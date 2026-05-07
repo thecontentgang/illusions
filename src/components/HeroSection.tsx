@@ -83,7 +83,7 @@ const HeroSection = memo(() => {
     className="absolute inset-0 w-full h-full object-cover"
   >
     <source
-      src="https://res.cloudinary.com/dmabn7bjw/video/upload/q_auto/f_auto/v1778149067/Video_Project_cvnwxd.mp4"
+      src="/Video-Project.mp4"
       type="video/mp4"
     />
   </video>
@@ -122,7 +122,7 @@ const HeroSection = memo(() => {
             duration: 0.5,
             delay: 0.15,
           }}
-          className="max-w-2xl mt-6 text-[#6B7280] text-base md:text-lg font-medium leading-relaxed"
+          className="max-w-2xl mt-6 text-white text-base md:text-lg font-medium leading-relaxed"
         >
           We place you at the heart of the process. Through dedicated
           one-on-one service and superior artistry, we transform your vision
