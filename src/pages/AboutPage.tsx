@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import {Link } from "react-router-dom";
 
 const AboutPage = () => {
   return (
@@ -231,7 +232,7 @@ const AboutPage = () => {
               <img src="/founder.jpeg" alt="Nikhil - Founder of Interior Illusion" className="w-full h-full object-center object-cover  transition-all duration-700" />
             </div>
             <div className="absolute -bottom-6 -right-4 md:-right-8 z-20 bg-[#C4B5FD] p-6 md:p-8 rounded-[2rem] shadow-xl text-white">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-90 mb-1">Principal Designer</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] opacity-90 mb-1">Founder</p>
               <h4 className="text-3xl font-serif leading-none">Nikhil.</h4>
             </div>
           </motion.div>
@@ -292,14 +293,17 @@ const AboutPage = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-
+            <Link to="/contact">
             <button className="w-full sm:w-auto px-8 md:px-10 py-4 bg-[#C4B5FD] text-white font-black uppercase tracking-[0.18em] text-[10px] md:text-xs rounded-2xl hover:shadow-[0_10px_30px_rgba(196,181,253,0.4)] hover:scale-[1.02] transition-all duration-300">
               Book Consultation
             </button>
+            </Link>
 
+            <Link to="/projects">
             <button className="w-full sm:w-auto px-8 md:px-10 py-4 border border-white/10 bg-white/5 backdrop-blur-sm text-white font-black uppercase tracking-[0.18em] text-[10px] md:text-xs rounded-2xl hover:border-[#C4B5FD]/60 hover:bg-white/10 transition-all duration-300">
               Explore Portfolio
             </button>
+            </Link>
 
           </div>
         </motion.div>

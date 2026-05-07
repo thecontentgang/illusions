@@ -71,7 +71,7 @@ const HeroSection = memo(() => {
   );
 
   return (
-    <section className="relative min-h-screen mt-20 w-full flex flex-col items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen pt-20 w-full flex flex-col items-center justify-center overflow-hidden bg-black">
 
   {/* BACKGROUND VIDEO */}
   <video
@@ -89,7 +89,7 @@ const HeroSection = memo(() => {
   </video>
 
   {/* DARK OVERLAY */}
-  <div className="absolute inset-0 bg-black/45 z-[1]" />
+  {/* <div className="absolute inset-0 bg-black/45 z-[1]" /> */}
 
   {/* BOTTOM GRADIENT */}
   <div className="absolute bottom-0 left-0 w-full h-[45%] z-[2] bg-gradient-to-t from-black via-black/60 to-transparent" />
