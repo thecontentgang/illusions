@@ -1,180 +1,226 @@
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Play } from 'lucide-react';
 
-const showcaseImages = [
-  "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto:best,f_auto,dpr_auto,w_1400/v1778139714/IMG_0768_vkuqst.jpg",
-
-  "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto:best,f_auto,dpr_auto,w_1400/v1778136576/Flow_IMG_20260313_152549_01_079_bjyb1x.jpg",
-
-  "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto:best,f_auto,dpr_auto,w_1400/v1778133984/IMG_8635_ejqaag.heic",
-
-  "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto:best,f_auto,dpr_auto,w_1400/v1778133965/Flow_IMG_20260419_214104_01_466_x1gftl.jpg",
-
-  "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto:best,f_auto,dpr_auto,w_1400/v1778134821/IMG_3740_dtkjqs.jpg",
-
-  "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto:best,f_auto,dpr_auto,w_1400/v1778133981/IMG_8637_ayjad7.heic",
-];
-
-/* Optimized Image Card */
-const ImageCard = memo(({ img, index }: { img: string; index: number }) => {
-  return (
-    <div
-      className="
-        w-[280px]
-        sm:w-[340px]
-        md:w-[420px]
-        lg:w-[500px]
-        h-[220px]
-        sm:h-[260px]
-        md:h-[300px]
-        lg:h-[340px]
-        rounded-[2rem]
-        overflow-hidden
-        bg-gray-100
-        flex-shrink-0
-        will-change-transform
-        transform-gpu
-      "
-    >
-      <img
-        src={img}
-        alt={`Interior ${index + 1}`}
-        loading={index < 2 ? "eager" : "lazy"}
-        fetchPriority={index < 2 ? "high" : "auto"}
-        decoding="async"
-        draggable="false"
-        className="
-          w-full
-          h-full
-          object-cover
-          will-change-transform
-          transform-gpu
-          backface-hidden
-          hover:scale-105
-          transition-transform
-          duration-700
-        "
-      />
-    </div>
-  );
-});
-
-ImageCard.displayName = "ImageCard";
+import ShowcaseCarousel from './ShowcaseCarousel';
 
 const HeroSection = memo(() => {
-
-  /* Prevent Re-rendering */
-  const duplicatedImages = useMemo(
-    () => [...showcaseImages, ...showcaseImages],
-    []
-  );
-
   return (
-    <section className="relative min-h-screen pt-20 w-full flex flex-col items-center justify-center overflow-hidden bg-black">
+    <section className="relative w-full overflow-hidden bg-white">
 
-  {/* BACKGROUND VIDEO */}
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    <source
-      src="/Video-Project.mp4"
-      type="video/mp4"
-    />
-  </video>
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-  {/* DARK OVERLAY */}
-  {/* <div className="absolute inset-0 bg-black/45 z-[1]" /> */}
+      {/* TOP GLOW */}
+      <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/20 blur-3xl rounded-full" />
 
-  {/* BOTTOM GRADIENT */}
-  <div className="absolute bottom-0 left-0 w-full h-[45%] z-[2] bg-gradient-to-t from-black via-black/60 to-transparent" />
+      {/* CONTENT */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 md:pt-32">
 
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl w-full text-center flex flex-col items-center px-6">
+        <div className="flex flex-col items-center text-center">
 
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.5,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="font-aesthetic text-5xl pt-10 sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05] tracking-tight"
-        >
-          Bespoke Interiors <br />
-          <span className="text-[#C4B5FD] italic">
-            Personally
-          </span>
-          curated.
-        </motion.h1>
+          {/* TAG */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="mb-6"
+          >
+            <span className="px-5 py-2 rounded-full bg-[#8B5CF6]/10 border border-[#C4B5FD]/30 text-[#7C3AED] text-sm font-semibold tracking-wide">
+              Luxury Interior Studio
+            </span>
+          </motion.div>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            delay: 0.15,
-          }}
-          className="max-w-2xl mt-6 text-white text-base md:text-lg font-medium leading-relaxed"
-        >
-          We place you at the heart of the process. Through dedicated
-          one-on-one service and superior artistry, we transform your vision
-          into a timeless sanctuary.
-        </motion.p>
+          {/* HEADING */}
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="
+              font-semibold
+              text-5xl
+              sm:text-6xl
+              md:text-7xl
+              lg:text-8xl
+              text-[#111827]
+              leading-[1]
+              tracking-wider
+              max-w-6xl
+            "
+          >
+            Bespoke Interiors <br />
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.4,
-            delay: 0.2,
-          }}
-          className="flex flex-col sm:flex-row items-center gap-4 mt-8"
-        >
-          <Link to="/projects">
-            <button className="group relative px-8 md:px-10 py-4 bg-[#C4B5FD] text-white font-bold rounded-2xl shadow-[0_15px_30px_-10px_rgba(196,181,253,0.6)] hover:shadow-[0_20px_40px_-10px_rgba(196,181,253,0.8)] transition-all duration-300 active:scale-95 will-change-transform transform-gpu">
-              Our Projects
-            </button>
-          </Link>
+            <span className="text-[#8B5CF6] italic">
+              Personally
+            </span>{" "}
 
-          <Link to="/contact">
-            <button className="px-8 md:px-10 py-4 bg-white text-[#374151] font-bold rounded-2xl border-2 border-gray-100 hover:border-[#C4B5FD]/30 hover:bg-gray-50 transition-all duration-300 will-change-transform transform-gpu">
-              Contact Us
-            </button>
-          </Link>
-        </motion.div>
+            curated.
+          </motion.h1>
+          {/* VIDEO SECTION */}
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.25,
+            }}
+            className="
+              relative
+              mt-14
+              w-full
+              max-w-5xl
+              rounded-[2rem]
+              overflow-hidden
+              shadow-[0_25px_80px_rgba(139,92,246,0.15)]
+              border
+              border-white/50
+              backdrop-blur-xl
+            "
+          >
+
+            {/* VIDEO */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="
+                w-full
+                h-[240px]
+                sm:h-[340px]
+                md:h-[480px]
+                lg:h-[560px]
+                object-cover
+              "
+              poster="/video-thumbnail.jpg"
+            >
+              <source src="/founder-video.mp4" type="video/mp4" />
+            </video>
+
+            {/* VIDEO OVERLAY */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+            {/* PLAY LABEL */}
+            <div className="absolute bottom-5 left-5 flex items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl">
+
+              <div className="w-10 h-10 rounded-full bg-[#8B5CF6] flex items-center justify-center text-white">
+                <Play size={18} fill="white" />
+              </div>
+
+              <div className="text-left">
+                <p className="text-sm font-bold text-[#111827]">
+                  Founder Story
+                </p>
+
+                <p className="text-xs text-gray-500">
+                  Discover our design philosophy
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* DESCRIPTION */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.15,
+            }}
+            className="
+              max-w-2xl
+              mt-7
+              text-[#4B5563]
+              text-base
+              sm:text-lg
+              md:text-xl
+              font-medium
+              leading-relaxed
+            "
+          >
+            We place you at the heart of the process. Through dedicated
+            one-on-one service and superior artistry, we transform your
+            vision into a timeless sanctuary.
+          </motion.p>
+
+
+
+          {/* BUTTONS */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.35,
+            }}
+            className="
+              flex
+              flex-col
+              sm:flex-row
+              items-center
+              gap-4
+              mt-10
+            "
+          >
+            <Link to="/projects">
+              <button
+                className="
+                  group
+                  relative
+                  px-8
+                  md:px-10
+                  py-4
+                  bg-[#8B5CF6]
+                  text-white
+                  font-bold
+                  rounded-2xl
+                  shadow-[0_15px_30px_-10px_rgba(139,92,246,0.45)]
+                  hover:shadow-[0_20px_40px_-10px_rgba(139,92,246,0.6)]
+                  hover:scale-[1.03]
+                  transition-all
+                  duration-300
+                  active:scale-95
+                "
+              >
+                Our Projects
+              </button>
+            </Link>
+
+            <Link to="/contact">
+              <button
+                className="
+                  px-8
+                  md:px-10
+                  py-4
+                  bg-white
+                  text-[#111827]
+                  font-bold
+                  rounded-2xl
+                  border-2
+                  border-[#E5E7EB]
+                  hover:border-[#C4B5FD]
+                  hover:bg-[#F9FAFB]
+                  transition-all
+                  duration-300
+                  shadow-sm
+                "
+              >
+                Contact Us
+              </button>
+            </Link>
+          </motion.div>
+        </div>
       </div>
 
-      {/* FULL WIDTH AUTO SCROLL CAROUSEL */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.5,
-        }}
-        className="relative w-screen mt-16 overflow-hidden z-20"
-      >
-        <div className="flex gap-6 animate-marquee w-max px-6 will-change-transform transform-gpu">
-          
-          {duplicatedImages.map((img, index) => (
-            <ImageCard
-              key={`${img}-${index}`}
-              img={img}
-              index={index}
-            />
-          ))}
-
-        </div>
-      </motion.div>
+      {/* CAROUSEL */}
+      <div className="relative z-10 mt-24">
+        <ShowcaseCarousel />
+      </div>
     </section>
   );
 });

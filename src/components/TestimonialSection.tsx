@@ -41,7 +41,7 @@ const TestimonialSection = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-milchella text-[#374151]"
+            className="text-4xl md:text-6xl font-milchella font-semibold tracking-wider text-[#374151]"
           >
             Voices of <span className="italic">Satisfaction.</span>
           </motion.h2>

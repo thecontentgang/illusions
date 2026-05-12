@@ -64,9 +64,9 @@ const AboutSection = () => {
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-6xl font-milchella text-[#374151] leading-[1.1]"
+                className="text-4xl md:text-6xl font-milchella font-semibold text-[#374151] leading-[1.1] tracking-wider"
               >
-                Where heritage <br/> meets <span className="text-[#C4B5FD] italic">modernity.</span>
+                Where heritage <br/> meets <span className="text-[#8B5CF6] italic">modernity.</span>
               </motion.h2>
             </header>
 

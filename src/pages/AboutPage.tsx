@@ -20,10 +20,10 @@ const AboutPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-serif text-[#374151] leading-[1.05] tracking-tight"
+              className="text-5xl md:text-7xl lg:text-8xl font-semibold font-serif text-[#374151] leading-[1.05] tracking-wider"
             >
               Redefining the <br />
-              <span className="text-[#C4B5FD] italic">Modern Indian</span> Home.
+              <span className="text-[#8B5CF6] italic">Modern Indian</span> Home.
             </motion.h1>
           </div>
           <motion.div
@@ -56,7 +56,7 @@ const AboutPage = () => {
             <span className="relative z-10 text-[#C4B5FD] text-[10px] font-black font-josefin uppercase tracking-[0.4em] mb-6 block">
               Our Mission
             </span>
-            <h3 className="relative z-10 text-3xl md:text-4xl font-milchella mb-6 leading-tight">
+            <h3 className="relative z-10 text-3xl md:text-4xl font-milchella font-semibold tracking-wider  mb-6 leading-tight">
               To engineer lifestyles through bespoke design.
             </h3>
             <p className="relative z-10 text-gray-400 font-medium leading-relaxed text-sm md:text-base">
@@ -77,7 +77,7 @@ const AboutPage = () => {
             <span className="relative z-10 text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.4em] mb-6 block">
               Our Vision
             </span>
-            <h3 className="relative z-10 text-3xl md:text-4xl font-milchella text-[#374151] mb-6 leading-tight">
+            <h3 className="relative z-10 text-3xl md:text-4xl font-milchella font-semibold tracking-wider text-[#374151] mb-6 leading-tight">
               Defining the future of <span className="italic">luxury living.</span>
             </h3>
             <p className="relative z-10 text-gray-500 font-medium leading-relaxed text-sm md:text-base">
@@ -96,8 +96,8 @@ const AboutPage = () => {
             <span className="text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.4em] mb-3 block">
               Core Principles
             </span>
-            <h2 className="text-3xl md:text-5xl font-milchella text-[#374151] leading-tight">
-              The architecture of <span className="italic text-[#C4B5FD]">experience.</span>
+            <h2 className="text-3xl md:text-5xl font-milchella font-semibold tracking-wider text-[#374151] leading-tight">
+              The architecture of <span className="italic text-[#8B5CF6]">experience.</span>
             </h2>
           </div>
           <p className="text-gray-500 text-sm md:text-base font-medium max-w-sm">
@@ -160,52 +160,14 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 4. OUR PROCESS: Sleek Methodology Timeline */}
-      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto border-b-[6px] border-gray-50">
-        <div className="text-center mb-16 md:mb-24">
-          <span className="text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
-            Methodology
-          </span>
-          <h2 className="text-4xl md:text-6xl font-milchella text-[#374151]">
-            The <span className="italic text-[#C4B5FD]">Illusion</span> Process.
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
-          {/* Desktop Connecting Line */}
-          <div className="hidden md:block absolute top-[2.25rem] left-[10%] right-[10%] h-[2px] bg-gray-100 z-0" />
-
-          {[
-            { step: "01", title: "Discovery", desc: "A deep-dive consultation to understand your lifestyle, routines, and aesthetic aspirations." },
-            { step: "02", title: "Blueprint", desc: "Translating your vision into structural layouts, 3D visualizations, and precise material boards." },
-            { step: "03", title: "Curation", desc: "Executing the build with our trusted artisans, sourcing honest, high-end materials globally." },
-            { step: "04", title: "The Reveal", desc: "A flawless, turnkey handover of a space that is ready to be lived in and deeply loved." }
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="relative z-10 group text-center md:text-left"
-            >
-              {/* Number Badge */}
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white border-[4px] border-gray-100 flex items-center justify-center mb-6 shadow-sm mx-auto md:mx-0 group-hover:border-[#C4B5FD] group-hover:shadow-lg transition-all duration-300">
-                <span className="text-xl md:text-2xl font-black text-[#C4B5FD]">{item.step}</span>
-              </div>
-              <h4 className="text-xl md:text-2xl font-serif text-[#374151] mb-3">{item.title}</h4>
-              <p className="text-gray-500 text-sm leading-relaxed max-w-[250px] mx-auto md:mx-0">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      
 
       {/* 5. PRESTIGE & COMMUNITIES: Building Trust */}
       <section className="py-20 md:py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-start lg:items-center justify-between">
           <div className="lg:w-1/3">
             <span className="text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Our Footprint</span>
-            <h3 className="text-4xl md:text-5xl font-milchella text-[#374151] leading-tight">
+            <h3 className="text-4xl md:text-5xl font-milchella font-semibold tracking-wider text-[#374151] leading-tight">
               Trusted across <br /> Hyderabad's most <br />
               <span className="text-[#C4B5FD] italic">premier</span> addresses.
             </h3>
@@ -240,7 +202,7 @@ const AboutPage = () => {
           <div className="lg:col-span-7 space-y-8">
             <header>
               <span className="text-[#C4B5FD] text-[10px] font-milchella md:text-xs font-black uppercase tracking-[0.3em] block mb-3">The Visionary</span>
-              <h2 className="text-4xl md:text-6xl font-milchella text-[#374151] leading-tight">
+              <h2 className="text-4xl md:text-6xl font-milchella font-semibold tracking-wider text-[#374151] leading-tight">
                 Design is an act of <br /> <span className="italic">soulful curation.</span>
               </h2>
             </header>
@@ -278,7 +240,7 @@ const AboutPage = () => {
           </span>
 
           {/* Heading */}
-          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] font-milchella tracking-tight">
+          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] font-milchella font-semibold  tracking-wider">
             Ready to create your <br />
             <span className="text-[#C4B5FD] italic">
               dream interior?

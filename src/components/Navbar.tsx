@@ -133,7 +133,7 @@ const Navbar = () => {
         <motion.button
           whileHover={{ scale: 1.02, backgroundColor: '#b3a1fa' }}
           whileTap={{ scale: 0.98 }}
-          className="px-8 py-2.5 text-sm font-medium tracking-wide text-white rounded-full bg-[#d1b5fd] shadow-[0_4px_14px_0_rgba(196,181,253,0.39)] transition-all duration-300"
+          className="px-8 py-2.5 text-sm font-medium tracking-wide text-white rounded-full bg-[#8B5CF6] shadow-[0_4px_14px_0_rgba(196,181,253,0.39)] transition-all duration-300"
         >
           Start a Project
         </motion.button>

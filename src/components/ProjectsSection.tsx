@@ -17,7 +17,7 @@ const ProjectsSection = () => {
               Selected Works
             </span>
 
-            <h2 className="text-4xl md:text-6xl font-milchella text-[#374151] leading-tight">
+            <h2 className="text-4xl md:text-6xl font-milchella font-semibold tracking-wider text-[#374151] leading-tight">
               Creating spaces that <br />
               <span className="italic text-[#C4B5FD]">
                 inspire

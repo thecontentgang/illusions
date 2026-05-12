@@ -93,7 +93,7 @@ Suncity Hyderabad
                 href="mailto:hello@illusioninteriors.com" 
                 className="inline-block text-[13px] md:text-sm font-bold text-[#C4B5FD] border-b-2 border-[#C4B5FD]/20 hover:border-[#C4B5FD] transition-all pb-1"
               >
-                Email Studio
+                hello@illusioninteriors.com
               </a>
             </div>
           </div>
