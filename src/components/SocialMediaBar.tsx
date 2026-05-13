@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const socialLinks = [
   {
     id: "instagram",
-    href: "https://instagram.com/",
+    href: "https://www.instagram.com/interiorillusions_india/",
     label: "Instagram",
     icon: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -11,19 +11,10 @@ const socialLinks = [
       </svg>
     ),
   },
-  {
-    id: "facebook",
-    href: "https://facebook.com/",
-    label: "Facebook",
-    icon: (
-      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24H12.82v-9.294H9.692V11.01h3.128V8.414c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z" />
-      </svg>
-    ),
-  },
+
   {
     id: "whatsapp",
-    href: "https://wa.me/919999999999",
+    href: "https://wa.me/918317503596",
     label: "WhatsApp",
     icon: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -33,7 +24,7 @@ const socialLinks = [
   },
   {
     id: "phone",
-    href: "tel:+919999999999",
+    href: "tel:+918317503596",
     label: "Call Us",
     icon: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -43,7 +34,7 @@ const socialLinks = [
   },
   {
     id: "youtube",
-    href: "https://youtube.com/",
+    href: "https://www.youtube.com/@Interiorillusions_",
     label: "YouTube",
     icon: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -55,7 +46,7 @@ const socialLinks = [
 
 const SocialMediaBar = () => {
   return (
-    <div className="fixed right-4 sm:right-5 top-1/2 -translate-y-1/2 z-[999] flex flex-col gap-2.5">
+    <div className="fixed right-3 sm:right-5 top-2/3 -translate-y-1/2 z-[999] flex flex-col gap-2.5">
       {socialLinks.map((social, index) => (
         <motion.a
           key={social.id}
@@ -100,6 +91,79 @@ const SocialMediaBar = () => {
           <span className="relative z-10">{social.icon}</span>
         </motion.a>
       ))}
+
+      {/* SCROLL TO TOP */}
+      <motion.button
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.45,
+          delay: 0.4,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        whileHover={{
+          scale: 1.08,
+          y: -3,
+        }}
+        whileTap={{ scale: 0.94 }}
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
+        className="
+    group
+    relative
+    w-11
+    h-11
+    sm:w-12
+    sm:h-12
+    rounded-2xl
+    flex
+    items-center
+    justify-center
+    bg-[#111827]
+    border
+    border-[#111827]
+    shadow-[0_8px_25px_-4px_rgba(17,24,39,0.35)]
+    text-white
+    hover:bg-[#8B5CF6]
+    hover:border-[#8B5CF6]
+    transition-all
+    duration-300
+  "
+      >
+
+        {/* GLOW */}
+        <span
+          className="
+      absolute
+      inset-0
+      rounded-2xl
+      ring-0
+      ring-[#C4B5FD]/40
+      group-hover:ring-4
+      transition-all
+      duration-300
+    "
+        />
+
+        {/* ARROW ICON */}
+        <svg
+          className="relative z-10 w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      </motion.button>
 
       {/* Vertical connector line */}
       <div className="mx-auto mt-1 w-px h-10 bg-gradient-to-b from-[#C4B5FD]/40 to-transparent" />

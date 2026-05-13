@@ -29,11 +29,10 @@ const Pill = ({
   <button
     type="button"
     onClick={onClick}
-    className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide border transition-all duration-200 whitespace-nowrap ${
-      active
+    className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide border transition-all duration-200 whitespace-nowrap ${active
         ? 'bg-[#8B5CF6] border-[#8B5CF6] text-white shadow-[0_2px_10px_rgba(139,92,246,0.35)]'
         : 'bg-white border-[#E5E7EB] text-[#6B7280] hover:border-[#C4B5FD] hover:text-[#8B5CF6]'
-    }`}
+      }`}
   >
     {label}
   </button>
@@ -195,38 +194,114 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                     <div className="flex flex-col gap-4">
 
                       {/* Row 1: Name + Phone */}
-                      <div className="grid grid-cols-2 gap-3">
+                      {/* Row 1: Name + Phone */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                        {/* NAME */}
                         <div>
                           <FieldLabel>Name</FieldLabel>
+
                           <input
                             type="text"
-                            placeholder="Your Name"
+                            placeholder="Your Full Name"
                             value={form.name}
-                            onChange={(e) => setField('name', e.target.value)}
+                            onChange={(e) =>
+                              setField(
+                                'name',
+                                e.target.value.replace(/[^A-Za-z\s]/g, '')
+                              )
+                            }
+                            required
                             className="
-                              w-full px-3 py-2.5 rounded-xl
-                              text-sm text-[#111827] placeholder-[#D1D5DB]
-                              bg-[#FAFAFA] border border-[#E5E7EB]
-                              focus:outline-none focus:border-[#8B5CF6] focus:bg-white
-                              transition-all duration-200
-                            "
+        w-full
+        px-3
+        py-2.5
+        rounded-xl
+        text-sm
+        text-[#111827]
+        placeholder-[#D1D5DB]
+        bg-[#FAFAFA]
+        border
+        border-[#E5E7EB]
+        focus:outline-none
+        focus:border-[#8B5CF6]
+        focus:bg-white
+        transition-all
+        duration-200
+      "
                           />
                         </div>
+
+                        {/* PHONE */}
                         <div>
                           <FieldLabel>Phone</FieldLabel>
-                          <input
-                            type="tel"
-                            placeholder="+91 XXXXX XXXXX"
-                            value={form.phone}
-                            onChange={(e) => setField('phone', e.target.value)}
+
+                          <div
                             className="
-                              w-full px-3 py-2.5 rounded-xl
-                              text-sm text-[#111827] placeholder-[#D1D5DB]
-                              bg-[#FAFAFA] border border-[#E5E7EB]
-                              focus:outline-none focus:border-[#8B5CF6] focus:bg-white
-                              transition-all duration-200
-                            "
-                          />
+        flex
+        items-center
+        overflow-hidden
+        rounded-xl
+        border
+        border-[#E5E7EB]
+        bg-[#FAFAFA]
+        focus-within:border-[#8B5CF6]
+        focus-within:bg-white
+        transition-all
+        duration-200
+      "
+                          >
+
+                            {/* COUNTRY CODE */}
+                            <div
+                              className="
+          px-3
+          py-2.5
+          text-sm
+          font-semibold
+          text-[#111827]
+          border-r
+          border-[#E5E7EB]
+          bg-white
+        "
+                            >
+                              +91
+                            </div>
+
+                            {/* INPUT */}
+                            <input
+                              type="tel"
+                              placeholder="9876543210"
+                              value={form.phone}
+                              required
+                              maxLength={10}
+                              inputMode="numeric"
+                              onChange={(e) => {
+                                const value = e.target.value
+                                  .replace(/\D/g, '')
+                                  .slice(0, 10);
+
+                                setField('phone', value);
+                              }}
+                              className="
+          w-full
+          px-3
+          py-2.5
+          text-sm
+          text-[#111827]
+          placeholder-[#D1D5DB]
+          bg-transparent
+          focus:outline-none
+        "
+                            />
+                          </div>
+
+                          {/* ERROR */}
+                          {form.phone.length > 0 && form.phone.length < 10 && (
+                            <p className="text-[11px] text-red-500 mt-1 pl-1">
+                              Enter a valid 10-digit phone number
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -310,6 +385,43 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                           "
                         />
                       </div>
+                      {/* TERMS & CONDITIONS */}
+                      <label
+                        className="
+    flex
+    items-start
+    gap-3
+    text-[11px]
+    text-[#6B7280]
+    leading-relaxed
+    cursor-pointer
+    select-none
+  "
+                      >
+                        <input
+                          type="checkbox"
+                          required
+                          className="
+      mt-0.5
+      w-4
+      h-4
+      rounded
+      border-[#D1D5DB]
+      text-[#8B5CF6]
+      focus:ring-[#8B5CF6]
+    "
+                        />
+
+                        <span>
+                          I agree to the{" "}
+
+                          <span className="text-[#8B5CF6] font-medium">
+                            Terms & Conditions
+                          </span>{" "}
+
+                          and consent to being contacted regarding my inquiry.
+                        </span>
+                      </label>
 
                       {/* CTA */}
                       <button

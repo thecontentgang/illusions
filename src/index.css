@@ -62,3 +62,9 @@ img {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
+html,
+body,
+#root {
+  overflow-x: hidden;
+  background: white;
+}

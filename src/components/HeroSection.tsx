@@ -43,17 +43,19 @@ const HeroSection = memo(() => {
               duration: 0.6,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="
-              font-semibold
-              text-5xl
-              sm:text-6xl
-              md:text-7xl
-              lg:text-8xl
-              text-[#111827]
-              leading-[1]
-              tracking-wider
-              max-w-6xl
-            "
+           className="
+  font-semibold
+  text-[2.6rem]
+  leading-[0.95]
+
+  sm:text-6xl
+  md:text-7xl
+  lg:text-8xl
+
+  text-[#111827]
+  tracking-wider
+  max-w-6xl
+"
           >
             Bespoke Interiors <br />
 
@@ -151,7 +153,137 @@ const HeroSection = memo(() => {
             vision into a timeless sanctuary.
           </motion.p>
 
+{/* GOOGLE REVIEWS */}
+<motion.div
+  initial={{ opacity: 0, y: 15 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    duration: 0.5,
+    delay: 0.28,
+  }}
+  className="
+    mt-5
+    flex
+    flex-col
+    sm:flex-row
+    items-center
+    gap-5
+  "
+>
 
+  {/* MAIN REVIEW CARD */}
+  <div
+    className="
+      flex
+      items-center
+      gap-5
+      px-5
+      py-4
+      rounded-[1.8rem]
+      bg-white/90
+      backdrop-blur-xl
+      border
+      border-[#ECECEC]
+      shadow-[0_15px_50px_rgba(0,0,0,0.06)]
+    "
+  >
+
+    {/* PEOPLE IMAGES */}
+    <div className="flex -space-x-4">
+
+      <img
+        src="https://randomuser.me/api/portraits/women/44.jpg"
+        alt=""
+        className="
+          w-12
+          h-12
+          rounded-full
+          object-cover
+          border-2
+          border-white
+        "
+      />
+
+      <img
+        src="https://randomuser.me/api/portraits/men/32.jpg"
+        alt=""
+        className="
+          w-12
+          h-12
+          rounded-full
+          object-cover
+          border-2
+          border-white
+        "
+      />
+
+      <img
+        src="https://randomuser.me/api/portraits/women/68.jpg"
+        alt=""
+        className="
+          w-12
+          h-12
+          rounded-full
+          object-cover
+          border-2
+          border-white
+        "
+      />
+    </div>
+
+    {/* REVIEW CONTENT */}
+    <div className="text-left">
+
+      {/* GOOGLE LOGO */}
+      <div className="flex items-center gap-2">
+
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+          alt="Google"
+          className="w-5 h-5"
+        />
+
+        <span className="font-semibold text-[#111827]">
+          Google Reviews
+        </span>
+      </div>
+
+      {/* STARS */}
+      <div className="flex items-center gap-1 mt-2">
+
+        <div className="flex text-[#F59E0B] text-sm">
+          ★★★★★
+        </div>
+
+        <span className="text-[#111827] font-bold ml-1">
+          4.9
+        </span>
+
+        <span className="text-[#6B7280] text-sm">
+          (250+ Reviews)
+        </span>
+      </div>
+    </div>
+  </div>
+
+  {/* TRUST TAG */}
+  <div
+    className="
+      px-5
+      py-4
+      rounded-[1.6rem]
+      bg-[#8B5CF6]/10
+      border
+      border-[#C4B5FD]/20
+      text-[#7C3AED]
+      font-semibold
+      text-sm
+      tracking-wide
+    "
+  >
+    Trusted by Luxury Homeowners
+  </div>
+</motion.div>
 
           {/* BUTTONS */}
           <motion.div

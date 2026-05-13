@@ -6,133 +6,233 @@ const ProjectsSection = () => {
   const featuredProjects = portfolioData.slice(0, 4);
 
   return (
-    <section className="py-20 md:py-32 bg-white px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="py-20 md:py-28 bg-white px-5 md:px-10 lg:px-20 overflow-hidden">
+
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          
+        {/* SECTION HEADER */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+
           <div className="max-w-2xl">
-            <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
+
+            <span
+              className="
+                text-[#8B5CF6]
+                text-[10px]
+                font-black
+                uppercase
+                tracking-[0.35em]
+                mb-4
+                block
+              "
+            >
               Selected Works
             </span>
 
-            <h2 className="text-4xl md:text-6xl font-milchella font-semibold tracking-wider text-[#374151] leading-tight">
+            <h2
+              className="
+                text-4xl
+                md:text-6xl
+                font-milchella
+                font-semibold
+                tracking-wider
+                text-[#374151]
+                leading-tight
+              "
+            >
               Creating spaces that <br />
+
               <span className="italic text-[#8B5CF6]">
                 inspire
               </span>{" "}
+
               living.
             </h2>
           </div>
 
-          {/* Desktop Button */}
+          {/* DESKTOP BUTTON */}
           <Link
             to="/projects"
-            className="hidden md:block px-8 py-4 bg-[#8B5CF6] border border-[#8B5CF6] rounded-xl text-[10px] font-black uppercase tracking-widest text-white hover:bg-gray-50 hover:text-[#374151] transition-all duration-300"
+            className="
+              hidden
+              md:flex
+              items-center
+              justify-center
+              px-7
+              py-4
+              bg-[#8B5CF6]
+              border
+              border-[#8B5CF6]
+              rounded-2xl
+              text-xs
+              font-black
+              uppercase
+              tracking-[0.25em]
+              text-white
+              hover:bg-white
+              hover:text-[#374151]
+              transition-all
+              duration-300
+            "
           >
             View All Projects
           </Link>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        {/* PROJECTS GRID */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            md:grid-cols-2
+            gap-5
+            md:gap-7
+          "
+        >
 
-          {featuredProjects.map((project, index) => {
-            const isLarge = index === 0 || index === 3;
+          {featuredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.45,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ y: -6 }}
+              className="
+  group
+  relative
+  overflow-hidden
+  rounded-[2rem]
+  h-[280px]
+  md:h-[340px]
+  lg:h-[380px]
+  bg-[#F3F4F6]
+  shadow-[0_12px_40px_rgba(0,0,0,0.08)]
+"
+            >
 
-            return (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{
-                  delay: index * 0.05,
-                  duration: 0.45,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className={`group relative overflow-hidden rounded-[2.5rem] bg-gray-100 will-change-transform transform-gpu ${
-                  isLarge ? 'md:aspect-[4/5]' : 'md:aspect-square'
-                } aspect-[4/5] shadow-2xl cursor-pointer`}
+              <Link
+                to={`/projects/${project.id}`}
+                className="block w-full h-full relative"
               >
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="block w-full h-full relative"
+
+                {/* IMAGE */}
+                <img
+                  src={project.heroImage}
+                  alt={project.title}
+                  loading="lazy"
+                  draggable="false"
+                  className="
+                    absolute
+                    inset-0
+                    w-full
+                    h-full
+                    object-cover
+                    transition-transform
+                    duration-700
+                    group-hover:scale-105
+                  "
+                />
+
+                {/* OVERLAY */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-black/80
+                    via-black/10
+                    to-transparent
+                  "
+                />
+
+                {/* CONTENT */}
+                <div
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    w-full
+                    p-2
+                    md:p-3
+                  "
                 >
 
-                  {/* Image */}
-                  <div className="absolute inset-0 bg-[#E5E7EB] will-change-transform transform-gpu transition-transform duration-700 ease-out group-hover:scale-105">
+                  {/* GLASS CARD */}
+                  <div
+                    className="
+                      rounded-[1.5rem]
+                      bg-white/10
+                      backdrop-blur-xl
+                      border
+                      border-white/10
+                      px-3
+                      py-2
+                    "
+                  >
 
-                    <img
-                      src={project.heroImage}
-                      alt={project.title}
-                      loading="lazy"
-                      decoding="async"
-                      draggable="false"
-                      fetchPriority={index === 0 ? "high" : "auto"}
-                      className="w-full h-full object-cover will-change-transform transform-gpu backface-hidden"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
+                    <p
+                      className="
+                        text-[10px]
+                        md:text-xs
+                        font-black
+                        uppercase
+                        text-center
+                        tracking-[0.25em]
+                        text-[#C4B5FD]
+                        mb-2
+                      "
+                    >
+                      {project.category}
+                    </p>
 
-                    {/* Fallback */}
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-milchella italic -z-10">
+                    <h3
+                      className="
+                        text-xl
+                        md:text-2xl
+                        text-center
+                        font-semibold
+                        text-white
+                        leading-tight
+                      "
+                    >
                       {project.title}
-                    </div>
+                    </h3>
+
                   </div>
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#374151]/90 via-[#374151]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  {/* Info */}
-                  <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
-
-                    <div className="flex items-end justify-between">
-
-                      <div className="text-white">
-                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8B5CF6] mb-2">
-                          {project.category} / {project.community}
-                        </p>
-
-                        <h3 className="text-2xl md:text-3xl font-milchella leading-none">
-                          {project.title}
-                        </h3>
-                      </div>
-
-                      {/* Arrow */}
-                      <div className="w-12 h-12 rounded-full bg-white text-[#374151] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 scale-50 group-hover:scale-100 shadow-xl">
-
-                        <svg
-                          className="w-5 h-5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            );
-          })}
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Mobile Button */}
+        {/* MOBILE BUTTON */}
         <Link
           to="/projects"
-          className="flex justify-center items-center w-full mt-12 md:hidden px-8 py-5 bg-[#8B5CF6] rounded-2xl text-[10px] font-black uppercase tracking-widest text-white shadow-lg"
+          className="
+            flex
+            md:hidden
+            justify-center
+            items-center
+            w-full
+            mt-10
+            px-8
+            py-4
+            bg-[#8B5CF6]
+            rounded-2xl
+            text-xs
+            font-black
+            uppercase
+            tracking-[0.25em]
+            text-white
+            shadow-lg
+          "
         >
-          Explore All Portfolio
+          Explore Portfolio
         </Link>
       </div>
     </section>

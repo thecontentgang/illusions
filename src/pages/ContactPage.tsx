@@ -62,15 +62,99 @@ Suncity Hyderabad
               </div>
             </div>
 
-            {/* Thick Trust Block */}
-            <div className="bg-[#1F2937] p-8 rounded-3xl shadow-xl mt-8">
-              <p className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.3em] mb-2">
-                What's Next?
-              </p>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Once you submit this form, Nikhil or our lead design team will reach out within <strong className="text-white">24 hours</strong> to schedule your initial discovery call.
-              </p>
-            </div>
+            {/* LOCATION MAP CARD */}
+<div
+  className="
+    relative
+    overflow-hidden
+    rounded-[2rem]
+    h-[320px]
+    shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+    mt-8
+    group
+  "
+>
+
+  {/* MAP */}
+  <iframe
+    title="Office Location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243710.23946883448!2d78.0901336669922!3d17.365056641899134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97e032e71c0b%3A0x347126a37060cd26!2sInterior%20Illusions!5e0!3m2!1sen!2sin!4v1778670596783!5m2!1sen!2sin" 
+    className="
+      absolute
+      inset-0
+      w-full
+      h-full
+      border-0
+    "
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+
+  {/* OVERLAY */}
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-black/80
+      via-black/20
+      to-transparent
+    "
+  />
+
+  {/* CONTENT */}
+  <div
+    className="
+      absolute
+      bottom-0
+      left-0
+      w-full
+      p-5
+    "
+  >
+
+    <div
+      className="
+        rounded-[1.5rem]
+        bg-white/10
+        backdrop-blur-xl
+        border
+        border-white/10
+        px-5
+        py-4
+      "
+    >
+
+      <p
+        className="
+          text-[10px]
+          font-black
+          uppercase
+          tracking-[0.3em]
+          text-[#C4B5FD]
+          mb-2
+        "
+      >
+        Visit Our Studio
+      </p>
+
+      <h3
+        className="
+          text-xl
+          font-serif
+          text-white
+          leading-tight
+        "
+      >
+        Interior Illustrations <br />
+
+        <span className="text-gray-300 text-base">
+          Suncity, Hyderabad
+        </span>
+      </h3>
+    </div>
+  </div>
+</div>
           </motion.div>
 
           {/* RIGHT COLUMN: The Conversion Form (7 Cols) */}
@@ -88,25 +172,112 @@ Suncity Hyderabad
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 
                 {/* Responsive Row: Name & Phone */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 pl-2">Full Name</label>
-                    <input 
-                      type="text" 
-                      placeholder="Jane Doe"
-                      className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#8B5CF6] focus:bg-white transition-all placeholder:text-gray-300"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 pl-2">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      placeholder="+91"
-                      className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#8B5CF6] focus:bg-white transition-all placeholder:text-gray-300"
-                    />
-                  </div>
-                </div>
+                {/* Responsive Row: Name & Phone */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
+  {/* NAME */}
+  <div className="space-y-2">
+    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 pl-2">
+      Full Name
+    </label>
+
+    <input
+      type="text"
+      placeholder="Enter your full name"
+      required
+      pattern="^[A-Za-z\s]+$"
+      title="Only letters are allowed"
+      className="
+        w-full
+        bg-gray-50/50
+        border-2
+        border-gray-100
+        rounded-2xl
+        px-5
+        py-4
+        text-sm
+        font-medium
+        text-[#374151]
+        focus:outline-none
+        focus:border-[#8B5CF6]
+        focus:bg-white
+        transition-all
+        placeholder:text-gray-300
+      "
+    />
+  </div>
+
+  {/* PHONE */}
+  <div className="space-y-2">
+    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 pl-2">
+      Phone Number
+    </label>
+
+    <div
+      className="
+        flex
+        items-center
+        overflow-hidden
+        rounded-2xl
+        border-2
+        border-gray-100
+        bg-gray-50/50
+        focus-within:border-[#8B5CF6]
+        focus-within:bg-white
+        transition-all
+      "
+    >
+
+      {/* COUNTRY CODE */}
+      <div
+        className="
+          px-4
+          py-4
+          text-sm
+          font-semibold
+          text-[#374151]
+          border-r
+          border-gray-200
+          bg-white
+        "
+      >
+        +91
+      </div>
+
+      {/* INPUT */}
+      <input
+        type="tel"
+        placeholder="9876543210"
+        required
+        maxLength={10}
+        pattern="[0-9]{10}"
+        inputMode="numeric"
+        title="Please enter a valid 10-digit number"
+        onInput={(e) => {
+          e.currentTarget.value = e.currentTarget.value
+            .replace(/[^0-9]/g, "")
+            .slice(0, 10);
+        }}
+        className="
+          w-full
+          px-5
+          py-4
+          bg-transparent
+          text-sm
+          font-medium
+          text-[#374151]
+          focus:outline-none
+          placeholder:text-gray-300
+        "
+      />
+    </div>
+
+    {/* ERROR TEXT */}
+    <p className="text-xs text-gray-400 pl-2">
+      Enter a valid 10-digit mobile number
+    </p>
+  </div>
+</div>
                 {/* Email Field */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 pl-2">Email Address</label>

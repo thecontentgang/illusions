@@ -72,7 +72,7 @@ const AboutPage = () => {
             transition={{ delay: 0.2 }}
             className="bg-gray-50 p-10 md:p-16 rounded-[2.5rem] shadow-inner border-[6px] border-white relative overflow-hidden group"
           >
-            <span className="absolute -top-10 -right-4 text-[12rem] font-serif text-gray-200/50 group-hover:text-[#C4B5FD]/10 transition-colors duration-500">V</span>
+            
 
             <span className="relative z-10 text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.4em] mb-6 block">
               Our Vision
@@ -212,9 +212,7 @@ const AboutPage = () => {
               <p>Having delivered exclusive projects across Hyderabad's elite communities, his approach is deeply personal. He believes that true luxury isn't just about expensive materials—it's about creating an environment that intuitively aligns with how a family moves, rests, and connects.</p>
             </div>
 
-            <div className="pl-6 border-l-[4px] border-[#C4B5FD] py-2">
-              <p className="text-gray-400 text-lg md:text-xl font-serif italic">"A home should be a physical manifestation of your journey—thick with memories, rich in texture, and flawlessly clean in its execution."</p>
-            </div>
+            
 
             <motion.a href="https://wa.me/918317503596" target="_blank" rel="noreferrer" whileHover={{ x: 10 }} className="inline-flex items-center gap-4 bg-[#1F2937] hover:bg-[#C4B5FD] text-white px-8 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] md:text-xs shadow-lg transition-all duration-300 group mt-4">
               Direct Chat with Nikhil

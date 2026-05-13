@@ -90,56 +90,7 @@ const ProjectDetails = () => {
         </motion.div>
       </section>
 
-      {/* 3. THE NARRATIVE & MATERIAL PALETTE */}
-      <section className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto mb-24 md:mb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-
-          {/* Story & Quote (7 Cols) */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-7 space-y-10"
-          >
-            <h3 className="text-3xl font-serif text-[#374151]">The Design Narrative</h3>
-            <p className="text-gray-500 text-lg leading-relaxed font-medium">
-              {project.story}
-            </p>
-            <div className="pl-6 md:pl-10 border-l-[4px] border-[#8B5CF6]">
-              <p className="text-2xl md:text-3xl font-serif text-[#374151] italic leading-snug">
-                "{project.quote}"
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Material Palette - High-end UI feature (5 Cols) */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-5 bg-gray-50 p-10 rounded-[2.5rem]"
-          >
-            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8B5CF6] mb-8">
-              Material Palette
-            </h4>
-            <div className="space-y-6">
-              {project.materials.map((mat, i) => (
-                <div key={i} className="flex items-center gap-6 group">
-                  <div
-                    className="w-16 h-16 rounded-2xl shadow-inner border-2 border-white group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: mat.hex }}
-                  />
-                  <div>
-                    <p className="font-bold text-[#374151] text-sm">{mat.name}</p>
-                    <p className="text-[10px] font-mono tracking-widest text-gray-400 mt-1 uppercase">{mat.hex}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+      
       {/* 4. GRAND GALLERY (More Viewing) */}
       <section className="px-6 md:px-12 lg:px-24 max-w-[90rem] mx-auto mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 auto-rows-[400px] md:auto-rows-[600px] grid-flow-dense">

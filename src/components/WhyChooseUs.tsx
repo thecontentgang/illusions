@@ -1,46 +1,39 @@
 import { motion } from "framer-motion";
-import {
-  Sparkles,
-  ShieldCheck,
-  Clock3,
-  PenTool,
-  Gem,
-  Users,
-} from "lucide-react";
+import CTAImage from "../assets/cta-image.jpg";
 
 const features = [
   {
-    icon: Sparkles,
+    image: "",
     title: "Luxury Design Approach",
     description:
       "Every space is crafted with timeless elegance, modern aesthetics, and refined attention to detail.",
   },
   {
-    icon: PenTool,
+    image: "",
     title: "Tailored Customization",
     description:
       "We personalize every design according to your lifestyle, vision, and architectural identity.",
   },
   {
-    icon: ShieldCheck,
+    image: "",
     title: "Premium Quality Materials",
     description:
       "From finishes to furnishings, we source only premium materials for exceptional durability and beauty.",
   },
   {
-    icon: Clock3,
+    image: "",
     title: "On-Time Project Delivery",
     description:
       "Our streamlined execution process ensures smooth coordination and timely completion.",
   },
   {
-    icon: Gem,
+    image: "",
     title: "Sophisticated Craftsmanship",
     description:
       "Every detail is thoughtfully executed by experienced artisans and skilled design professionals.",
   },
   {
-    icon: Users,
+    image: "",
     title: "Client-Centered Experience",
     description:
       "We collaborate closely with clients to ensure a seamless and inspiring design journey.",
@@ -67,7 +60,7 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <div className="px-5 py-2 rounded-full bg-[#8B5CF6]/10 border border-[#C4B5FD]/30">
+          <div className="px-5 py-2 rounded-full bg-[#8B5CF6]/10 border border-[#8B5CF6]/30">
             <span className="text-sm font-semibold tracking-wide uppercase text-[#7C3AED]">
               Why Choose Us
             </span>
@@ -120,43 +113,40 @@ const WhyChooseUs = () => {
           </p>
         </motion.div>
         {/* STATS SECTION */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{
-    duration: 0.6,
-    delay: 0.2,
-  }}
-  viewport={{ once: true }}
-  className="
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.2,
+          }}
+          viewport={{ once: true }}
+          className="
     mt-16
     grid
-    grid-cols-2
-    lg:grid-cols-4
+    grid-cols-3
+    lg:grid-cols-3
     gap-5
   "
->
-  {[
-    {
-      value: "250+",
-      label: "Luxury Projects",
-    },
-    {
-      value: "15+",
-      label: "Years Experience",
-    },
-    {
-      value: "98%",
-      label: "Client Satisfaction",
-    },
-    {
-      value: "20+",
-      label: "Expert Designers",
-    },
-  ].map((item, index) => (
-    <div
-      key={index}
-      className="
+        >
+          {[
+            {
+              value: "187+",
+              label: "Luxury Projects",
+            },
+            {
+              value: "8+",
+              label: "Years Experience",
+            },
+            {
+              value: "98%",
+              label: "Client Satisfaction",
+            },
+
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="
         relative
         overflow-hidden
         rounded-[2rem]
@@ -172,64 +162,62 @@ const WhyChooseUs = () => {
         transition-all
         duration-500
       "
-    >
+            >
 
-      {/* BACKGROUND GLOW */}
-      <div
-        className="
+              {/* BACKGROUND GLOW */}
+              <div
+                className="
           absolute
           inset-0
           bg-gradient-to-br
-          from-[#C4B5FD]/5
+          from-[#8B5CF6]/5
           via-transparent
           to-[#8B5CF6]/10
         "
-      />
+              />
 
-      <div className="relative z-10">
+              <div className="relative z-10">
 
-        <h3
-          className="
+                <h3
+                  className="
             text-4xl
             sm:text-5xl
             font-bold
             tracking-tight
             text-[#8B5CF6]
           "
-        >
-          {item.value}
-        </h3>
+                >
+                  {item.value}
+                </h3>
 
-        <p
-          className="
+                <p
+                  className="
             mt-3
             text-sm
             sm:text-base
             font-medium
             text-[#6B7280]
           "
-        >
-          {item.label}
-        </p>
-      </div>
-    </div>
-  ))}
-</motion.div>
+                >
+                  {item.label}
+                </p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
 
         {/* FEATURE GRID */}
         <div
           className="
-            mt-20
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-3
-            gap-7
-          "
+    mt-20
+    grid
+    grid-cols-1
+    sm:grid-cols-2
+    lg:grid-cols-3
+    gap-7
+  "
         >
           {features.map((feature, index) => {
-            const Icon = feature.icon;
-
             return (
               <motion.div
                 key={index}
@@ -240,179 +228,250 @@ const WhyChooseUs = () => {
                   delay: index * 0.08,
                 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -8 }}
                 className="
-                  group
-                  relative
-                  rounded-[2rem]
-                  p-8
-                  bg-white/80
-                  border
-                  border-[#ECECEC]
-                  shadow-[0_10px_40px_rgba(0,0,0,0.05)]
-                  hover:shadow-[0_25px_70px_rgba(139,92,246,0.12)]
-                  hover:-translate-y-2
-                  transition-all
-                  duration-500
-                  overflow-hidden
-                "
+          group
+          relative
+          overflow-hidden
+          rounded-[2rem]
+          h-[320px]
+          md:h-[360px]
+          shadow-[0_15px_50px_rgba(0,0,0,0.08)]
+        "
               >
 
-                {/* HOVER GLOW */}
-                <div
+                {/* IMAGE */}
+                <img
+                  src={feature.image}
+                  alt={feature.title}
                   className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-br
-                    from-[#C4B5FD]/0
-                    via-[#C4B5FD]/0
-                    to-[#C4B5FD]/10
-                    opacity-0
-                    group-hover:opacity-100
-                    transition-opacity
-                    duration-500
-                  "
+            w-full
+            h-full
+            object-cover
+            group-hover:scale-110
+            transition-transform
+            duration-700
+          "
                 />
 
-                {/* ICON */}
+                {/* OVERLAY */}
                 <div
                   className="
-                    relative
-                    z-10
-                    w-16
-                    h-16
-                    rounded-2xl
-                    bg-[#8B5CF6]/10
-                    flex
-                    items-center
-                    justify-center
-                    group-hover:bg-[#8B5CF6]
-                    transition-all
-                    duration-500
-                  "
-                >
-                  <Icon
-                    size={30}
-                    className="
-                      text-[#8B5CF6]
-                      group-hover:text-white
-                      transition-colors
-                      duration-500
-                    "
-                  />
-                </div>
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-black/90
+            via-black/20
+            to-transparent
+          "
+                />
 
                 {/* CONTENT */}
-                <div className="relative z-10">
-                  <h3
-                    className="
-                      mt-7
-                      text-2xl
-                      font-semibold
-                      text-[#111827]
-                    "
-                  >
-                    {feature.title}
-                  </h3>
-
-                  <p
-                    className="
-                      mt-4
-                      text-[#6B7280]
-                      leading-relaxed
-                    "
-                  >
-                    {feature.description}
-                  </p>
-                </div>
-
-                {/* NUMBER */}
                 <div
                   className="
-                    absolute
-                    top-5
-                    right-6
-                    text-6xl
-                    font-bold
-                    text-[#8B5CF6]/5
-                    select-none
-                  "
+            absolute
+            bottom-0
+            left-0
+            w-full
+            p-5
+          "
                 >
-                  0{index + 1}
+
+                  {/* GLASS TITLE CARD */}
+                  <div
+                    className="
+              relative
+              overflow-hidden
+              rounded-[1.5rem]
+              bg-white/10
+              backdrop-blur-xl
+              border
+              border-white/10
+              px-6
+              py-5
+            "
+                  >
+
+                    {/* INNER GRADIENT */}
+                    <div
+                      className="
+                absolute
+                inset-0
+                bg-gradient-to-br
+                from-white/10
+                via-transparent
+                to-[#8B5CF6]/20
+              "
+                    />
+
+                    <div className="relative z-10">
+
+                      <h3
+                        className="
+                  text-2xl
+                  md:text-3xl
+                  font-semibold
+                  text-white
+                  leading-tight
+                "
+                      >
+                        {feature.title}
+                      </h3>
+
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             );
           })}
         </div>
-
-        {/* BOTTOM HIGHLIGHT */}
+        {/* DESIGNER CTA SECTION */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.6,
-            delay: 0.3,
+            duration: 0.7,
+            delay: 0.2,
           }}
           viewport={{ once: true }}
           className="
-            mt-20
-            rounded-[2.5rem]
-            bg-gradient-to-r
-            from-[#8B5CF6]
-            via-[#A78BFA]
-            to-[#8B5CF6]
-            p-[1px]
-          "
+    relative
+    mt-20
+    overflow-hidden
+    rounded-[3rem]
+    h-[360px]
+    md:h-[420px]
+    shadow-[0_25px_80px_rgba(0,0,0,0.12)]
+  "
         >
+
+          {/* BACKGROUND IMAGE */}
+          <img
+            src={CTAImage}
+            alt="Interior Designer"
+            className="
+      absolute
+      inset-0
+      w-full
+      h-full
+      object-cover
+    "
+          />
+
+          {/* DARK OVERLAY */}
           <div
             className="
-              rounded-[2.5rem]
-              bg-white
-              px-8
-              py-10
-              md:px-14
-              md:py-14
-              flex
-              flex-col
-              lg:flex-row
-              items-center
-              justify-between
-              gap-10
-            "
+      absolute
+      inset-0
+      bg-gradient-to-r
+      from-black/80
+      via-black/50
+      to-black/20
+    "
+          />
+
+          {/* PURPLE GLOW */}
+          <div
+            className="
+      absolute
+      inset-0
+      bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.22),transparent_35%)]
+    "
+          />
+
+          {/* CONTENT */}
+
+          <div
+            className="
+    relative
+    z-10
+    h-full
+    px-7
+    md:px-14
+    flex
+    items-center
+    justify-center
+    md:justify-start
+  "
           >
 
-            <div className="max-w-2xl">
-              <h3 className="text-3xl md:text-4xl font-semibold text-[#111827] leading-tight">
-                Creating Beautiful Spaces <br />
+            <div className="max-w-2xl text-center md:text-left">
+              {/* LABEL */}
+              <div
+                className="
+          inline-flex
+          items-center
+          px-4
+          py-2
+          rounded-full
+          bg-white/10
+          backdrop-blur-xl
+          border
+          border-white/10
+        "
+              >
+                <span className="text-xs uppercase tracking-[0.25em] text-[#C4B5FD] font-semibold">
+                  Luxury Interior Studio
+                </span>
+              </div>
 
-                <span className="italic text-[#8B5CF6]">
-                  That Inspire Everyday Living
+              {/* HEADING */}
+              <h3
+                className="
+          mt-6
+          text-3xl
+          sm:text-4xl
+          md:text-5xl
+          font-semibold
+          text-white
+          leading-[1.05]
+          tracking-tight
+        "
+              >
+                Creating Beautiful Spaces
+
+                <span className="block italic text-[#C4B5FD]">
+                  That Inspire Living
                 </span>
               </h3>
 
-              <p className="mt-5 text-[#6B7280] leading-relaxed">
-                Our expertise lies in transforming ordinary interiors
-                into elegant experiences through thoughtful design,
-                premium craftsmanship, and personalized attention.
+              {/* DESCRIPTION */}
+              <p
+                className="
+          mt-5
+          text-sm
+          sm:text-base
+          md:text-lg
+          text-gray-200
+          leading-relaxed
+          max-w-xl
+        "
+              >
+                Transforming interiors into timeless luxury experiences
+                with creativity and craftsmanship.
               </p>
-            </div>
 
-            <button
-              className="
-                px-8
-                py-4
-                rounded-2xl
-                bg-[#8B5CF6]
-                text-white
-                font-semibold
-                shadow-[0_15px_40px_rgba(139,92,246,0.35)]
-                hover:scale-105
-                transition-all
-                duration-300
-                whitespace-nowrap
-              "
-            >
-              Start Your Project
-            </button>
+              {/* BUTTON */}
+              <div className="mt-7">
+
+                <button
+                  className="
+            px-7
+            py-3.5
+            rounded-2xl
+            bg-[#8B5CF6]
+            text-white
+            font-semibold
+            shadow-[0_15px_40px_rgba(139,92,246,0.35)]
+            hover:scale-105
+            transition-all
+            duration-300
+          "
+                >
+                  Start Your Project
+                </button>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
