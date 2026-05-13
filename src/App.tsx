@@ -7,6 +7,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetails from './pages/ProjectDetails';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import SocialMediaBar from './components/SocialMediaBar';
 
 // Simple Page Components for testing
 
@@ -18,7 +19,7 @@ const App = () => {
       {/* Navbar is outside Routes so it stays visible on every page */}
       <Navbar />
       <ScrollToTop />
-
+      <SocialMediaBar />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />

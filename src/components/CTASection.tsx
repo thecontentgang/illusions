@@ -185,51 +185,7 @@ const ConsultationCTA = () => {
             </button>
           </motion.div>
 
-          {/* BOTTOM STATS */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.4,
-            }}
-            viewport={{ once: true }}
-            className="
-              mt-16
-              grid
-              grid-cols-2
-              md:grid-cols-4
-              gap-5
-            "
-          >
-            {[
-              { value: "250+", label: "Projects Completed" },
-              { value: "15+", label: "Years Experience" },
-              { value: "98%", label: "Client Satisfaction" },
-              { value: "20+", label: "Expert Designers" },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="
-                  rounded-2xl
-                  bg-white/5
-                  border
-                  border-white/10
-                  backdrop-blur-xl
-                  py-6
-                  px-4
-                "
-              >
-                <h3 className="text-3xl font-bold text-white">
-                  {item.value}
-                </h3>
-
-                <p className="mt-2 text-sm text-gray-400">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
+          
         </div>
       </div>
     </section>
