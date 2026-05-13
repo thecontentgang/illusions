@@ -1,39 +1,47 @@
 import { motion } from "framer-motion";
 import CTAImage from "../assets/cta-image.jpg";
+import { useState } from "react";
+import { LeadModal } from "./LeadModal";
+import luxurydesign from "../assets/whychooseus/luxury-design-approach.jpg";
+import tailoredcustomization from "../assets/whychooseus/cutomization.jpg";
+import premiumquality from "../assets/whychooseus/quality-materials.jpg";
+import ontimeproject from "../assets/whychooseus/on-time-delivery.jpg";
+import sophisticatedcraftsmanship from "../assets/whychooseus/sophiscated-craftmanship.jpg";
+import clientcentered from "../assets/whychooseus/client-centered-approach.jpg";
 
 const features = [
   {
-    image: "",
+    image: luxurydesign,
     title: "Luxury Design Approach",
     description:
       "Every space is crafted with timeless elegance, modern aesthetics, and refined attention to detail.",
   },
   {
-    image: "",
+    image: tailoredcustomization,
     title: "Tailored Customization",
     description:
       "We personalize every design according to your lifestyle, vision, and architectural identity.",
   },
   {
-    image: "",
+    image: premiumquality,
     title: "Premium Quality Materials",
     description:
       "From finishes to furnishings, we source only premium materials for exceptional durability and beauty.",
   },
   {
-    image: "",
+    image: ontimeproject,
     title: "On-Time Project Delivery",
     description:
       "Our streamlined execution process ensures smooth coordination and timely completion.",
   },
   {
-    image: "",
+    image: sophisticatedcraftsmanship,
     title: "Sophisticated Craftsmanship",
     description:
       "Every detail is thoughtfully executed by experienced artisans and skilled design professionals.",
   },
   {
-    image: "",
+    image: clientcentered,
     title: "Client-Centered Experience",
     description:
       "We collaborate closely with clients to ensure a seamless and inspiring design journey.",
@@ -41,7 +49,10 @@ const features = [
 ];
 
 const WhyChooseUs = () => {
+  const [open, setOpen] = useState(false);
+
   return (
+    <>
     <section className="relative py-24 overflow-hidden bg-white">
 
       {/* BACKGROUND */}
@@ -234,8 +245,8 @@ const WhyChooseUs = () => {
           relative
           overflow-hidden
           rounded-[2rem]
-          h-[320px]
-          md:h-[360px]
+          h-[200px]
+          md:h-[300px]
           shadow-[0_15px_50px_rgba(0,0,0,0.08)]
         "
               >
@@ -306,17 +317,18 @@ const WhyChooseUs = () => {
 
                     <div className="relative z-10">
 
-                      <h3
+                      <h5
                         className="
-                  text-2xl
-                  md:text-3xl
+                  text-lg
+                  md:text-xl
                   font-semibold
+                  text-center
                   text-white
                   leading-tight
                 "
                       >
                         {feature.title}
-                      </h3>
+                      </h5>
 
                     </div>
                   </div>
@@ -455,6 +467,7 @@ const WhyChooseUs = () => {
               <div className="mt-7">
 
                 <button
+                onClick={() => setOpen(true)}
                   className="
             px-7
             py-3.5
@@ -476,6 +489,8 @@ const WhyChooseUs = () => {
         </motion.div>
       </div>
     </section>
+    <LeadModal isOpen={open} onClose={() => setOpen(false)} />
+    </>
   );
 };
 

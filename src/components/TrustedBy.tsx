@@ -1,14 +1,20 @@
 import { motion } from "framer-motion";
 
 const trustedLogos = [
-  "/aparna-logo.svg",
-  "/asbl-logo.png",
-  "/asbl-spire-logo.jpg",
+  "/logos/aparna-zenon.png","/logos/asbl-spire.png",
+  "/logos/auro-regent.svg","/logos/avani-tulasi-vanam.png",
+  "/logos/candeur-40.jpg","/logos/dsr-park-ridge.jpg",
+  "/logos/elegance-emperia.png","/logos/epil-carnerstone.jpg",
+  "/logos/gem-nakshtra.png","/logos/hallmark-skyrena.jpg",
+  "/logos/indus-peblcity.png","/logos/my-home-sayuk.jpg",
+  "/logos/nyla-tema4.png","/logos/tripura-lm-3.jpg",
+  "/logos/vaishnavi-oasis.png"
 
-  "/eipl-cornerstone-logo.jpg",
-  "/nyla-logo.png",
-  "/smr-logo.png",
 ];
+
+const row1 = [...trustedLogos, ...trustedLogos];
+const row2 = [...trustedLogos].reverse();
+const duplicatedRow2 = [...row2, ...row2];
 
 const TrustedBy = () => {
   return (
@@ -17,8 +23,7 @@ const TrustedBy = () => {
       {/* BACKGROUND */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FAFAFF] to-[#F5F3FF]" />
 
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* TOP LABEL */}
         <motion.div
@@ -26,7 +31,7 @@ const TrustedBy = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="flex justify-center"
+          className="flex justify-center px-5"
         >
           <div className="px-5 py-2 rounded-full border border-[#8B5CF6]/40 bg-[#8B5CF6]/5">
             <span className="text-sm font-semibold tracking-wide text-[#7C3AED] uppercase">
@@ -41,7 +46,7 @@ const TrustedBy = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mt-8"
+          className="text-center mt-8 px-5"
         >
           <h2
             className="
@@ -74,109 +79,225 @@ const TrustedBy = () => {
             "
           >
             Collaborating with premium apartments, luxury residences,
-            and modern architectural developments to craft timeless
-            living experiences.
+            and modern architectural developments.
           </p>
         </motion.div>
 
-        {/* LOGO GRID */}
-        <div
-  className="
-    mt-16
-    grid
-    grid-cols-2
-    sm:grid-cols-3
-    lg:grid-cols-6
-    gap-5
-    md:gap-6
-  "
->
-  {trustedLogos.map((logo, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.08,
-      }}
-      viewport={{ once: true }}
-      className="
-        group
-        relative
-        h-[120px]
-        sm:h-[140px]
-        md:h-[160px]
-        rounded-[2rem]
-        overflow-hidden
-        bg-white
-        border
-        border-[#F3F4F6]
-        shadow-[0_15px_50px_rgba(0,0,0,0.06)]
-        hover:shadow-[0_25px_70px_rgba(139,92,246,0.18)]
-        transition-all
-        duration-500
-        flex
-        items-center
-        justify-center
-        p-0
-      "
-    >
+        {/* ROW 1 */}
+        <div className="relative mt-16 overflow-hidden">
 
-      {/* PREMIUM GLOW */}
-      <div
-        className="
-          absolute
-          inset-0
-          bg-gradient-to-br
-          from-[#C4B5FD]/10
-          via-transparent
-          to-[#8B5CF6]/10
-          opacity-0
-          group-hover:opacity-100
-          transition-opacity
-          duration-500
-        "
-      />
+          {/* LEFT FROST */}
+          <div
+            className="
+              absolute
+              left-0
+              top-0
+              z-20
+              h-full
+              w-24
+              md:w-40
+              bg-gradient-to-r
+              from-[#FAFAFF]
+              via-[#FAFAFF]/90
+              to-transparent
+              pointer-events-none
+            "
+          />
 
-      {/* LOGO IMAGE */}
-      <img
-        src={logo}
-        alt={`Trusted Brand ${index + 1}`}
-        className="
-          relative
-          z-10
-          w-full
-          h-full
-          object-cover
-          object-center
-          brightness-100
-          saturate-150
-          contrast-110
-          group-hover:scale-105
-          transition-all
-          duration-700
-        "
-      />
+          {/* RIGHT FROST */}
+          <div
+            className="
+              absolute
+              right-0
+              top-0
+              z-20
+              h-full
+              w-24
+              md:w-40
+              bg-gradient-to-l
+              from-[#F5F3FF]
+              via-[#F5F3FF]/90
+              to-transparent
+              pointer-events-none
+            "
+          />
 
-      {/* LIGHT REFLECTION */}
-      <div
-        className="
-          absolute
-          inset-0
-          bg-gradient-to-tr
-          from-transparent
-          via-white/10
-          to-white/30
-          opacity-40
-          pointer-events-none
-        "
-      />
-    </motion.div>
-  ))}
-</div>
+          <motion.div
+            animate={{
+              x: ["0%", "-50%"],
+            }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex gap-5 w-max"
+          >
 
-        
+            {row1.map((logo, index) => (
+              <div
+                key={index}
+                className="
+  relative
+  w-[170px]
+  h-[80px]
+  md:w-[220px]
+  md:h-[95px]
+  rounded-[1.5rem]
+  overflow-hidden
+  bg-white
+  border
+  border-[#F3F4F6]
+  shadow-[0_15px_50px_rgba(0,0,0,0.05)]
+  flex-shrink-0
+  group
+"
+              >
+
+                {/* GLOW */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-br
+                    from-[#C4B5FD]/10
+                    via-transparent
+                    to-[#8B5CF6]/10
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity
+                    duration-500
+                  "
+                />
+
+                {/* LOGO */}
+                <img
+                  src={logo}
+                  alt="Trusted Brand"
+                  className="
+                    relative
+                    z-10
+                    w-full
+                    h-full
+                    object-contain
+                    object-center
+                    group-hover:scale-105
+                    transition-transform
+                    duration-700
+                  "
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* ROW 2 */}
+        <div className="relative mt-6 overflow-hidden">
+
+          {/* LEFT FROST */}
+          <div
+            className="
+              absolute
+              left-0
+              top-0
+              z-20
+              h-full
+              w-24
+              md:w-40
+              bg-gradient-to-r
+              from-[#FAFAFF]
+              via-[#FAFAFF]/90
+              to-transparent
+              pointer-events-none
+            "
+          />
+
+          {/* RIGHT FROST */}
+          <div
+            className="
+              absolute
+              right-0
+              top-0
+              z-20
+              h-full
+              w-24
+              md:w-40
+              bg-gradient-to-l
+              from-[#F5F3FF]
+              via-[#F5F3FF]/90
+              to-transparent
+              pointer-events-none
+            "
+          />
+
+          <motion.div
+            animate={{
+              x: ["-50%", "0%"],
+            }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex gap-5 w-max"
+          >
+
+            {duplicatedRow2.map((logo, index) => (
+              <div
+                key={index}
+                className="
+  relative
+  w-[170px]
+  h-[80px]
+  md:w-[220px]
+  md:h-[95px]
+  rounded-[1.5rem]
+  overflow-hidden
+  bg-white
+  border
+  border-[#F3F4F6]
+  shadow-[0_15px_50px_rgba(0,0,0,0.05)]
+  flex-shrink-0
+  group
+"
+              >
+
+                {/* GLOW */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-br
+                    from-[#C4B5FD]/10
+                    via-transparent
+                    to-[#8B5CF6]/10
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity
+                    duration-500
+                  "
+                />
+
+                {/* LOGO */}
+                <img
+                  src={logo}
+                  alt="Trusted Brand"
+                  className="
+                    relative
+                    z-10
+                    w-full
+                    h-full
+                    object-contain
+                    object-center
+                    group-hover:scale-105
+                    transition-transform
+                    duration-700
+                  "
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
