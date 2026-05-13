@@ -15,7 +15,7 @@ const ContactPage = () => {
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[#C4B5FD] text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-4 block"
+            className="text-[#8B5CF6] text-[10px] md:text-xs font-black uppercase tracking-[0.4em] mb-4 block"
           >
             Start the Dialogue
           </motion.span>
@@ -26,7 +26,7 @@ const ContactPage = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-serif text-[#374151] leading-[1.1] tracking-tight"
           >
             Let's discuss your <br className="hidden md:block" />
-            <span className="text-[#C4B5FD] italic">future space.</span>
+            <span className="text-[#8B5CF6] italic">future space.</span>
           </motion.h1>
         </div>
 
@@ -53,10 +53,10 @@ Suncity Hyderabad
             <div className="space-y-4">
               <h3 className="text-2xl font-serif text-[#374151]">Direct Contact</h3>
               <div className="flex flex-col gap-3">
-                <a href="mailto:hello@illusioninteriors.com" className="text-gray-500 font-medium hover:text-[#C4B5FD] transition-colors w-fit">
+                <a href="mailto:hello@illusioninteriors.com" className="text-gray-500 font-medium hover:text-[#8B5CF6] transition-colors w-fit">
                   hello@illusioninteriors.com
                 </a>
-                <a href="tel:+919876543210" className="text-gray-500 font-medium hover:text-[#C4B5FD] transition-colors w-fit">
+                <a href="tel:+919876543210" className="text-gray-500 font-medium hover:text-[#8B5CF6] transition-colors w-fit">
                   +91 83175 03596
                 </a>
               </div>
@@ -64,7 +64,7 @@ Suncity Hyderabad
 
             {/* Thick Trust Block */}
             <div className="bg-[#1F2937] p-8 rounded-3xl shadow-xl mt-8">
-              <p className="text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.3em] mb-2">
+              <p className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.3em] mb-2">
                 What's Next?
               </p>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -83,7 +83,7 @@ Suncity Hyderabad
             <div className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-[6px] border-gray-50 relative">
               
               {/* Subtle Form Header Accent */}
-              <div className="absolute top-0 right-12 w-24 h-2 bg-[#C4B5FD] rounded-b-lg" />
+              <div className="absolute top-0 right-12 w-24 h-2 bg-[#8B5CF6] rounded-b-lg" />
 
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 
@@ -94,7 +94,7 @@ Suncity Hyderabad
                     <input 
                       type="text" 
                       placeholder="Jane Doe"
-                      className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#C4B5FD] focus:bg-white transition-all placeholder:text-gray-300"
+                      className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#8B5CF6] focus:bg-white transition-all placeholder:text-gray-300"
                     />
                   </div>
                   <div className="space-y-2">
@@ -102,7 +102,7 @@ Suncity Hyderabad
                     <input 
                       type="tel" 
                       placeholder="+91"
-                      className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#C4B5FD] focus:bg-white transition-all placeholder:text-gray-300"
+                      className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#8B5CF6] focus:bg-white transition-all placeholder:text-gray-300"
                     />
                   </div>
                 </div>
@@ -113,7 +113,7 @@ Suncity Hyderabad
                   <input 
                     type="email" 
                     placeholder="hello@example.com"
-                    className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#C4B5FD] focus:bg-white transition-all placeholder:text-gray-300"
+                    className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#8B5CF6] focus:bg-white transition-all placeholder:text-gray-300"
                   />
                 </div>
 
@@ -128,7 +128,7 @@ Suncity Hyderabad
                         onClick={() => setActiveService(service)}
                         className={`px-6 py-3 rounded-xl text-xs font-bold tracking-widest uppercase transition-all duration-300 border-2 ${
                           activeService === service 
-                            ? 'bg-[#C4B5FD] border-[#C4B5FD] text-white shadow-md' 
+                            ? 'bg-[#8B5CF6] border-[#8B5CF6] text-white shadow-md' 
                             : 'bg-white border-gray-100 text-gray-400 hover:border-gray-200'
                         }`}
                       >
@@ -144,7 +144,7 @@ Suncity Hyderabad
                   <textarea 
                     rows={4}
                     placeholder="Tell us about your space, location (e.g., Aparna Zicon), and timeline..."
-                    className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#C4B5FD] focus:bg-white transition-all placeholder:text-gray-300 resize-none"
+                    className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl px-5 py-4 text-sm font-medium text-[#374151] focus:outline-none focus:border-[#8B5CF6] focus:bg-white transition-all placeholder:text-gray-300 resize-none"
                   ></textarea>
                 </div>
 
@@ -153,7 +153,7 @@ Suncity Hyderabad
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full bg-[#1F2937] text-white rounded-2xl py-5 text-xs font-black uppercase tracking-[0.2em] shadow-xl hover:bg-[#C4B5FD] transition-colors duration-300"
+                  className="w-full bg-[#1F2937] text-white rounded-2xl py-5 text-xs font-black uppercase tracking-[0.2em] shadow-xl hover:bg-[#8B5CF6] transition-colors duration-300"
                 >
                   Submit Inquiry
                 </motion.button>

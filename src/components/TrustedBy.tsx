@@ -28,7 +28,7 @@ const TrustedBy = () => {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <div className="px-5 py-2 rounded-full border border-[#C4B5FD]/40 bg-[#8B5CF6]/5">
+          <div className="px-5 py-2 rounded-full border border-[#8B5CF6]/40 bg-[#8B5CF6]/5">
             <span className="text-sm font-semibold tracking-wide text-[#7C3AED] uppercase">
               Trusted By Premium Clients
             </span>
@@ -176,51 +176,7 @@ const TrustedBy = () => {
   ))}
 </div>
 
-        {/* BOTTOM STATS */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.2,
-          }}
-          viewport={{ once: true }}
-          className="
-            mt-16
-            grid
-            grid-cols-2
-            md:grid-cols-4
-            gap-6
-          "
-        >
-          {[
-            { number: "250+", label: "Luxury Projects" },
-            { number: "15+", label: "Years Experience" },
-            { number: "98%", label: "Client Satisfaction" },
-            { number: "20+", label: "Design Experts" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="
-                text-center
-                rounded-[2rem]
-                bg-white/70
-                border
-                border-[#E5E7EB]
-                p-8
-                shadow-sm
-              "
-            >
-              <h3 className="text-3xl md:text-4xl font-bold text-[#8B5CF6]">
-                {item.number}
-              </h3>
-
-              <p className="mt-2 text-sm md:text-base text-[#6B7280] font-medium">
-                {item.label}
-              </p>
-            </div>
-          ))}
-        </motion.div>
+        
       </div>
     </section>
   );

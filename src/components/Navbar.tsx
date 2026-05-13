@@ -69,7 +69,7 @@ const Navbar = () => {
     <nav
       ref={navRef}
       className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-12 py-4 z-50 transition-all duration-500 ease-in-out ${isScrolled || isOpen
-          ? 'bg-white/95 backdrop-blur-lg shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-[#C4B5FD]/20'
+          ? 'bg-white/95 backdrop-blur-lg shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-[#8B5CF6]/20'
           : 'bg-transparent'
         }`}
     >
@@ -111,7 +111,7 @@ const Navbar = () => {
             {activeLink === link.id && (
               <motion.div
                 layoutId="desktop-active-pill"
-                className="absolute inset-0 bg-[#C4B5FD]/15 border border-[#C4B5FD]/20 rounded-xl"
+                className="absolute inset-0 bg-[#8B5CF6]/15 border border-[#8B5CF6]/20 rounded-xl"
                 initial={false}
                 transition={{
                   type: 'spring',
@@ -185,7 +185,7 @@ const Navbar = () => {
                     className="flex items-center group"
                   >
                     <span
-                      className={`font-serif text-4xl tracking-tight transition-colors duration-300 ${activeLink === link.id ? 'text-[#C4B5FD]' : 'text-[#374151]'
+                      className={`font-serif text-4xl tracking-tight transition-colors duration-300 ${activeLink === link.id ? 'text-[#8B5CF6]' : 'text-[#374151]'
                         }`}
                     >
                       {link.label}
@@ -193,7 +193,7 @@ const Navbar = () => {
                     {activeLink === link.id && (
                       <motion.span
                         layoutId="mobile-active-dot"
-                        className="ml-4 w-2 h-2 rounded-full bg-[#C4B5FD]"
+                        className="ml-4 w-2 h-2 rounded-full bg-[#8B5CF6]"
                       />
                     )}
                   </MotionLink>
@@ -219,7 +219,7 @@ const Navbar = () => {
                     <a
                       key={social.id}
                       href={social.href}
-                      className="text-[#9CA3AF] hover:text-[#C4B5FD] transition-colors duration-300"
+                      className="text-[#9CA3AF] hover:text-[#8B5CF6] transition-colors duration-300"
                       aria-label={social.id}
                     >
                       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

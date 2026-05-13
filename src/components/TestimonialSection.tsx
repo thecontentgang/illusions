@@ -102,19 +102,7 @@ const TestimonialSection = () => {
           ))}
         </div>
         
-        {/* Call to Action - Compact */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-16 text-center"
-        > 
-          <a href='https://www.youtube.com/@Interiorillusions_' className="text-xs font-black uppercase tracking-[0.2em] text-[#374151] hover:text-[#C4B5FD] transition-all flex items-center gap-3 mx-auto group">
-            Watch More Stories
-            <div className="w-8 h-8 rounded-full border-2 border-gray-200 flex items-center justify-center group-hover:border-[#C4B5FD] transition-all">
-              →
-            </div>
-          </a>
-        </motion.div>
+        
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ const ProjectsPage = () => {
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-[#C4B5FD] text-[9px] sm:text-[10px] font-black uppercase tracking-[0.35em] sm:tracking-[0.4em] mb-3 md:mb-4 block"
+              className="text-[#8B5CF6] text-[9px] sm:text-[10px] font-black uppercase tracking-[0.35em] sm:tracking-[0.4em] mb-3 md:mb-4 block"
             >
               Our Portfolio
             </motion.span>
@@ -50,7 +50,7 @@ const ProjectsPage = () => {
       "
             >
               Spaces designed to <br />
-              <span className="italic text-[#C4B5FD]">
+              <span className="italic text-[#8B5CF6]">
                 inspire life.
               </span>
             </motion.h1>
@@ -86,7 +86,7 @@ const ProjectsPage = () => {
               onClick={() => setFilter(cat)}
               className={`px-7 py-3 rounded-xl text-xs font-bold tracking-widest uppercase transition-all duration-300 border-2 ${filter === cat
                 ? 'bg-[#1F2937] border-[#1F2937] text-white shadow-lg shadow-gray-900/20'
-                : 'bg-transparent border-gray-200 text-gray-500 hover:border-[#C4B5FD] hover:text-[#374151] hover:bg-white'
+                : 'bg-transparent border-gray-200 text-gray-500 hover:border-[#8B5CF6] hover:text-[#374151] hover:bg-white'
                 }`}
             >
               {cat}
@@ -142,7 +142,7 @@ const ProjectsPage = () => {
 
                     <div className="flex justify-between items-end">
                       <div>
-                        <span className="text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.3em] mb-3 block transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                        <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.3em] mb-3 block transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                           {project.category} • {project.community}
                         </span>
                         <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white leading-tight transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const SocialIcon = ({ path }: { path: string }) => (
-  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+  <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
     <path d={path} />
   </svg>
 );
@@ -19,16 +19,16 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#1F2937] text-white pt-16 pb-10 px-6 md:px-12 lg:px-24 rounded-t-[3rem] md:rounded-t-[5rem]">
+    <footer className="bg-[#1F2937] text-white pt-24 pb-14 px-6 md:px-14 lg:px-28 rounded-t-[4rem] md:rounded-t-[6rem]">
       <div className="max-w-6xl mx-auto">
         
         {/* Responsive Grid: Stacks sections vertically on mobile, side-by-side on desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-12 mb-20">
           
           {/* 1. Brand Section: Centered at the top on mobile */}
           <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
             <Link to="/" className="inline-block group">
-              <div className="w-[180px] h-[45px] relative">
+              <div className="w-[240px] md:w-[280px] h-[70px] relative">
                  <img 
                    src="/illusion-white.png" 
                    alt="Illusion Interior Studio" 
@@ -36,7 +36,7 @@ const Footer = () => {
                  />
               </div>
             </Link>
-            <p className="text-gray-400 text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed">
+          <p className="text-gray-400 text-sm md:text-base font-semibold uppercase tracking-[0.25em] leading-relaxed">
               Interior Design Studio <br />
               Hyderabad, India.
             </p>
@@ -46,7 +46,7 @@ const Footer = () => {
                 <motion.a
                   key={social.id}
                   href={social.href}
-                  whileHover={{ scale: 1.15, color: '#C4B5FD' }}
+                  whileHover={{ scale: 1.15, color: '#8B5CF6' }}
                   className="text-gray-500 transition-colors"
                   aria-label={social.id}
                 >
@@ -61,7 +61,7 @@ const Footer = () => {
 
           {/* 2. Page Links: Left side of mobile row */}
           <div className="space-y-6">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#C4B5FD]">Pages</h4>
+            <h4 className="text-sm md:text-base font-black uppercase tracking-[0.45em] text-[#8B5CF6]">Pages</h4>
             <div className="flex flex-col gap-4">
               {[
                 { name: 'Home', path: '/' },
@@ -72,7 +72,7 @@ const Footer = () => {
                 <Link 
                   key={link.name} 
                   to={link.path} 
-                  className="text-sm font-bold text-gray-300 hover:text-[#C4B5FD] transition-colors w-fit"
+                  className="text-lg md:text-xl font-semibold text-gray-300 hover:text-[#8B5CF6] transition-colors w-fit"
                 >
                   {link.name}
                 </Link>
@@ -82,16 +82,16 @@ const Footer = () => {
 
           {/* 3. Connect: Right side of mobile row */}
           <div className="space-y-6">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#C4B5FD]">Connect</h4>
+            <h4 className="text-sm md:text-base font-black uppercase tracking-[0.45em] text-[#8B5CF6]">Connect</h4>
             <div className="space-y-6">
-              <p className="text-[12px] md:text-sm font-medium text-gray-400 leading-relaxed">
+              <p className="text-base md:text-lg font-medium text-gray-400 leading-relaxed">
                 H.no 7-31/16, <br />
 Laxmi Narsimha colony,
 Suncity Hyderabad
               </p>
               <a 
                 href="mailto:hello@illusioninteriors.com" 
-                className="inline-block text-[13px] md:text-sm font-bold text-[#C4B5FD] border-b-2 border-[#C4B5FD]/20 hover:border-[#C4B5FD] transition-all pb-1"
+                className="inline-block text-lg md:text-xl font-semibold text-gray-300 hover:text-[#8B5CF6] transition-colors"
               >
                 hello@illusioninteriors.com
               </a>
@@ -108,10 +108,10 @@ Suncity Hyderabad
           <motion.button
             onClick={scrollToTop}
             whileHover={{ y: -5 }}
-            className="group flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.4em] text-[#C4B5FD] order-1 md:order-2"
+            className="group flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.4em] text-[#8B5CF6] order-1 md:order-2"
           >
             Back to Top
-            <span className="w-9 h-9 rounded-full border border-gray-800 flex items-center justify-center group-hover:bg-[#C4B5FD] group-hover:text-[#1F2937] transition-all">
+            <span className="w-9 h-9 rounded-full border border-gray-800 flex items-center justify-center group-hover:bg-[#8B5CF6] group-hover:text-[#1F2937] transition-all">
               ↑
             </span>
           </motion.button>

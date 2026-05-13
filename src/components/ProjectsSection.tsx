@@ -13,13 +13,13 @@ const ProjectsSection = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           
           <div className="max-w-2xl">
-            <span className="text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
+            <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
               Selected Works
             </span>
 
             <h2 className="text-4xl md:text-6xl font-milchella font-semibold tracking-wider text-[#374151] leading-tight">
               Creating spaces that <br />
-              <span className="italic text-[#C4B5FD]">
+              <span className="italic text-[#8B5CF6]">
                 inspire
               </span>{" "}
               living.
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
           {/* Desktop Button */}
           <Link
             to="/projects"
-            className="hidden md:block px-8 py-4 bg-[#C4B5FD] border border-[#C4B5FD] rounded-xl text-[10px] font-black uppercase tracking-widest text-white hover:bg-gray-50 hover:text-[#374151] transition-all duration-300"
+            className="hidden md:block px-8 py-4 bg-[#8B5CF6] border border-[#8B5CF6] rounded-xl text-[10px] font-black uppercase tracking-widest text-white hover:bg-gray-50 hover:text-[#374151] transition-all duration-300"
           >
             View All Projects
           </Link>
@@ -92,7 +92,7 @@ const ProjectsSection = () => {
                     <div className="flex items-end justify-between">
 
                       <div className="text-white">
-                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#C4B5FD] mb-2">
+                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8B5CF6] mb-2">
                           {project.category} / {project.community}
                         </p>
 
@@ -130,7 +130,7 @@ const ProjectsSection = () => {
         {/* Mobile Button */}
         <Link
           to="/projects"
-          className="flex justify-center items-center w-full mt-12 md:hidden px-8 py-5 bg-[#C4B5FD] rounded-2xl text-[10px] font-black uppercase tracking-widest text-white shadow-lg"
+          className="flex justify-center items-center w-full mt-12 md:hidden px-8 py-5 bg-[#8B5CF6] rounded-2xl text-[10px] font-black uppercase tracking-widest text-white shadow-lg"
         >
           Explore All Portfolio
         </Link>

@@ -160,7 +160,7 @@ const HeroSection = memo(() => {
             }}
             className="
               flex
-              flex-col
+              flex-row
               
               items-center
               gap-4

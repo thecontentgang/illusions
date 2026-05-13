@@ -1,5 +1,5 @@
 import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
+import WhyChooseUs from "../components/WhyChooseUs";
 import ProjectsSection from "../components/ProjectsSection";
 import TestimonialSection from "../components/TestimonialSection";
 import TrustedBy from "../components/TrustedBy";
@@ -13,12 +13,12 @@ const HomePage = () => {
   return (
     <>
       <HeroSection />
+      <WhyChooseUs />
       <TrustedBy />
-      <AboutSection />
-      <ProjectsSection />
       <ServicesSection />
-      <DesignProcess />
       <TestimonialSection />
+      <ProjectsSection />
+      <DesignProcess />
       <CTASection />
     </>
   )

@@ -29,7 +29,7 @@ const ProjectDetails = () => {
       <section className="relative h-[70vh] md:h-[85vh] w-full bg-[#1F2937]">
         {/* Back Button Overlay */}
         <div className="absolute top-32 left-6 md:left-12 lg:left-24 z-20">
-          <Link to="/projects" className="group flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-[0.3em] hover:text-[#C4B5FD] transition-colors bg-black/20 backdrop-blur-md px-6 py-3 rounded-full border border-white/10">
+          <Link to="/projects" className="group flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-[0.3em] hover:text-[#8B5CF6] transition-colors bg-black/20 backdrop-blur-md px-6 py-3 rounded-full border border-white/10">
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
             Back to Portfolio
           </Link>
@@ -66,7 +66,7 @@ const ProjectDetails = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="bg-white p-10 md:p-16 lg:p-20 rounded-[3rem] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border-[6px] border-white"
         >
-          <span className="text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
+          <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
             {project.category} • {project.community}
           </span>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-[#374151] leading-[1.1] mb-12">
@@ -105,7 +105,7 @@ const ProjectDetails = () => {
             <p className="text-gray-500 text-lg leading-relaxed font-medium">
               {project.story}
             </p>
-            <div className="pl-6 md:pl-10 border-l-[4px] border-[#C4B5FD]">
+            <div className="pl-6 md:pl-10 border-l-[4px] border-[#8B5CF6]">
               <p className="text-2xl md:text-3xl font-serif text-[#374151] italic leading-snug">
                 "{project.quote}"
               </p>
@@ -119,7 +119,7 @@ const ProjectDetails = () => {
             viewport={{ once: true }}
             className="lg:col-span-5 bg-gray-50 p-10 rounded-[2.5rem]"
           >
-            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#C4B5FD] mb-8">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8B5CF6] mb-8">
               Material Palette
             </h4>
             <div className="space-y-6">
@@ -178,15 +178,15 @@ const ProjectDetails = () => {
           className="bg-[#1F2937] rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden"
         >
           {/* Sleek Vertical Accent Line */}
-          <div className="absolute top-0 left-0 w-2 h-full bg-[#C4B5FD]" />
+          <div className="absolute top-0 left-0 w-2 h-full bg-[#8B5CF6]" />
 
           {/* Left: Punchy Text */}
           <div className="text-center md:text-left">
-            <span className="text-[#C4B5FD] text-[10px] font-black uppercase tracking-[0.4em] mb-2 block">
+            <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.4em] mb-2 block">
               Inspired by this space?
             </span>
             <h2 className="text-3xl md:text-4xl font-serif text-white leading-tight">
-              Let's design your <span className="italic text-[#C4B5FD]">sanctuary.</span>
+              Let's design your <span className="italic text-[#8B5CF6]">sanctuary.</span>
             </h2>
           </div>
 
@@ -194,13 +194,13 @@ const ProjectDetails = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto shrink-0">
             <Link
               to="/contact"
-              className="w-full sm:w-auto px-8 py-4 bg-[#C4B5FD] text-[#1F2937] font-black uppercase tracking-[0.2em] text-[10px] md:text-xs rounded-xl hover:bg-white transition-colors text-center shadow-lg"
+              className="w-full sm:w-auto px-8 py-4 bg-[#8B5CF6] text-[#1F2937] font-black uppercase tracking-[0.2em] text-[10px] md:text-xs rounded-xl hover:bg-white transition-colors text-center shadow-lg"
             >
               Book Consult
             </Link>
             <Link
               to="/projects"
-              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gray-600 text-white font-black uppercase tracking-[0.2em] text-[10px] md:text-xs rounded-xl hover:border-[#C4B5FD] hover:text-[#C4B5FD] transition-colors text-center"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-gray-600 text-white font-black uppercase tracking-[0.2em] text-[10px] md:text-xs rounded-xl hover:border-[#8B5CF6] hover:text-[#C4B5FD] transition-colors text-center"
             >
               Next Project →
             </Link>
