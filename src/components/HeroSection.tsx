@@ -1,12 +1,15 @@
-import { memo } from 'react';
+import { memo , useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Play } from 'lucide-react';
+import { LeadModal } from './LeadModal';
 
 import ShowcaseCarousel from './ShowcaseCarousel';
 
 const HeroSection = memo(() => {
+  const [open, setOpen] = useState(false);
   return (
+    <>
     <section className="relative w-full overflow-hidden bg-white">
 
       {/* BACKGROUND */}
@@ -191,8 +194,9 @@ const HeroSection = memo(() => {
               </button>
             </Link>
 
-            <Link to="/contact">
+            
               <button
+              onClick={() => setOpen(true)}
                 className="
                   px-8
                   md:px-10
@@ -212,7 +216,7 @@ const HeroSection = memo(() => {
               >
                 Contact Us
               </button>
-            </Link>
+            
           </motion.div>
         </div>
       </div>
@@ -222,6 +226,8 @@ const HeroSection = memo(() => {
         <ShowcaseCarousel />
       </div>
     </section>
+    <LeadModal isOpen={open} onClose={() => setOpen(false)} />
+    </>
   );
 });
 

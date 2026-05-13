@@ -2,18 +2,18 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
 import gsap from 'gsap';
-import Logo from '../assets/illusion-logo.png'; // Ensure this path is correct based on your project structure  
+import { LeadModal } from './LeadModal';
+import Logo from '../assets/illusion-logo.png';
 
 const MotionLink = motion(Link);
 
 const navLinks = [
   { id: 'home', label: 'Home', href: '/' },
   { id: 'about', label: 'About', href: '/about' },
-  { id: 'projects', label: 'Portfolio', href: '/projects' }, // Renamed for a premium feel
+  { id: 'projects', label: 'Portfolio', href: '/projects' },
   { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
-// Social Media Icons (Clean SVGs)
 const socialLinks = [
   {
     id: 'instagram',
@@ -28,7 +28,8 @@ const socialLinks = [
 ];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);   // ← controls LeadModal
+  const [menuOpen, setMenuOpen] = useState(false);     // ← controls mobile menu
   const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef(null);
   const location = useLocation();
@@ -45,14 +46,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent scrolling when mobile menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [isOpen]);
+    document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
+  }, [menuOpen]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -65,180 +61,252 @@ const Navbar = () => {
     return () => ctx.revert();
   }, []);
 
+  // Opens modal and ensures menu is closed
+  const openModal = () => {
+    setMenuOpen(false);
+    setModalOpen(true);
+  };
+
   return (
-    <nav
-      ref={navRef}
-      className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-12 py-4 z-50 transition-all duration-500 ease-in-out ${isScrolled || isOpen
-          ? 'bg-white/95 backdrop-blur-lg shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-[#8B5CF6]/20'
-          : 'bg-transparent'
+    <>
+      <nav
+        ref={navRef}
+        className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-12 py-4 z-50 transition-all duration-500 ease-in-out ${
+          isScrolled || menuOpen
+            ? 'bg-white/95 backdrop-blur-lg shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-[#8B5CF6]/20'
+            : 'bg-transparent'
         }`}
-    >
-      {/* Logo */}
-      <MotionLink
-        to="/"
-        className="nav-logo z-50 flex items-center group relative cursor-pointer"
       >
-        {/* UI/UX Best Practice: Wrapper for image stabilization */}
-        <div className="relative w-[180px] md:w-[220px] lg:w-[240px] aspect-[4/1] overflow-hidden">
-          <img
-            src={Logo}
-            alt="Interior Illusions - Luxury Home Design"
-            width="240"
-            height="60"
-            className="w-full h-full object-contain transition-all duration-300 group-hover:scale-[1.03]"
-          />
+        {/* Logo */}
+        <MotionLink to="/" className="nav-logo z-50 flex items-center group relative cursor-pointer">
+          <div className="relative w-[180px] md:w-[220px] lg:w-[240px] aspect-[4/1] overflow-hidden">
+            <img
+              src={Logo}
+              alt="Interior Illusions - Luxury Home Design"
+              width="240"
+              height="60"
+              className="w-full h-full object-contain transition-all duration-300 group-hover:scale-[1.03]"
+            />
+          </div>
+        </MotionLink>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center space-x-1">
+          {navLinks.map((link) => (
+            <MotionLink
+              key={link.id}
+              to={link.href}
+              className="nav-link-item relative px-6 py-2.5 group transition-colors duration-300"
+            >
+              <span className={`relative z-10 text-sm font-semibold tracking-wider transition-colors duration-300 ${
+                activeLink === link.id ? 'text-[#6D28D9]' : 'text-[#4B5563]'
+              }`}>
+                {link.label}
+              </span>
+              {activeLink === link.id && (
+                <motion.div
+                  layoutId="desktop-active-pill"
+                  className="absolute inset-0 bg-[#8B5CF6]/15 border border-[#8B5CF6]/20 rounded-xl"
+                  initial={false}
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+              {activeLink !== link.id && (
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gray-100/50 rounded-xl transition-opacity duration-300" />
+              )}
+            </MotionLink>
+          ))}
         </div>
 
-
-      </MotionLink>
-
-      {/* Desktop Nav */}
-      <div className="hidden md:flex items-center space-x-1">
-        {navLinks.map((link) => (
-          <MotionLink
-            key={link.id}
-            to={link.href}
-            className="nav-link-item relative px-6 py-2.5 group transition-colors duration-300"
+        {/* Desktop CTA — opens LeadModal ✓ */}
+        <div className="hidden md:block nav-cta">
+          <motion.button
+            onClick={openModal}
+            whileHover={{ scale: 1.02, backgroundColor: '#b3a1fa' }}
+            whileTap={{ scale: 0.98 }}
+            className="px-8 py-2.5 text-sm font-medium tracking-wide text-white rounded-full bg-[#8B5CF6] shadow-[0_4px_14px_0_rgba(196,181,253,0.39)] transition-all duration-300"
           >
-            <span
-              className={`relative z-10 text-sm font-semibold tracking-wider transition-colors duration-300 ${activeLink === link.id ? 'text-[#6D28D9]' : 'text-[#4B5563]'
-                }`}
-            >
-              {link.label}
-            </span>
+            Start a Project
+          </motion.button>
+        </div>
 
-            {/* Soft Floating Pill Background */}
-            {activeLink === link.id && (
-              <motion.div
-                layoutId="desktop-active-pill"
-                className="absolute inset-0 bg-[#8B5CF6]/15 border border-[#8B5CF6]/20 rounded-xl"
-                initial={false}
-                transition={{
-                  type: 'spring',
-                  stiffness: 380,
-                  damping: 30
-                }}
-              />
-            )}
-
-            {/* Subtle Hover State (Only for non-active) */}
-            {activeLink !== link.id && (
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gray-100/50 rounded-xl transition-opacity duration-300" />
-            )}
-          </MotionLink>
-        ))}
-      </div>
-      {/* Desktop CTA */}
-      <div className="hidden md:block nav-cta">
-        <motion.button
-          whileHover={{ scale: 1.02, backgroundColor: '#b3a1fa' }}
-          whileTap={{ scale: 0.98 }}
-          className="px-8 py-2.5 text-sm font-medium tracking-wide text-white rounded-full bg-[#8B5CF6] shadow-[0_4px_14px_0_rgba(196,181,253,0.39)] transition-all duration-300"
+        {/* Mobile Toggle */}
+        <button
+          className="nav-toggle z-50 md:hidden p-2 focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
         >
-          Start a Project
-        </motion.button>
-      </div>
+          <div className="flex flex-col justify-center items-end gap-[5px] w-6">
+            <motion.span
+              animate={menuOpen ? { rotate: 45, y: 7, width: '24px' } : { rotate: 0, y: 0, width: '24px' }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              style={{ width: 24 }}
+              className="block h-[1.5px] bg-[#111827] rounded-full origin-center"
+            />
+            <motion.span
+              animate={menuOpen ? { opacity: 0, x: 6 } : { opacity: 1, x: 0 }}
+              transition={{ duration: 0.2 }}
+              className="block h-[1.5px] bg-[#8B5CF6] rounded-full"
+              style={{ width: 16 }}
+            />
+            <motion.span
+              animate={menuOpen ? { rotate: -45, y: -7, width: '24px' } : { rotate: 0, y: 0, width: '24px' }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              style={{ width: 24 }}
+              className="block h-[1.5px] bg-[#111827] rounded-full origin-center"
+            />
+          </div>
+        </button>
 
-      {/* Mobile Toggle */}
-      <button
-        className="nav-toggle z-50 md:hidden text-[#4B5563] p-2 focus:outline-none"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle Menu"
-      >
-        <motion.svg
-          animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="w-7 h-7"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          {isOpen ? (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
-          ) : (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 7h16M4 17h16" />
-          )}
-        </motion.svg>
-      </button>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' }}
-            animate={{ opacity: 1, clipPath: 'inset(0% 0% 0% 0%)' }}
-            exit={{ opacity: 0, clipPath: 'inset(0% 0% 100% 0%)' }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 top-0 left-0 w-full h-[100dvh] bg-[#F9FAFB] pt-24 px-6 pb-10 flex flex-col justify-between md:hidden"
-          >
-            {/* Links Section */}
-            <div className="flex flex-col gap-6 mt-8">
-              {navLinks.map((link, i) => (
-                <div key={link.id} className="overflow-hidden">
-                  <MotionLink
-                    initial={{ y: 40, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -20, opacity: 0 }}
-                    transition={{ delay: 0.1 + i * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center group"
-                  >
-                    <span
-                      className={`font-serif text-4xl tracking-tight transition-colors duration-300 ${activeLink === link.id ? 'text-[#8B5CF6]' : 'text-[#374151]'
-                        }`}
-                    >
-                      {link.label}
-                    </span>
-                    {activeLink === link.id && (
-                      <motion.span
-                        layoutId="mobile-active-dot"
-                        className="ml-4 w-2 h-2 rounded-full bg-[#8B5CF6]"
-                      />
-                    )}
-                  </MotionLink>
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom Section: CTA & Socials */}
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {menuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex flex-col gap-8 w-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 w-full h-[100dvh] md:hidden"
             >
-              {/* Divider */}
-              <div className="w-full h-[1px] bg-[#E5E7EB]" />
+              <div className="absolute inset-0 bg-white" />
 
-              {/* Social Links */}
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-medium tracking-widest text-[#9CA3AF] uppercase">Follow Us</span>
-                <div className="flex gap-5">
+              <motion.div
+                initial={{ scale: 0.6, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute -top-20 -right-20 w-80 h-80 bg-[#EEF2FF] rounded-full blur-3xl pointer-events-none"
+              />
+              <motion.div
+                initial={{ scale: 0.6, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute -bottom-16 -left-16 w-64 h-64 bg-[#F5F3FF] rounded-full blur-3xl pointer-events-none"
+              />
+
+              <div className="relative z-10 flex flex-col h-full pt-20 pb-10 px-8">
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="flex items-center gap-3 mb-auto"
+                >
+                  <div className="h-px flex-1 bg-gradient-to-r from-[#C4B5FD]/50 to-transparent" />
+                  <span className="text-[10px] font-semibold tracking-[0.25em] text-[#C4B5FD] uppercase">
+                    Menu
+                  </span>
+                </motion.div>
+
+                <div className="flex-1 flex flex-col items-center justify-center -mt-10">
+                  <div className="flex flex-col items-center w-full">
+                    {navLinks.map((link, i) => (
+                      <motion.div
+                        key={link.id}
+                        initial={{ opacity: 0, y: 28 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 14 }}
+                        transition={{ delay: 0.1 + i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="w-full flex flex-col items-center"
+                      >
+                        <Link
+                          to={link.href}
+                          onClick={() => setMenuOpen(false)}
+                          className="group relative flex items-center justify-center py-4 w-full"
+                        >
+                          <span className="absolute left-0 text-[11px] font-mono text-[#D1D5DB] select-none">
+                            0{i + 1}
+                          </span>
+                          <span className={`text-[2.6rem] leading-none font-light tracking-tight transition-all duration-300 ${
+                            activeLink === link.id
+                              ? 'text-[#8B5CF6]'
+                              : 'text-[#111827] group-hover:text-[#8B5CF6]/60 group-hover:translate-x-1'
+                          }`}>
+                            {link.label}
+                          </span>
+                          {activeLink === link.id && (
+                            <motion.span
+                              layoutId="active-dot"
+                              className="absolute right-0 w-2 h-2 rounded-full bg-[#8B5CF6]"
+                              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                            />
+                          )}
+                        </Link>
+
+                        {i < navLinks.length - 1 && (
+                          <motion.div
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ delay: 0.18 + i * 0.08, duration: 0.4 }}
+                            className="w-full h-px bg-[#F3F4F6] origin-left"
+                          />
+                        )}
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Mobile CTA — closes menu then opens modal ✓ */}
+                  <motion.button
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.48, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                    onClick={openModal}
+                    className="
+                      mt-12 w-full max-w-[280px]
+                      py-4 rounded-2xl
+                      text-sm font-semibold tracking-[0.12em] uppercase text-white
+                      bg-[#8B5CF6]
+                      shadow-[0_12px_32px_-6px_rgba(139,92,246,0.5)]
+                      hover:bg-[#7C3AED]
+                      hover:shadow-[0_16px_36px_-6px_rgba(139,92,246,0.6)]
+                      active:scale-[0.97]
+                      transition-all duration-300
+                    "
+                  >
+                    Start a Project
+                  </motion.button>
+                </div>
+
+                {/* Socials */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.55, duration: 0.4 }}
+                  className="flex items-center justify-center gap-5 pt-6"
+                >
+                  <div className="h-px w-8 bg-[#E5E7EB]" />
+                  <span className="text-[10px] font-semibold tracking-[0.22em] text-[#D1D5DB] uppercase">
+                    Follow Us
+                  </span>
                   {socialLinks.map((social) => (
                     <a
                       key={social.id}
                       href={social.href}
-                      className="text-[#9CA3AF] hover:text-[#8B5CF6] transition-colors duration-300"
                       aria-label={social.id}
+                      className="
+                        w-9 h-9 rounded-xl flex items-center justify-center
+                        bg-[#FAFAFA] border border-[#F3F4F6]
+                        text-[#9CA3AF]
+                        hover:bg-[#8B5CF6] hover:border-[#8B5CF6] hover:text-white
+                        hover:shadow-[0_4px_14px_rgba(139,92,246,0.3)]
+                        transition-all duration-300
+                      "
                     >
-                      <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                         {social.icon}
                       </svg>
                     </a>
                   ))}
-                </div>
+                  <div className="h-px w-8 bg-[#E5E7EB]" />
+                </motion.div>
               </div>
-
-              {/* Mobile CTA */}
-              <button className="w-full py-4 rounded-xl text-sm font-medium tracking-wide text-white bg-[#374151] hover:bg-[#111827] transition-colors duration-300">
-                Start a Project
-              </button>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+          )}
+        </AnimatePresence>
+      </nav>
+
+      {/* LeadModal — controlled by modalOpen only ✓ */}
+      <LeadModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
   );
 };
 
