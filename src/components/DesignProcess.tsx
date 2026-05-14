@@ -35,13 +35,13 @@ const steps = [
 
 const DesignProcess = () => {
   return (
-    <section className="relative py-28 overflow-hidden bg-[#FAFAFF]">
+    <section className="relative py-28 overflow-hidden bg-[#111111]">
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FAFAFF] to-[#F5F3FF]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
 
-      {/* GLOW */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#8B5CF6]/10 blur-3xl rounded-full" />
+      {/* GOLD GLOW */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
@@ -53,7 +53,7 @@ const DesignProcess = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto"
         >
-          <span className="text-[#8B5CF6] font-semibold uppercase tracking-[0.25em] text-sm">
+          <span className="text-[#E5C76B] font-semibold uppercase tracking-[0.25em] text-sm">
             Design Process
           </span>
 
@@ -65,19 +65,19 @@ const DesignProcess = () => {
               md:text-6xl
               font-milchella
               font-semibold
-              text-[#111827]
+              text-[#F5F5F5]
               tracking-wide
               leading-[1.1]
             "
           >
             A Seamless Journey <br />
 
-            <span className="italic text-[#8B5CF6]">
+            <span className="italic text-[#C9A227]">
               From Vision To Reality
             </span>
           </h2>
 
-          <p className="mt-6 text-[#6B7280] text-base md:text-lg leading-relaxed">
+          <p className="mt-6 text-[#A1A1AA] text-base md:text-lg leading-relaxed">
             Our process blends creativity, planning, and craftsmanship
             to deliver extraordinary interior experiences.
           </p>
@@ -104,9 +104,9 @@ const DesignProcess = () => {
               lg:block
               w-[3px]
               bg-gradient-to-b
-              from-[#C4B5FD]
-              via-[#8B5CF6]
-              to-[#C4B5FD]
+              from-[#C9A227]/30
+              via-[#C9A227]
+              to-[#C9A227]/30
               rounded-full
             "
           />
@@ -156,16 +156,16 @@ const DesignProcess = () => {
                       w-16
                       h-16
                       rounded-full
-                      bg-white
+                      bg-[#1A1A1A]
                       border-4
-                      border-[#8B5CF6]
+                      border-[#C9A227]
                       items-center
                       justify-center
-                      shadow-[0_10px_40px_rgba(139,92,246,0.25)]
+                      shadow-[0_10px_40px_rgba(201,162,39,0.25)]
                       z-20
                     "
                   >
-                    <span className="text-[#8B5CF6] font-bold text-lg">
+                    <span className="text-[#C9A227] font-bold text-lg">
                       0{index + 1}
                     </span>
                   </div>
@@ -184,14 +184,14 @@ const DesignProcess = () => {
                         relative
                         overflow-hidden
                         rounded-[2.5rem]
-                        bg-white/90
+                        bg-[#1A1A1A]/90
                         backdrop-blur-xl
                         border
-                        border-[#ECECEC]
+                        border-[#2A2A2A]
                         p-8
                         md:p-10
-                        shadow-[0_10px_50px_rgba(0,0,0,0.06)]
-                        hover:shadow-[0_25px_80px_rgba(139,92,246,0.15)]
+                        shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                        hover:shadow-[0_25px_80px_rgba(201,162,39,0.15)]
                         hover:-translate-y-2
                         transition-all
                         duration-500
@@ -204,9 +204,9 @@ const DesignProcess = () => {
                           absolute
                           inset-0
                           bg-gradient-to-br
-                          from-[#C4B5FD]/5
+                          from-[#C9A227]/5
                           via-transparent
-                          to-[#8B5CF6]/10
+                          to-[#C9A227]/10
                           opacity-0
                           group-hover:opacity-100
                           transition-opacity
@@ -221,8 +221,8 @@ const DesignProcess = () => {
                           w-14
                           h-14
                           rounded-2xl
-                          bg-[#8B5CF6]
-                          text-white
+                          bg-[#C9A227]
+                          text-black
                           flex
                           items-center
                           justify-center
@@ -242,7 +242,7 @@ const DesignProcess = () => {
                             text-2xl
                             md:text-3xl
                             font-semibold
-                            text-[#111827]
+                            text-[#F5F5F5]
                           "
                         >
                           {step.title}
@@ -251,7 +251,7 @@ const DesignProcess = () => {
                         <p
                           className="
                             mt-5
-                            text-[#6B7280]
+                            text-[#A1A1AA]
                             leading-relaxed
                             text-base
                             md:text-lg
@@ -269,7 +269,7 @@ const DesignProcess = () => {
                           right-6
                           text-7xl
                           font-bold
-                          text-[#8B5CF6]/5
+                          text-[#C9A227]/5
                           select-none
                         "
                       >

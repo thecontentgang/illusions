@@ -52,16 +52,20 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-white">
+    <section className="relative py-24 overflow-hidden bg-[#111111]">
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FAFAFF] to-[#F5F3FF]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+
+      {/* GOLD GLOW */}
+      <div className="absolute top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* HEADING */}
         <div className="text-center max-w-3xl mx-auto">
-          <span className="text-[#8B5CF6] font-semibold uppercase tracking-[0.2em] text-sm">
+
+          <span className="text-[#E5C76B] font-semibold uppercase tracking-[0.2em] text-sm">
             Our Services
           </span>
 
@@ -74,17 +78,17 @@ const ServicesSection = () => {
               font-milchella
               font-semibold
               tracking-wider
-              text-[#111827]
+              text-[#F5F5F5]
             "
           >
             Designing Spaces <br />
 
-            <span className="text-[#8B5CF6] italic">
+            <span className="text-[#C9A227] italic">
               Beyond Expectations
             </span>
           </h2>
 
-          <p className="mt-6 text-[#6B7280] text-base md:text-lg leading-relaxed">
+          <p className="mt-6 text-[#A1A1AA] text-base md:text-lg leading-relaxed">
             We craft sophisticated interiors and architectural experiences
             blending luxury, functionality, and timeless aesthetics.
           </p>
@@ -117,8 +121,10 @@ const ServicesSection = () => {
                 relative
                 overflow-hidden
                 rounded-[2rem]
-                bg-white
-                shadow-[0_15px_50px_rgba(0,0,0,0.06)]
+                bg-[#1A1A1A]
+                border
+                border-[#2A2A2A]
+                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
               "
             >
 
@@ -149,7 +155,7 @@ const ServicesSection = () => {
                     absolute
                     inset-0
                     bg-gradient-to-t
-                    from-black/80
+                    from-black/85
                     via-black/20
                     to-transparent
                   "
@@ -167,10 +173,10 @@ const ServicesSection = () => {
                   <div
                     className="
                       rounded-[1.5rem]
-                      bg-white/10
+                      bg-black/20
                       backdrop-blur-xl
                       border
-                      border-white/10
+                      border-[#C9A227]/10
                       px-5
                       py-2
                     "
@@ -196,7 +202,7 @@ const ServicesSection = () => {
 
                 <p
                   className="
-                    text-[#6B7280]
+                    text-[#A1A1AA]
                     leading-relaxed
                     text-base
                     md:text-lg
@@ -204,7 +210,6 @@ const ServicesSection = () => {
                 >
                   {service.description}
                 </p>
-
 
               </div>
             </motion.div>

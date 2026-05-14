@@ -6,26 +6,18 @@ const Footer = () => {
       className="
         relative
         overflow-hidden
-        bg-[#111827]
+        bg-[#111111]
         text-white
         pt-20
         pb-10
         px-6
         md:px-12
         lg:px-20
-        rounded-t-[3rem]
-        md:rounded-t-[5rem]
+        
       "
     >
 
-      {/* BACKGROUND IMAGE */}
-      <div className="absolute inset-0 opacity-10">
-        <img
-          src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop"
-          alt="Luxury Interior"
-          className="w-full h-full object-cover"
-        />
-      </div>
+     
 
       {/* DARK OVERLAY */}
       <div
@@ -33,13 +25,13 @@ const Footer = () => {
           absolute
           inset-0
           bg-gradient-to-b
-          from-[#111827]/95
-          via-[#111827]/90
-          to-[#111827]
+          from-[#111111]/95
+          via-[#1A1A1A]/92
+          to-[#111111]
         "
       />
 
-      {/* PURPLE GLOW */}
+      {/* GOLD GLOW */}
       <div
         className="
           absolute
@@ -50,7 +42,7 @@ const Footer = () => {
           h-[350px]
           md:w-[500px]
           md:h-[500px]
-          bg-[#8B5CF6]/20
+          bg-[#C9A227]/15
           blur-3xl
           rounded-full
         "
@@ -112,7 +104,7 @@ const Footer = () => {
                 md:text-sm
                 uppercase
                 tracking-[0.3em]
-                text-gray-400
+                text-[#A1A1AA]
                 leading-relaxed
               "
             >
@@ -125,16 +117,16 @@ const Footer = () => {
           {/* FOOTER BUTTON LINKS */}
           <div
             className="
-    grid
-    grid-cols-2
-    gap-4
-    mt-10
-    items-center
-    text-center
-    px-5
-    md:mt-0
-    md:justify-start
-  "
+              grid
+              grid-cols-2
+              gap-4
+              mt-10
+              items-center
+              text-center
+              px-5
+              md:mt-0
+              md:justify-start
+            "
           >
             {[
               { name: 'Home', path: '/' },
@@ -149,20 +141,20 @@ const Footer = () => {
                   px-5
                   py-3
                   rounded-2xl
-                  bg-white/5
+                  bg-black/20
                   backdrop-blur-xl
                   border
-                  border-white/10
+                  border-[#C9A227]/10
                   text-sm
                   md:text-base
                   font-medium
-                  text-gray-200
-                  hover:bg-[#8B5CF6]
-                  hover:border-[#8B5CF6]
-                  hover:text-white
+                  text-[#D1D5DB]
+                  hover:bg-[#C9A227]
+                  hover:border-[#C9A227]
+                  hover:text-black
                   transition-all
                   duration-300
-                  shadow-[0_8px_30px_rgba(0,0,0,0.08)]
+                  shadow-[0_8px_30px_rgba(0,0,0,0.25)]
                 "
               >
                 {link.name}
@@ -185,7 +177,7 @@ const Footer = () => {
               className="
                 text-sm
                 md:text-base
-                text-gray-400
+                text-[#A1A1AA]
                 leading-relaxed
               "
             >
@@ -199,8 +191,8 @@ const Footer = () => {
                 block
                 text-sm
                 md:text-base
-                text-gray-300
-                hover:text-[#8B5CF6]
+                text-[#D1D5DB]
+                hover:text-[#C9A227]
                 transition-colors
                 break-all
               "
@@ -215,8 +207,8 @@ const Footer = () => {
                 block
                 text-sm
                 md:text-base
-                text-gray-300
-                hover:text-[#8B5CF6]
+                text-[#D1D5DB]
+                hover:text-[#C9A227]
                 transition-colors
               "
             >
@@ -230,7 +222,7 @@ const Footer = () => {
           className="
             w-full
             h-[1px]
-            bg-white/10
+            bg-[#C9A227]/10
             my-8
           "
         />
@@ -241,7 +233,7 @@ const Footer = () => {
             text-[10px]
             uppercase
             tracking-[0.25em]
-            text-gray-500
+            text-[#666666]
             text-center
           "
         >

@@ -1,10 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balthazar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 
 @font-face {
   font-family: "aesthetic";
   src: url("/Aesthetic-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "chubbo";
+  src: url("/Chubbo-Regular.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -17,8 +32,60 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Canela";
+  src: url("/Canela-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CabinetGrotesk";
+  src: url("/CabinetGrotesk-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Panchang";
+  src: url("/Panchang-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lovato";
+  src: url("/Lovato-Regular.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Estrella";
+  src: url("/Estrella-pgWKv.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-chubbo: "chubbo", sans-serif;
+  --font-cabinet: "CabinetGrotesk", sans-serif;
+  --font-estrella: "Estrella", serif;
+  --font-quicksand: "Quicksand", serif;
+  --font-uncialantiqua: "Uncial Antiqua", serif;
+  --font-panchang: "Panchang", serif;
+  --font-canela: "Canela", serif;
+  --font-sortsmillgoudy: "Sorts Mill Goudy", serif;
+  --font-balthazar: "Balthazar", serif;
+  --font-lovato: "Lovato", serif;
+  --font-prata: "Prata", serif;
+  --font-abhre: "Abhaya Libre", serif;
   --font-aesthetic: "aesthetic", sans-serif;
   --font-milchella: "Milchella", sans-serif;
   --font-josefin: "Josefin Sans", sans-serif;
@@ -29,7 +96,7 @@ body {
 }
 
 h1 {
-  font-family: var(--font-milchella);
+  font-family: var(--font-abhre);
 }
 
 /* Add this in global.css */

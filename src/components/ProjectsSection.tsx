@@ -6,9 +6,15 @@ const ProjectsSection = () => {
   const featuredProjects = portfolioData.slice(0, 4);
 
   return (
-    <section className="py-20 md:py-28 bg-white px-5 md:px-10 lg:px-20 overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-[#111111] px-5 md:px-10 lg:px-20 overflow-hidden">
 
-      <div className="max-w-7xl mx-auto">
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+
+      {/* GOLD GLOW */}
+      <div className="absolute top-[-220px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* SECTION HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
@@ -17,7 +23,7 @@ const ProjectsSection = () => {
 
             <span
               className="
-                text-[#8B5CF6]
+                text-[#E5C76B]
                 text-[10px]
                 font-black
                 uppercase
@@ -36,13 +42,13 @@ const ProjectsSection = () => {
                 font-milchella
                 font-semibold
                 tracking-wider
-                text-[#374151]
+                text-[#F5F5F5]
                 leading-tight
               "
             >
               Creating spaces that <br />
 
-              <span className="italic text-[#8B5CF6]">
+              <span className="italic text-[#C9A227]">
                 inspire
               </span>{" "}
 
@@ -60,17 +66,18 @@ const ProjectsSection = () => {
               justify-center
               px-7
               py-4
-              bg-[#8B5CF6]
+              bg-[#C9A227]
               border
-              border-[#8B5CF6]
+              border-[#C9A227]
               rounded-2xl
               text-xs
               font-black
               uppercase
               tracking-[0.25em]
-              text-white
-              hover:bg-white
-              hover:text-[#374151]
+              text-black
+              hover:bg-[#E5C76B]
+              hover:border-[#E5C76B]
+              hover:shadow-[0_12px_35px_rgba(201,162,39,0.35)]
               transition-all
               duration-300
             "
@@ -103,16 +110,18 @@ const ProjectsSection = () => {
               }}
               whileHover={{ y: -6 }}
               className="
-  group
-  relative
-  overflow-hidden
-  rounded-[2rem]
-  h-[280px]
-  md:h-[340px]
-  lg:h-[380px]
-  bg-[#F3F4F6]
-  shadow-[0_12px_40px_rgba(0,0,0,0.08)]
-"
+                group
+                relative
+                overflow-hidden
+                rounded-[2rem]
+                h-[280px]
+                md:h-[340px]
+                lg:h-[380px]
+                bg-[#1A1A1A]
+                border
+                border-[#2A2A2A]
+                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+              "
             >
 
               <Link
@@ -144,9 +153,25 @@ const ProjectsSection = () => {
                     absolute
                     inset-0
                     bg-gradient-to-t
-                    from-black/80
+                    from-black/90
                     via-black/10
                     to-transparent
+                  "
+                />
+
+                {/* GOLD HOVER GLOW */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-br
+                    from-[#C9A227]/5
+                    via-transparent
+                    to-[#C9A227]/10
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity
+                    duration-500
                   "
                 />
 
@@ -166,10 +191,10 @@ const ProjectsSection = () => {
                   <div
                     className="
                       rounded-[1.5rem]
-                      bg-white/10
+                      bg-black/20
                       backdrop-blur-xl
                       border
-                      border-white/10
+                      border-[#C9A227]/10
                       px-3
                       py-2
                     "
@@ -183,7 +208,7 @@ const ProjectsSection = () => {
                         uppercase
                         text-center
                         tracking-[0.25em]
-                        text-[#C4B5FD]
+                        text-[#E5C76B]
                         mb-2
                       "
                     >
@@ -222,14 +247,14 @@ const ProjectsSection = () => {
             mt-10
             px-8
             py-4
-            bg-[#8B5CF6]
+            bg-[#C9A227]
             rounded-2xl
             text-xs
             font-black
             uppercase
             tracking-[0.25em]
-            text-white
-            shadow-lg
+            text-black
+            shadow-[0_12px_35px_rgba(201,162,39,0.35)]
           "
         >
           Explore Portfolio

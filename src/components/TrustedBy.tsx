@@ -1,15 +1,21 @@
 import { motion } from "framer-motion";
 
 const trustedLogos = [
-  "/logos/aparna-zenon.png","/logos/asbl-spire.png",
-  "/logos/auro-regent.svg","/logos/avani-tulasi-vanam.png",
-  "/logos/candeur-40.jpg","/logos/dsr-park-ridge.jpg",
-  "/logos/elegance-emperia.png","/logos/epil-carnerstone.jpg",
-  "/logos/gem-nakshtra.png","/logos/hallmark-skyrena.jpg",
-  "/logos/indus-peblcity.png","/logos/my-home-sayuk.jpg",
-  "/logos/nyla-tema4.png","/logos/tripura-lm-3.jpg",
-  "/logos/vaishnavi-oasis.png"
-
+  "/logos/aparna-zenon.png",
+  "/logos/asbl-spire.png",
+  "/logos/auro-regent.svg",
+  "/logos/avani-tulasi-vanam.png",
+  "/logos/candeur-40.png",
+  "/logos/dsr-park-ridge.jpg",
+  "/logos/elegance-emperia.png",
+  "/logos/epil-carnerstone.png",
+  "/logos/gem-nakshtra.png",
+  "/logos/hallmark-skyrena.png",
+  "/logos/indus-peblcity.png",
+  "/logos/my-home-sayuk.jpg",
+  "/logos/nyla-tema4.png",
+  "/logos/tripura-lm-3.png",
+  "/logos/vaishnavi-oasis.png",
 ];
 
 const row1 = [...trustedLogos, ...trustedLogos];
@@ -18,10 +24,13 @@ const duplicatedRow2 = [...row2, ...row2];
 
 const TrustedBy = () => {
   return (
-    <section className="relative w-full overflow-hidden py-20 bg-white">
+    <section className="relative w-full overflow-hidden py-20 bg-[#111111]">
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FAFAFF] to-[#F5F3FF]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+
+      {/* GOLD GLOW */}
+      <div className="absolute top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
@@ -33,8 +42,8 @@ const TrustedBy = () => {
           viewport={{ once: true }}
           className="flex justify-center px-5"
         >
-          <div className="px-5 py-2 rounded-full border border-[#8B5CF6]/40 bg-[#8B5CF6]/5">
-            <span className="text-sm font-semibold tracking-wide text-[#7C3AED] uppercase">
+          <div className="px-5 py-2 rounded-full border border-[#C9A227]/20 bg-[#C9A227]/10 backdrop-blur-xl">
+            <span className="text-sm font-semibold tracking-wide text-[#E5C76B] uppercase">
               Trusted By Premium Clients
             </span>
           </div>
@@ -55,14 +64,14 @@ const TrustedBy = () => {
               md:text-6xl
               font-milchella
               font-semibold
-              text-[#111827]
+              text-[#F5F5F5]
               leading-tight
               tracking-wider
             "
           >
             Spaces Designed For <br />
 
-            <span className="text-[#8B5CF6] italic">
+            <span className="text-[#C9A227] italic">
               Visionary Communities
             </span>
           </h2>
@@ -72,7 +81,7 @@ const TrustedBy = () => {
               mt-5
               max-w-2xl
               mx-auto
-              text-[#6B7280]
+              text-[#A1A1AA]
               text-base
               md:text-lg
               leading-relaxed
@@ -97,8 +106,8 @@ const TrustedBy = () => {
               w-24
               md:w-40
               bg-gradient-to-r
-              from-[#FAFAFF]
-              via-[#FAFAFF]/90
+              from-[#111111]
+              via-[#111111]/90
               to-transparent
               pointer-events-none
             "
@@ -115,8 +124,8 @@ const TrustedBy = () => {
               w-24
               md:w-40
               bg-gradient-to-l
-              from-[#F5F3FF]
-              via-[#F5F3FF]/90
+              from-[#111111]
+              via-[#111111]/90
               to-transparent
               pointer-events-none
             "
@@ -133,40 +142,68 @@ const TrustedBy = () => {
             }}
             className="flex gap-5 w-max"
           >
-
             {row1.map((logo, index) => (
               <div
                 key={index}
                 className="
-  relative
-  w-[170px]
-  h-[80px]
-  md:w-[220px]
-  md:h-[95px]
-  rounded-[1.5rem]
-  overflow-hidden
-  bg-white
-  border
-  border-[#F3F4F6]
-  shadow-[0_15px_50px_rgba(0,0,0,0.05)]
-  flex-shrink-0
-  group
-"
+                  relative
+                  w-[170px]
+                  h-[80px]
+                  md:w-[220px]
+                  md:h-[95px]
+                  rounded-[1.5rem]
+                  overflow-hidden
+
+                  /* WHITE + GOLD BACKGROUND */
+                  bg-gradient-to-br
+                  from-[#FFFDF7]
+                  via-[#FFF8E7]
+                  to-[#F5E3A1]
+
+                  border
+                  border-[#E5C76B]/40
+
+                  shadow-[0_15px_50px_rgba(201,162,39,0.18)]
+
+                  flex
+                  items-center
+                  justify-center
+                  flex-shrink-0
+                  group
+                  transition-all
+                  duration-500
+
+                  hover:scale-[1.02]
+                  hover:shadow-[0_20px_60px_rgba(201,162,39,0.28)]
+                "
               >
 
-                {/* GLOW */}
+                {/* GOLD SHINE */}
                 <div
                   className="
                     absolute
                     inset-0
                     bg-gradient-to-br
-                    from-[#C4B5FD]/10
+                    from-white/70
                     via-transparent
-                    to-[#8B5CF6]/10
-                    opacity-0
-                    group-hover:opacity-100
-                    transition-opacity
-                    duration-500
+                    to-[#C9A227]/10
+                    opacity-80
+                  "
+                />
+
+                {/* HOVER EFFECT */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-r
+                    from-transparent
+                    via-[#FFF5CC]/40
+                    to-transparent
+                    translate-x-[-100%]
+                    group-hover:translate-x-[100%]
+                    transition-transform
+                    duration-1000
                   "
                 />
 
@@ -177,8 +214,8 @@ const TrustedBy = () => {
                   className="
                     relative
                     z-10
-                    w-full
-                    h-full
+                    w-[70%]
+                    h-[70%]
                     object-contain
                     object-center
                     group-hover:scale-105
@@ -205,8 +242,8 @@ const TrustedBy = () => {
               w-24
               md:w-40
               bg-gradient-to-r
-              from-[#FAFAFF]
-              via-[#FAFAFF]/90
+              from-[#111111]
+              via-[#111111]/90
               to-transparent
               pointer-events-none
             "
@@ -223,8 +260,8 @@ const TrustedBy = () => {
               w-24
               md:w-40
               bg-gradient-to-l
-              from-[#F5F3FF]
-              via-[#F5F3FF]/90
+              from-[#111111]
+              via-[#111111]/90
               to-transparent
               pointer-events-none
             "
@@ -241,40 +278,68 @@ const TrustedBy = () => {
             }}
             className="flex gap-5 w-max"
           >
-
             {duplicatedRow2.map((logo, index) => (
               <div
                 key={index}
                 className="
-  relative
-  w-[170px]
-  h-[80px]
-  md:w-[220px]
-  md:h-[95px]
-  rounded-[1.5rem]
-  overflow-hidden
-  bg-white
-  border
-  border-[#F3F4F6]
-  shadow-[0_15px_50px_rgba(0,0,0,0.05)]
-  flex-shrink-0
-  group
-"
+                  relative
+                  w-[170px]
+                  h-[80px]
+                  md:w-[220px]
+                  md:h-[95px]
+                  rounded-[1.5rem]
+                  overflow-hidden
+
+                  /* WHITE + GOLD BACKGROUND */
+                  bg-gradient-to-br
+                  from-[#FFFDF7]
+                  via-[#FFF8E7]
+                  to-[#F5E3A1]
+
+                  border
+                  border-[#E5C76B]/40
+
+                  shadow-[0_15px_50px_rgba(201,162,39,0.18)]
+
+                  flex
+                  items-center
+                  justify-center
+                  flex-shrink-0
+                  group
+                  transition-all
+                  duration-500
+
+                  hover:scale-[1.02]
+                  hover:shadow-[0_20px_60px_rgba(201,162,39,0.28)]
+                "
               >
 
-                {/* GLOW */}
+                {/* GOLD SHINE */}
                 <div
                   className="
                     absolute
                     inset-0
                     bg-gradient-to-br
-                    from-[#C4B5FD]/10
+                    from-white/70
                     via-transparent
-                    to-[#8B5CF6]/10
-                    opacity-0
-                    group-hover:opacity-100
-                    transition-opacity
-                    duration-500
+                    to-[#C9A227]/10
+                    opacity-80
+                  "
+                />
+
+                {/* HOVER EFFECT */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-r
+                    from-transparent
+                    via-[#FFF5CC]/40
+                    to-transparent
+                    translate-x-[-100%]
+                    group-hover:translate-x-[100%]
+                    transition-transform
+                    duration-1000
                   "
                 />
 
@@ -285,8 +350,8 @@ const TrustedBy = () => {
                   className="
                     relative
                     z-10
-                    w-full
-                    h-full
+                    w-[70%]
+                    h-[70%]
                     object-contain
                     object-center
                     group-hover:scale-105
