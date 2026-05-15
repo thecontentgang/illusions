@@ -7,7 +7,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetails from './pages/ProjectDetails';
 import Footer from './components/Footer';
 import TermsConditionsPage from './pages/TermsConditions';
-import PrivacyPolicyPage from './pages/PrivacyPOlicyPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import NotFoundPage from './pages/404Page';
 import ScrollToTop from './components/ScrollToTop';
 import SocialMediaBar from './components/SocialMediaBar';
