@@ -53,13 +53,13 @@ const WhyChooseUs = () => {
 
   return (
     <>
-      <section className="relative py-24 overflow-hidden bg-[#111111]">
+      <section className="relative py-24 overflow-hidden bg-white">
 
         {/* BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-        {/* GLOW EFFECT */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
+        {/* PURPLE GLOW */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/20 blur-3xl rounded-full" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
@@ -71,8 +71,8 @@ const WhyChooseUs = () => {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="px-5 py-2 rounded-full bg-[#C9A227]/10 border border-[#C9A227]/20">
-              <span className="text-sm font-semibold tracking-wide uppercase text-[#E5C76B]">
+            <div className="px-5 py-2 rounded-full bg-[#8B5CF6]/20 border border-[#8B5CF6]/30">
+              <span className="text-sm font-semibold tracking-wide uppercase text-[#8B5CF6]">
                 Why Choose Us
               </span>
             </div>
@@ -94,16 +94,16 @@ const WhyChooseUs = () => {
                 text-4xl
                 sm:text-5xl
                 md:text-6xl
-                font-semibold
-                text-[#F5F5F5]
+              
+                text-[#1F2937]
                 leading-[1.1]
-                font-milchella
-                tracking-wider
+                font-abhre
+                tracking-tight
               "
             >
               Crafting Interiors With <br />
 
-              <span className="italic text-[#C9A227]">
+              <span className="italic text-[#8B5CF6]">
                 Precision & Passion
               </span>
             </h2>
@@ -113,7 +113,7 @@ const WhyChooseUs = () => {
                 mt-6
                 text-base
                 sm:text-lg
-                text-[#A1A1AA]
+                text-[#6B7280]
                 leading-relaxed
                 max-w-3xl
                 mx-auto
@@ -125,94 +125,96 @@ const WhyChooseUs = () => {
           </motion.div>
 
           {/* STATS SECTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.2,
-          }}
-          viewport={{ once: true }}
-          className="
-            mt-12 sm:mt-16
-            grid
-            grid-cols-1 sm:grid-cols-3
-            gap-4 sm:gap-5
-          "
-        >
-          {[
-            {
-              value: "187+",
-              label: "Luxury Projects",
-            },
-            {
-              value: "8+",
-              label: "Years Experience",
-            },
-            {
-              value: "98%",
-              label: "Client Satisfaction",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="
-                relative
-                overflow-hidden
-                rounded-[2rem]
-                border
-                border-[#2A2A2A]
-                bg-[#1A1A1A]/90
-                backdrop-blur-xl
-                p-6 sm:p-8
-                text-center
-                shadow-[0_15px_50px_rgba(0,0,0,0.35)]
-                hover:shadow-[0_20px_60px_rgba(201,162,39,0.15)]
-                hover:-translate-y-1
-                transition-all
-                duration-500
-              "
-            >
-              {/* BACKGROUND GLOW */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2,
+            }}
+            viewport={{ once: true }}
+            className="
+              mt-12 sm:mt-16
+              grid
+              grid-cols-1 sm:grid-cols-3
+              gap-4 sm:gap-5
+            "
+          >
+            {[
+              {
+                value: "187+",
+                label: "Luxury Projects",
+              },
+              {
+                value: "8+",
+                label: "Years Experience",
+              },
+              {
+                value: "98%",
+                label: "Client Satisfaction",
+              },
+            ].map((item, index) => (
               <div
+                key={index}
                 className="
-                  absolute
-                  inset-0
-                  bg-gradient-to-br
-                  from-[#C9A227]/5
-                  via-transparent
-                  to-[#C9A227]/10
+                  relative
+                  overflow-hidden
+                  rounded-[2rem]
+                  border
+                  border-white/50
+                  bg-white/70
+                  backdrop-blur-xl
+                  p-6 sm:p-8
+                  text-center
+                  shadow-[0_15px_50px_rgba(0,0,0,0.08)]
+                  hover:shadow-[0_20px_60px_rgba(139,92,246,0.18)]
+                  hover:-translate-y-1
+                  transition-all
+                  duration-500
                 "
-              />
+              >
 
-              <div className="relative z-10">
-                <h3
+                {/* CARD GLOW */}
+                <div
                   className="
-                    text-3xl
-                    sm:text-4xl lg:text-5xl
-                    font-bold
-                    tracking-tight
-                    text-[#C9A227]
+                    absolute
+                    inset-0
+                    bg-gradient-to-br
+                    from-[#8B5CF6]/10
+                    via-transparent
+                    to-[#7C3AED]/10
                   "
-                >
-                  {item.value}
-                </h3>
+                />
 
-                <p
-                  className="
-                    mt-2 sm:mt-3
-                    text-sm
-                    sm:text-base
-                    font-medium
-                    text-[#A1A1AA]
-                  "
-                >
-                  {item.label}
-                </p>
+                <div className="relative z-10">
+
+                  <h3
+                    className="
+                      text-3xl
+                      sm:text-4xl lg:text-5xl
+                      font-bold
+                      tracking-tight
+                      text-[#8B5CF6]
+                    "
+                  >
+                    {item.value}
+                  </h3>
+
+                  <p
+                    className="
+                      mt-2 sm:mt-3
+                      text-sm
+                      sm:text-base
+                      font-medium
+                      text-[#6B7280]
+                    "
+                  >
+                    {item.label}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
 
           {/* FEATURE GRID */}
           <div
@@ -244,7 +246,7 @@ const WhyChooseUs = () => {
                     rounded-[2rem]
                     h-[200px]
                     md:h-[300px]
-                    shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+                    shadow-[0_20px_60px_rgba(139,92,246,0.15)]
                   "
                 >
 
@@ -268,7 +270,7 @@ const WhyChooseUs = () => {
                       absolute
                       inset-0
                       bg-gradient-to-t
-                      from-black/90
+                      from-black/80
                       via-black/20
                       to-transparent
                     "
@@ -291,24 +293,24 @@ const WhyChooseUs = () => {
                         relative
                         overflow-hidden
                         rounded-[1.5rem]
-                        bg-black/20
+                        bg-white/10
                         backdrop-blur-xl
                         border
-                        border-[#C9A227]/10
+                        border-white/20
                         px-6
                         py-5
                       "
                     >
 
-                      {/* INNER GRADIENT */}
+                      {/* INNER GLOW */}
                       <div
                         className="
                           absolute
                           inset-0
                           bg-gradient-to-br
-                          from-[#C9A227]/10
+                          from-[#8B5CF6]/10
                           via-transparent
-                          to-[#C9A227]/10
+                          to-[#7C3AED]/10
                         "
                       />
 
@@ -351,7 +353,7 @@ const WhyChooseUs = () => {
               rounded-[3rem]
               h-[360px]
               md:h-[420px]
-              shadow-[0_30px_90px_rgba(0,0,0,0.5)]
+              shadow-[0_30px_90px_rgba(0,0,0,0.15)]
             "
           >
 
@@ -374,18 +376,18 @@ const WhyChooseUs = () => {
                 absolute
                 inset-0
                 bg-gradient-to-r
-                from-black/80
-                via-black/50
-                to-black/20
+                from-black/70
+                via-black/40
+                to-black/10
               "
             />
 
-            {/* GOLD GLOW */}
+            {/* CTA GLOW */}
             <div
               className="
                 absolute
                 inset-0
-                bg-[radial-gradient(circle_at_top_right,rgba(201,162,39,0.18),transparent_35%)]
+                bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.18),transparent_35%)]
               "
             />
 
@@ -420,7 +422,7 @@ const WhyChooseUs = () => {
                     border-white/10
                   "
                 >
-                  <span className="text-xs uppercase tracking-[0.25em] text-[#E5C76B] font-semibold">
+                  <span className="text-xs uppercase tracking-[0.25em] text-[#8B5CF6] font-semibold">
                     Luxury Interior Studio
                   </span>
                 </div>
@@ -433,6 +435,7 @@ const WhyChooseUs = () => {
                     sm:text-4xl
                     md:text-5xl
                     font-semibold
+                    font-abhre
                     text-white
                     leading-[1.05]
                     tracking-tight
@@ -440,7 +443,7 @@ const WhyChooseUs = () => {
                 >
                   Creating Beautiful Spaces
 
-                  <span className="block italic text-[#C9A227]">
+                  <span className="block italic text-[#8B5CF6]">
                     That Inspire Living
                   </span>
                 </h3>
@@ -452,7 +455,7 @@ const WhyChooseUs = () => {
                     text-sm
                     sm:text-base
                     md:text-lg
-                    text-[#D1D5DB]
+                    text-[#E5E7EB]
                     leading-relaxed
                     max-w-xl
                   "
@@ -470,11 +473,12 @@ const WhyChooseUs = () => {
                       px-7
                       py-3.5
                       rounded-2xl
-                      bg-[#C9A227]
-                      text-black
+                      bg-[#8B5CF6]
+                      text-white
                       font-semibold
-                      shadow-[0_15px_40px_rgba(201,162,39,0.35)]
+                      shadow-[0_15px_40px_rgba(139,92,246,0.35)]
                       hover:scale-105
+                      hover:bg-[#7C3AED]
                       transition-all
                       duration-300
                     "

@@ -45,7 +45,7 @@ const TestimonialSection = () => {
           relative
           py-20
           md:py-32
-          bg-[#111111]
+          bg-white
           px-6
           md:px-12
           lg:px-24
@@ -54,10 +54,10 @@ const TestimonialSection = () => {
       >
 
         {/* BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-        {/* GOLD GLOW */}
-        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
+        {/* PURPLE GLOW */}
+        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/20 blur-3xl rounded-full" />
 
         <div className="relative z-10 max-w-6xl mx-auto">
 
@@ -68,7 +68,7 @@ const TestimonialSection = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               className="
-                text-[#E5C76B]
+                text-[#8B5CF6]
                 text-[10px]
                 font-black
                 uppercase
@@ -86,14 +86,14 @@ const TestimonialSection = () => {
               className="
                 text-4xl
                 md:text-6xl
-                font-milchella
+                font-abhre
                 font-semibold
-                tracking-wider
-                text-[#F5F5F5]
+                tracking-tight
+                text-[#111827]
               "
             >
               Voices of{" "}
-              <span className="italic text-[#C9A227]">
+              <span className="italic text-[#8B5CF6]">
                 Satisfaction.
               </span>
             </motion.h2>
@@ -127,14 +127,31 @@ const TestimonialSection = () => {
                     relative
                     h-[500px]
                     md:h-[560px]
-                    bg-[#1A1A1A]
+                    bg-white/80
+                    backdrop-blur-xl
                     rounded-[2.5rem]
                     overflow-hidden
                     border
-                    border-[#2A2A2A]
-                    shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                    border-white/50
+                    shadow-[0_20px_60px_rgba(139,92,246,0.12)]
+                    hover:shadow-[0_20px_60px_rgba(139,92,246,0.22)]
+                    transition-all
+                    duration-500
                   "
                 >
+
+                  {/* CARD GLOW */}
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      bg-gradient-to-br
+                      from-[#8B5CF6]/5
+                      via-transparent
+                      to-[#7C3AED]/5
+                      pointer-events-none
+                    "
+                  />
 
                   {/* THUMBNAIL */}
                   <img
@@ -162,15 +179,15 @@ const TestimonialSection = () => {
                     "
                   />
 
-                  {/* GOLD HOVER GLOW */}
+                  {/* PURPLE HOVER GLOW */}
                   <div
                     className="
                       absolute
                       inset-0
                       bg-gradient-to-br
-                      from-[#C9A227]/5
+                      from-[#8B5CF6]/5
                       via-transparent
-                      to-[#C9A227]/10
+                      to-[#7C3AED]/10
                       opacity-0
                       group-hover:opacity-100
                       transition-opacity
@@ -198,7 +215,7 @@ const TestimonialSection = () => {
                         bg-black/30
                         backdrop-blur-xl
                         border
-                        border-[#C9A227]/20
+                        border-[#8B5CF6]/20
                         flex
                         items-center
                         justify-center
@@ -207,7 +224,7 @@ const TestimonialSection = () => {
                     >
 
                       <svg
-                        className="w-6 h-6 fill-[#C9A227] ml-1"
+                        className="w-6 h-6 fill-[#8B5CF6] ml-1"
                         viewBox="0 0 24 24"
                       >
                         <path d="M8 5v14l11-7z" />
@@ -229,10 +246,10 @@ const TestimonialSection = () => {
                     <div
                       className="
                         rounded-[1.8rem]
-                        bg-black/20
+                        bg-white/10
                         backdrop-blur-xl
                         border
-                        border-[#C9A227]/10
+                        border-white/20
                         px-5
                         py-4
                       "
@@ -244,7 +261,7 @@ const TestimonialSection = () => {
                           font-black
                           uppercase
                           tracking-[0.25em]
-                          text-[#E5C76B]
+                          text-[#8B5CF6]
                           mb-2
                         "
                       >
@@ -277,7 +294,7 @@ const TestimonialSection = () => {
                       backdrop-blur-xl
                       rounded-full
                       border
-                      border-[#C9A227]/10
+                      border-[#8B5CF6]/10
                     "
                   >
 
@@ -377,12 +394,12 @@ const TestimonialSection = () => {
                     bg-black/40
                     backdrop-blur-xl
                     border
-                    border-[#C9A227]/20
+                    border-[#8B5CF6]/20
                     flex
                     items-center
                     justify-center
                     text-white
-                    hover:text-[#C9A227]
+                    hover:text-[#8B5CF6]
                     transition-all
                   "
                 >

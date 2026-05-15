@@ -6,50 +6,53 @@ const Footer = () => {
       className="
         relative
         overflow-hidden
-        bg-[#111111]
-        text-white
+        rounded-t-[3rem] 
+        md:rounded-t-[4rem]
+        bg-[#0D0518]
         pt-20
         pb-10
         px-6
         md:px-12
         lg:px-20
-        
+        z-0
+      
       "
     >
-
-     
-
-      {/* DARK OVERLAY */}
+      {/* SHADER EFFECT GLOW 1 (Top Left Ambient Purple) */}
       <div
         className="
           absolute
-          inset-0
-          bg-gradient-to-b
-          from-[#111111]/95
-          via-[#1A1A1A]/92
-          to-[#111111]
+          top-[-10%]
+          left-[-10%]
+          w-[400px]
+          h-[400px]
+          md:w-[600px]
+          md:h-[600px]
+          bg-[#8B5CF6]/20
+          blur-[100px]
+          rounded-full
+          pointer-events-none
         "
       />
 
-      {/* GOLD GLOW */}
+      {/* SHADER EFFECT GLOW 2 (Bottom Right Deep Lavender) */}
       <div
         className="
           absolute
-          top-[-150px]
-          left-1/2
-          -translate-x-1/2
-          w-[350px]
-          h-[350px]
-          md:w-[500px]
-          md:h-[500px]
-          bg-[#C9A227]/15
-          blur-3xl
+          bottom-[-20%]
+          right-[-10%]
+          w-[500px]
+          h-[500px]
+          md:w-[800px]
+          md:h-[800px]
+          bg-[#6D28D9]/15
+          blur-[120px]
           rounded-full
+          pointer-events-none
         "
       />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-
         {/* RESPONSIVE FOOTER LAYOUT */}
         <div
           className="
@@ -57,7 +60,6 @@ const Footer = () => {
             flex-col
             items-center
             text-center
-
             md:grid
             md:grid-cols-3
             md:gap-12
@@ -65,7 +67,6 @@ const Footer = () => {
             md:text-left
           "
         >
-
           {/* BRAND */}
           <div
             className="
@@ -73,17 +74,14 @@ const Footer = () => {
               flex-col
               items-center
               text-center
-
               md:items-start
               md:text-left
             "
           >
-
             {/* LOGO */}
             <Link to="/" className="group">
-
               <img
-                src="/illusion-white.png"
+                src="/illusion-white.png" 
                 alt="Illusion Interior Studio"
                 className="
                   w-[180px]
@@ -102,14 +100,14 @@ const Footer = () => {
                 mt-5
                 text-xs
                 md:text-sm
+                font-bold
                 uppercase
                 tracking-[0.3em]
-                text-[#A1A1AA]
+                text-[#9CA3AF]
                 leading-relaxed
               "
             >
               Luxury Interior Design Studio <br />
-
               Hyderabad, India
             </p>
           </div>
@@ -141,20 +139,20 @@ const Footer = () => {
                   px-5
                   py-3
                   rounded-2xl
-                  bg-black/20
-                  backdrop-blur-xl
+                  bg-white/5
+                  backdrop-blur-md
                   border
-                  border-[#C9A227]/10
+                  border-white/10
                   text-sm
                   md:text-base
-                  font-medium
+                  font-bold
                   text-[#D1D5DB]
-                  hover:bg-[#C9A227]
-                  hover:border-[#C9A227]
-                  hover:text-black
+                  hover:bg-[#8B5CF6]
+                  hover:border-[#8B5CF6]
+                  hover:text-white
+                  hover:shadow-[0_8px_25px_rgba(139,92,246,0.3)]
                   transition-all
                   duration-300
-                  shadow-[0_8px_30px_rgba(0,0,0,0.25)]
                 "
               >
                 {link.name}
@@ -162,22 +160,21 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* CONTACT */}
+          {/* CONTACT INFO */}
           <div
             className="
               mt-10
               text-center
-
               md:mt-0
               md:text-left
             "
           >
-
             <p
               className="
                 text-sm
                 md:text-base
-                text-[#A1A1AA]
+                font-bold
+                text-[#C4B5FD]
                 leading-relaxed
               "
             >
@@ -191,8 +188,9 @@ const Footer = () => {
                 block
                 text-sm
                 md:text-base
-                text-[#D1D5DB]
-                hover:text-[#C9A227]
+                font-semibold
+                text-[#F3F4F6]
+                hover:text-[#C4B5FD]
                 transition-colors
                 break-all
               "
@@ -207,8 +205,9 @@ const Footer = () => {
                 block
                 text-sm
                 md:text-base
-                text-[#D1D5DB]
-                hover:text-[#C9A227]
+                font-semibold
+                text-[#F3F4F6]
+                hover:text-[#C4B5FD]
                 transition-colors
               "
             >
@@ -222,23 +221,68 @@ const Footer = () => {
           className="
             w-full
             h-[1px]
-            bg-[#C9A227]/10
-            my-8
+            bg-white/10
+            my-10
           "
         />
 
-        {/* COPYRIGHT */}
-        <p
+        {/* BOTTOM SECTION (Copyright, Legal, Credits) */}
+        <div 
           className="
-            text-[10px]
-            uppercase
-            tracking-[0.25em]
-            text-[#666666]
-            text-center
+            flex 
+            flex-wrap 
+            items-center 
+            justify-center 
+            gap-x-4
+            gap-y-2
+            text-[9px] 
+            md:text-[10px] 
+            font-bold 
+            uppercase 
+            tracking-[0.15em] 
+            text-[#9CA3AF]
+            max-w-3xl
+            mx-auto
           "
         >
-          © 2026 Illusion Interior Studio
-        </p>
+          {/* COPYRIGHT */}
+          <p>© 2026 Illusion</p>
+
+          <span className="hidden sm:inline text-white/20">|</span>
+
+          {/* LEGAL LINKS */}
+          <div className="flex items-center gap-4">
+            <Link 
+              to="/privacy-policy" 
+              className="hover:text-white transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-white/20">•</span>
+            <Link 
+              to="/terms-conditions" 
+              className="hover:text-white transition-colors"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
+
+          <span className="hidden sm:inline text-white/20">|</span>
+
+          {/* CREATOR SIGNATURE */}
+          <a 
+            href="https://thecontentgang.com" 
+            target="_blank" 
+            rel="noreferrer"
+            className="flex items-center gap-1 hover:opacity-80 transition-opacity"
+          >
+            <span>Built by</span>
+            <span className="text-white font-black tracking-[0.2em]">
+              TheContentGang
+            </span>
+          </a>
+        </div>
+
       </div>
     </footer>
   );

@@ -14,7 +14,7 @@ const trustedLogos = [
   "/logos/indus-peblcity.png",
   "/logos/my-home-sayuk.jpg",
   "/logos/nyla-tema4.png",
-  "/logos/tripura-lm-3.png",
+  "/logos/tripura-lm-3.jpg",
   "/logos/vaishnavi-oasis.png",
 ];
 
@@ -24,13 +24,13 @@ const duplicatedRow2 = [...row2, ...row2];
 
 const TrustedBy = () => {
   return (
-    <section className="relative w-full overflow-hidden py-20 bg-[#111111]">
+    <section className="relative w-full overflow-hidden py-20 bg-white">
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-      {/* GOLD GLOW */}
-      <div className="absolute top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
+      {/* PURPLE GLOW */}
+      <div className="absolute top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/20 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
@@ -42,8 +42,8 @@ const TrustedBy = () => {
           viewport={{ once: true }}
           className="flex justify-center px-5"
         >
-          <div className="px-5 py-2 rounded-full border border-[#C9A227]/20 bg-[#C9A227]/10 backdrop-blur-xl">
-            <span className="text-sm font-semibold tracking-wide text-[#E5C76B] uppercase">
+          <div className="px-5 py-2 rounded-full border border-[#8B5CF6]/20 bg-[#8B5CF6]/10 backdrop-blur-xl">
+            <span className="text-sm font-semibold tracking-wide text-[#8B5CF6] uppercase">
               Trusted By Premium Clients
             </span>
           </div>
@@ -62,16 +62,16 @@ const TrustedBy = () => {
               text-4xl
               sm:text-5xl
               md:text-6xl
-              font-milchella
+              font-abhre
               font-semibold
-              text-[#F5F5F5]
+              text-[#1F2937]
               leading-tight
-              tracking-wider
+              tracking-tight
             "
           >
             Spaces Designed For <br />
 
-            <span className="text-[#C9A227] italic">
+            <span className="text-[#8B5CF6] italic">
               Visionary Communities
             </span>
           </h2>
@@ -81,7 +81,7 @@ const TrustedBy = () => {
               mt-5
               max-w-2xl
               mx-auto
-              text-[#A1A1AA]
+              text-[#6B7280]
               text-base
               md:text-lg
               leading-relaxed
@@ -106,8 +106,8 @@ const TrustedBy = () => {
               w-24
               md:w-40
               bg-gradient-to-r
-              from-[#111111]
-              via-[#111111]/90
+              from-white
+              via-white/90
               to-transparent
               pointer-events-none
             "
@@ -124,8 +124,8 @@ const TrustedBy = () => {
               w-24
               md:w-40
               bg-gradient-to-l
-              from-[#111111]
-              via-[#111111]/90
+              from-white
+              via-white/90
               to-transparent
               pointer-events-none
             "
@@ -154,16 +154,13 @@ const TrustedBy = () => {
                   rounded-[1.5rem]
                   overflow-hidden
 
-                  /* WHITE + GOLD BACKGROUND */
-                  bg-gradient-to-br
-                  from-[#FFFDF7]
-                  via-[#FFF8E7]
-                  to-[#F5E3A1]
+                  bg-white/80
+                  backdrop-blur-xl
 
                   border
-                  border-[#E5C76B]/40
+                  border-white/50
 
-                  shadow-[0_15px_50px_rgba(201,162,39,0.18)]
+                  
 
                   flex
                   items-center
@@ -174,11 +171,11 @@ const TrustedBy = () => {
                   duration-500
 
                   hover:scale-[1.02]
-                  hover:shadow-[0_20px_60px_rgba(201,162,39,0.28)]
+                  hover:shadow-[0_20px_60px_rgba(139,92,246,0.22)]
                 "
               >
 
-                {/* GOLD SHINE */}
+                {/* PURPLE SHINE */}
                 <div
                   className="
                     absolute
@@ -186,7 +183,7 @@ const TrustedBy = () => {
                     bg-gradient-to-br
                     from-white/70
                     via-transparent
-                    to-[#C9A227]/10
+                    to-[#8B5CF6]/10
                     opacity-80
                   "
                 />
@@ -198,7 +195,7 @@ const TrustedBy = () => {
                     inset-0
                     bg-gradient-to-r
                     from-transparent
-                    via-[#FFF5CC]/40
+                    via-[#C4B5FD]/30
                     to-transparent
                     translate-x-[-100%]
                     group-hover:translate-x-[100%]
@@ -242,8 +239,8 @@ const TrustedBy = () => {
               w-24
               md:w-40
               bg-gradient-to-r
-              from-[#111111]
-              via-[#111111]/90
+              from-white
+              via-white/90
               to-transparent
               pointer-events-none
             "
@@ -260,8 +257,8 @@ const TrustedBy = () => {
               w-24
               md:w-40
               bg-gradient-to-l
-              from-[#111111]
-              via-[#111111]/90
+              from-white
+              via-white/90
               to-transparent
               pointer-events-none
             "
@@ -290,16 +287,13 @@ const TrustedBy = () => {
                   rounded-[1.5rem]
                   overflow-hidden
 
-                  /* WHITE + GOLD BACKGROUND */
-                  bg-gradient-to-br
-                  from-[#FFFDF7]
-                  via-[#FFF8E7]
-                  to-[#F5E3A1]
+                  bg-white/80
+                  backdrop-blur-xl
 
                   border
-                  border-[#E5C76B]/40
+                  border-white/50
 
-                  shadow-[0_15px_50px_rgba(201,162,39,0.18)]
+                 
 
                   flex
                   items-center
@@ -310,11 +304,11 @@ const TrustedBy = () => {
                   duration-500
 
                   hover:scale-[1.02]
-                  hover:shadow-[0_20px_60px_rgba(201,162,39,0.28)]
+                  hover:shadow-[0_20px_60px_rgba(139,92,246,0.22)]
                 "
               >
 
-                {/* GOLD SHINE */}
+                {/* PURPLE SHINE */}
                 <div
                   className="
                     absolute
@@ -322,7 +316,7 @@ const TrustedBy = () => {
                     bg-gradient-to-br
                     from-white/70
                     via-transparent
-                    to-[#C9A227]/10
+                    to-[#8B5CF6]/10
                     opacity-80
                   "
                 />
@@ -334,7 +328,7 @@ const TrustedBy = () => {
                     inset-0
                     bg-gradient-to-r
                     from-transparent
-                    via-[#FFF5CC]/40
+                    via-[#C4B5FD]/30
                     to-transparent
                     translate-x-[-100%]
                     group-hover:translate-x-[100%]

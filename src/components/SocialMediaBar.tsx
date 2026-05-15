@@ -17,7 +17,7 @@ const socialLinks = [
     label: "WhatsApp",
     icon: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
+        <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.274-.101-.473-.15-.672.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.525.146-.165.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.672-1.62-.922-2.205-.24-.585-.485-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.075-.797.375-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.15.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.615.715.225 1.365.195 1.876.12.576-.09 1.767-.72 2.016-1.425.25-.705.25-1.29.175-1.41-.075-.135-.275-.21-.575-.36zM12.004 21.6c-1.605 0-3.178-.426-4.557-1.233l-.326-.192-3.385.885.904-3.303-.211-.336c-.886-1.407-1.353-3.033-1.353-4.704 0-4.947 4.029-8.973 8.985-8.973 2.397 0 4.65 .933 6.345 2.628 1.693 1.692 2.625 3.945 2.625 6.345.002 4.947-4.028 8.976-8.986 8.976zM12.004 0h-.018C5.385 0 .003 5.37.003 11.979c0 2.115.553 4.185 1.605 6.006L.003 24l6.168-1.614c1.748.948 3.705 1.446 5.717 1.449h.016c6.603 0 11.979-5.373 11.979-11.982C23.882 5.373 18.513 0 12.004 0z"/>
       </svg>
     ),
   },
@@ -46,7 +46,8 @@ const socialLinks = [
 const SocialMediaBar = () => {
   return (
     <div className="fixed right-3 sm:right-5 bottom-10 z-[999] flex flex-col items-center gap-6">
-      {/* 1. SOCIAL MEDIA ICONS CONTAINER */}
+
+      {/* SOCIAL ICONS */}
       <div className="flex flex-col gap-2.5">
         {socialLinks.map((social, index) => (
           <motion.a
@@ -64,35 +65,95 @@ const SocialMediaBar = () => {
             }}
             whileHover={{ scale: 1.08, x: -4 }}
             whileTap={{ scale: 0.94 }}
-            className="group relative w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center bg-[#1A1A1A] border border-[#2A2A2A] shadow-[0_8px_30px_rgba(0,0,0,0.35)] text-[#A1A1AA] hover:text-black hover:bg-[#C9A227] hover:border-[#C9A227] hover:shadow-[0_12px_35px_rgba(201,162,39,0.35)] transition-all duration-300 backdrop-blur-xl"
+            className="
+              group relative
+              w-11 h-11 sm:w-12 sm:h-12
+              rounded-2xl
+              flex items-center justify-center
+              bg-white/90
+              backdrop-blur-xl
+              border border-[#E5E7EB]
+              shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+              text-[#6B7280]
+              hover:text-white
+              hover:bg-[#8B5CF6]
+              hover:border-[#8B5CF6]
+              hover:shadow-[0_12px_35px_rgba(139,92,246,0.35)]
+              transition-all duration-300
+            "
           >
-            <span className="absolute inset-0 rounded-2xl ring-0 ring-[#C9A227]/30 group-hover:ring-4 transition-all duration-300" />
-            <span className="relative z-10">{social.icon}</span>
+            <span
+              className="
+                absolute inset-0
+                rounded-2xl
+                ring-0
+                ring-[#8B5CF6]/20
+                group-hover:ring-4
+                transition-all duration-300
+              "
+            />
+            <span className="relative z-10">
+              {social.icon}
+            </span>
           </motion.a>
         ))}
       </div>
 
-      {/* 2. CONNECTOR LINE - Positioned between groups */}
-      <div className="w-px h-12 bg-gradient-to-b from-[#C9A227]/40 via-[#C9A227]/20 to-transparent" />
+      {/* CONNECTOR */}
+      <div className="w-px h-12 bg-gradient-to-b from-[#8B5CF6]/40 via-[#8B5CF6]/20 to-transparent" />
 
-      {/* 3. SCROLL TO TOP BUTTON - Now at the very bottom */}
+      {/* SCROLL TO TOP */}
       <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, delay: 0.4 }}
+        transition={{
+          duration: 0.45,
+          delay: 0.4,
+        }}
         whileHover={{ scale: 1.08, y: -3 }}
         whileTap={{ scale: 0.94 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="group relative w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center bg-[#C9A227] border border-[#C9A227] shadow-[0_12px_35px_rgba(201,162,39,0.35)] text-black hover:bg-[#E5C76B] hover:border-[#E5C76B] transition-all duration-300"
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
+        className="
+          group relative
+          w-11 h-11 sm:w-12 sm:h-12
+          rounded-2xl
+          flex items-center justify-center
+          bg-[#8B5CF6]
+          border border-[#8B5CF6]
+          shadow-[0_12px_35px_rgba(139,92,246,0.35)]
+          text-white
+          hover:bg-[#7C3AED]
+          hover:border-[#7C3AED]
+          transition-all duration-300
+        "
       >
-        <span className="absolute inset-0 rounded-2xl ring-0 ring-[#C9A227]/30 group-hover:ring-4 transition-all duration-300" />
+        <span
+          className="
+            absolute inset-0
+            rounded-2xl
+            ring-0
+            ring-[#8B5CF6]/20
+            group-hover:ring-4
+            transition-all duration-300
+          "
+        />
         <svg
           className="relative z-10 w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M5 15l7-7 7 7"
+          />
         </svg>
       </motion.button>
     </div>

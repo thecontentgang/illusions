@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Play } from "lucide-react";
+
 import { LeadModal } from "./LeadModal";
 import ShowcaseCarousel from "./ShowcaseCarousel";
 
@@ -10,13 +10,13 @@ const HeroSection = memo(() => {
 
   return (
     <>
-      <section className="relative w-full overflow-hidden bg-[#111111]">
+      <section className="relative w-full overflow-hidden bg-white">
 
         {/* BACKGROUND */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#111111] via-[#1A1A1A] to-[#2A2A2A]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-        {/* TOP GLOW */}
-        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
+        {/* PURPLE GLOW */}
+        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/20 blur-3xl rounded-full" />
 
         {/* CONTENT */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 md:pt-32">
@@ -30,37 +30,42 @@ const HeroSection = memo(() => {
               transition={{ duration: 0.4 }}
               className="mb-6"
             >
-              <span className="px-5 py-2 rounded-full bg-[#C9A227]/10 border border-[#C9A227]/20 text-[#E5C76B] text-sm font-semibold tracking-wide backdrop-blur-xl">
+              <span className="px-5 py-2 rounded-full bg-[#C4B5FD]/20 border border-[#A78BFA]/30 text-[#6D28D9] text-sm font-semibold tracking-wide backdrop-blur-xl">
                 Luxury Interior Studio
               </span>
             </motion.div>
 
             {/* HEADING */}
             <motion.h1
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.6,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1], // Silkier ease-out curve
               }}
               className="
-                font-semibold
-                text-[2.6rem]
-                leading-[0.95]
-                sm:text-6xl
-                md:text-7xl
-                lg:text-8xl
-                text-[#F5F5F5]
-                tracking-normal
-                max-w-6xl
-              "
+    font-serif 
+    font-normal
+    text-[2.75rem] 
+    leading-[1.1] 
+    sm:text-6xl 
+    md:text-7xl 
+    lg:text-8xl 
+    text-[#111827] 
+    tracking-tight 
+    max-w-5xl
+  "
             >
               Bespoke Interiors <br />
-
-              <span className="text-[#C9A227] italic">
+              <span className="
+    font-serif 
+    italic 
+    font-light 
+    text-[#8B5CF6] 
+    pr-2 
+  ">
                 Personally
               </span>{" "}
-
               curated.
             </motion.h1>
 
@@ -73,109 +78,64 @@ const HeroSection = memo(() => {
                 delay: 0.25,
               }}
               className="
-    relative
-    mt-14
-    w-full
-    max-w-5xl
-    rounded-[2rem]
-    overflow-hidden
-    shadow-[0_25px_80px_rgba(201,162,39,0.12)]
-    border
-    border-[#333333]
-    backdrop-blur-xl
-  "
+                relative
+                mt-14
+                w-full
+                max-w-5xl
+                rounded-[2rem]
+                overflow-hidden
+                shadow-[0_25px_80px_rgba(139,92,246,0.15)]
+                border
+                border-white/50
+                backdrop-blur-xl
+              "
             >
 
               {/* YOUTUBE VIDEO */}
               <iframe
                 className="
-      w-full
-      h-[240px]
-      sm:h-[340px]
-      md:h-[480px]
-      lg:h-[560px]
-      object-cover
-    "
+                  w-full
+                  h-[240px]
+                  sm:h-[340px]
+                  md:h-[480px]
+                  lg:h-[560px]
+                  object-cover
+                "
                 src="https://www.youtube.com/embed/pKpGFAlQQkk?autoplay=1&mute=1&loop=1&playlist=pKpGFAlQQkk&controls=1&rel=0&showinfo=0&modestbranding=1"
                 title="Founder Story"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
+              
 
-              {/* DARK OVERLAY */}
+              {/* OVERLAY */}
               <div
                 className="
-      absolute
-      inset-0
-      bg-gradient-to-t
-      from-black/70
-      via-black/10
-      to-transparent
-      pointer-events-none
-    "
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-black/40
+                  via-transparent
+                  to-transparent
+                  pointer-events-none
+                "
               />
 
-              {/* GOLD GLOW */}
+              {/* PURPLE GLOW */}
               <div
                 className="
-      absolute
-      inset-0
-      bg-gradient-to-br
-      from-[#C9A227]/10
-      via-transparent
-      to-[#C9A227]/5
-      pointer-events-none
-    "
+                  absolute
+                  inset-0
+                  bg-gradient-to-br
+                  from-[#C4B5FD]/10
+                  via-transparent
+                  to-[#8B5CF6]/10
+                  pointer-events-none
+                "
               />
 
-              {/* PLAY LABEL */}
-              <div
-                className="
-      absolute
-      bottom-5
-      left-5
-      flex
-      items-center
-      gap-3
-      bg-[#1A1A1A]/90
-      backdrop-blur-md
-      px-4
-      py-3
-      rounded-2xl
-      shadow-xl
-      border
-      border-[#333333]
-    "
-              >
-
-                {/* PLAY ICON */}
-                <div
-                  className="
-        w-10
-        h-10
-        rounded-full
-        bg-[#C9A227]
-        flex
-        items-center
-        justify-center
-        text-black
-        shadow-lg
-      "
-                >
-                  <Play size={18} fill="black" />
-                </div>
-
-                {/* TEXT */}
-                {/* <div className="text-left">
-      <p className="text-sm font-bold text-[#F5F5F5]">
-        Founder Story
-      </p>
-
-      <p className="text-xs text-[#A1A1AA]">
-        Discover our design philosophy
-      </p>
-    </div> */}
-              </div>
+              
+              
             </motion.div>
 
             {/* DESCRIPTION */}
@@ -189,7 +149,7 @@ const HeroSection = memo(() => {
               className="
                 max-w-2xl
                 mt-7
-                text-[#A1A1AA]
+                text-gray-500
                 text-base
                 sm:text-lg
                 md:text-xl
@@ -229,11 +189,11 @@ const HeroSection = memo(() => {
                   px-5
                   py-4
                   rounded-[1.8rem]
-                  bg-[#1A1A1A]/90
+                  bg-white/80
                   backdrop-blur-xl
                   border
-                  border-[#333333]
-                  shadow-[0_15px_50px_rgba(0,0,0,0.35)]
+                  border-white/50
+                  shadow-[0_15px_50px_rgba(0,0,0,0.08)]
                 "
               >
 
@@ -249,7 +209,7 @@ const HeroSection = memo(() => {
                       rounded-full
                       object-cover
                       border-2
-                      border-[#111111]
+                      border-white
                     "
                   />
 
@@ -262,7 +222,7 @@ const HeroSection = memo(() => {
                       rounded-full
                       object-cover
                       border-2
-                      border-[#111111]
+                      border-white
                     "
                   />
 
@@ -275,7 +235,7 @@ const HeroSection = memo(() => {
                       rounded-full
                       object-cover
                       border-2
-                      border-[#111111]
+                      border-white
                     "
                   />
                 </div>
@@ -283,7 +243,6 @@ const HeroSection = memo(() => {
                 {/* REVIEW CONTENT */}
                 <div className="text-left">
 
-                  {/* GOOGLE LOGO */}
                   <div className="flex items-center gap-2">
 
                     <img
@@ -292,7 +251,7 @@ const HeroSection = memo(() => {
                       className="w-5 h-5"
                     />
 
-                    <span className="font-semibold text-[#F5F5F5]">
+                    <span className="font-semibold text-[#1F2937]">
                       Google Reviews
                     </span>
                   </div>
@@ -300,15 +259,15 @@ const HeroSection = memo(() => {
                   {/* STARS */}
                   <div className="flex items-center gap-1 mt-2">
 
-                    <div className="flex text-[#C9A227] text-sm">
+                    <div className="flex text-[#8B5CF6] text-sm">
                       ★★★★★
                     </div>
 
-                    <span className="text-[#F5F5F5] font-bold ml-1">
+                    <span className="text-[#1F2937] font-bold ml-1">
                       4.9
                     </span>
 
-                    <span className="text-[#A1A1AA] text-sm">
+                    <span className="text-gray-500 text-sm">
                       (250+ Reviews)
                     </span>
                   </div>
@@ -321,10 +280,10 @@ const HeroSection = memo(() => {
                   px-5
                   py-4
                   rounded-[1.6rem]
-                  bg-[#C9A227]/10
+                  bg-[#C4B5FD]/20
                   border
-                  border-[#C9A227]/20
-                  text-[#E5C76B]
+                  border-[#A78BFA]/30
+                  text-[#6D28D9]
                   font-semibold
                   text-sm
                   tracking-wide
@@ -360,12 +319,12 @@ const HeroSection = memo(() => {
                     px-8
                     md:px-10
                     py-4
-                    bg-[#C9A227]
-                    text-black
+                    bg-[#8B5CF6]
+                    text-white
                     font-bold
                     rounded-2xl
-                    shadow-[0_15px_30px_-10px_rgba(201,162,39,0.45)]
-                    hover:shadow-[0_20px_40px_-10px_rgba(201,162,39,0.6)]
+                    shadow-[0_15px_30px_-10px_rgba(139,92,246,0.45)]
+                    hover:shadow-[0_20px_40px_-10px_rgba(139,92,246,0.6)]
                     hover:scale-[1.03]
                     transition-all
                     duration-300
@@ -383,14 +342,14 @@ const HeroSection = memo(() => {
                   px-8
                   md:px-10
                   py-4
-                  bg-[#1A1A1A]
-                  text-[#F5F5F5]
+                  bg-white
+                  text-[#1F2937]
                   font-bold
                   rounded-2xl
                   border-2
-                  border-[#3A3A3A]
-                  hover:border-[#C9A227]
-                  hover:bg-[#222222]
+                  border-[#E5E7EB]
+                  hover:border-[#8B5CF6]
+                  hover:bg-[#F8FAFC]
                   transition-all
                   duration-300
                   shadow-sm

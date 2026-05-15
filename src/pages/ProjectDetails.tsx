@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import { portfolioData } from '../data/data';
+import { portfolioData } from '../data/data'; // Ensure this path is correct
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -20,13 +20,13 @@ const ProjectDetails = () => {
   }
 
   return (
-    <div className="bg-[#111111] min-h-screen overflow-hidden">
+    <div className="bg-white min-h-screen overflow-hidden relative z-0">
+      
+      {/* BACKGROUND GRADIENT */}
+      <div className="fixed inset-0 bg-gradient-to-tr from-[#F8FAFC] via-white to-[#EEF2FF] -z-10" />
 
-      {/* BACKGROUND */}
-      <div className="fixed inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222] -z-10" />
-
-      {/* GOLD GLOW */}
-      <div className="fixed top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full -z-10" />
+      {/* SOFT PURPLE GLOW */}
+      <div className="fixed top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/15 blur-3xl rounded-full -z-10" />
 
       {/* HERO SECTION */}
       <section
@@ -35,13 +35,11 @@ const ProjectDetails = () => {
           h-[70vh]
           md:h-[85vh]
           w-full
-          bg-[#111111]
+          bg-white
         "
       >
-
         {/* BACK BUTTON */}
         <div className="absolute top-32 left-6 md:left-12 lg:left-24 z-20">
-
           <Link
             to="/projects"
             className="
@@ -49,48 +47,37 @@ const ProjectDetails = () => {
               flex
               items-center
               gap-3
-              text-white
+              text-[#1F2937]
               text-[10px]
               font-black
               uppercase
               tracking-[0.3em]
-              hover:text-[#C9A227]
+              hover:text-[#8B5CF6]
               transition-colors
-              bg-black/20
+              bg-white/80
               backdrop-blur-xl
               px-6
               py-3
               rounded-full
               border
-              border-[#C9A227]/10
+              border-[#E5E7EB]
+              shadow-sm
             "
           >
-
             <span className="group-hover:-translate-x-1 transition-transform">
               ←
             </span>
-
             Back to Portfolio
           </Link>
         </div>
 
         {/* HERO IMAGE */}
         <motion.div
-          initial={{
-            opacity: 0,
-            scale: 1.05
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1
-          }}
-          transition={{
-            duration: 1.2,
-            ease: "easeOut"
-          }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="absolute inset-0 w-full h-full"
         >
-
           <img
             src={project.heroImage}
             alt={project.title}
@@ -102,7 +89,6 @@ const ProjectDetails = () => {
               w-full
               h-full
               object-cover
-              opacity-80
               will-change-transform
               transform-gpu
               backface-hidden
@@ -112,24 +98,25 @@ const ProjectDetails = () => {
             }}
           />
 
-          {/* OVERLAY */}
+          {/* OVERLAY: Fades from dark top (for back button visibility) to white bottom */}
           <div
             className="
               absolute
               inset-0
               bg-gradient-to-b
-              from-black/10
-              via-black/20
-              to-[#111111]
+              from-black/30
+              via-transparent
+              to-white
             "
           />
 
-          {/* GOLD GLOW */}
+          {/* PURPLE TOP GLOW ON IMAGE */}
           <div
             className="
               absolute
               inset-0
-              bg-[radial-gradient(circle_at_top_right,rgba(201,162,39,0.18),transparent_35%)]
+              bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.15),transparent_40%)]
+              pointer-events-none
             "
           />
         </motion.div>
@@ -150,52 +137,42 @@ const ProjectDetails = () => {
           mb-20
         "
       >
-
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 40
-          }}
-          animate={{
-            opacity: 1,
-            y: 0
-          }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8
-          }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
           className="
             relative
             overflow-hidden
-            bg-[#1A1A1A]
+            bg-white/85
+            backdrop-blur-2xl
             p-10
             md:p-16
             lg:p-20
             rounded-[3rem]
-            shadow-[0_30px_90px_rgba(0,0,0,0.5)]
+            shadow-[0_30px_90px_rgba(139,92,246,0.1)]
             border
-            border-[#2A2A2A]
+            border-white/60
           "
         >
-
-          {/* INNER GLOW */}
+          {/* INNER PURPLE GLOW */}
           <div
             className="
               absolute
               inset-0
               bg-gradient-to-br
-              from-[#C9A227]/5
+              from-[#8B5CF6]/5
               via-transparent
-              to-[#C9A227]/10
+              to-[#7C3AED]/10
+              pointer-events-none
             "
           />
 
           <div className="relative z-10">
-
-            {/* CATEGORY */}
+            {/* CATEGORY & COMMUNITY */}
             <span
               className="
-                text-[#E5C76B]
+                text-[#8B5CF6]
                 text-[10px]
                 font-black
                 uppercase
@@ -213,10 +190,10 @@ const ProjectDetails = () => {
                 text-4xl
                 md:text-6xl
                 lg:text-7xl
-                font-milchella
+                font-serif
                 font-semibold
                 tracking-wider
-                text-[#F5F5F5]
+                text-[#1F2937]
                 leading-[1.1]
                 mb-12
               "
@@ -233,49 +210,33 @@ const ProjectDetails = () => {
                 gap-8
                 pt-8
                 border-t
-                border-[#2A2A2A]
+                border-[#E5E7EB]
               "
             >
-
               {[
-                {
-                  label: 'Client',
-                  value: project.client
-                },
-                {
-                  label: 'Location',
-                  value: project.community
-                },
-                {
-                  label: 'Area',
-                  value: project.area
-                },
-                {
-                  label: 'Year',
-                  value: project.year
-                },
+                { label: 'Client', value: project.client },
+                { label: 'Location', value: project.community },
+                { label: 'Area', value: project.area },
+                { label: 'Year', value: project.year },
               ].map((stat, i) => (
-
                 <div key={i} className="space-y-1">
-
                   <p
                     className="
                       text-[10px]
-                      font-black
+                      font-bold
                       uppercase
                       tracking-widest
-                      text-[#666666]
+                      text-[#6B7280]
                     "
                   >
                     {stat.label}
                   </p>
-
                   <p
                     className="
                       text-sm
                       md:text-base
                       font-bold
-                      text-[#F5F5F5]
+                      text-[#1F2937]
                     "
                   >
                     {stat.value}
@@ -298,7 +259,6 @@ const ProjectDetails = () => {
           mb-32
         "
       >
-
         <div
           className="
             grid
@@ -311,40 +271,25 @@ const ProjectDetails = () => {
             grid-flow-dense
           "
         >
-
           {project.gallery.map((img, i) => (
-
             <motion.div
               key={i}
-              initial={{
-                opacity: 0,
-                y: 40
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0
-              }}
-              viewport={{
-                once: true,
-                margin: "-100px"
-              }}
-              transition={{
-                duration: 0.7,
-                delay: i * 0.1
-              }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
               className={`
                 ${img.layout}
                 rounded-[2.5rem]
                 overflow-hidden
-                bg-[#1A1A1A]
+                bg-[#F8FAFC]
                 group
                 relative
                 border
-                border-[#2A2A2A]
-                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                border-[#E5E7EB]
+                shadow-[0_15px_40px_rgba(139,92,246,0.06)]
               `}
             >
-
               <img
                 src={img.src}
                 alt={`Project detail ${i + 1}`}
@@ -368,19 +313,20 @@ const ProjectDetails = () => {
                 }}
               />
 
-              {/* OVERLAY */}
+              {/* HOVER OVERLAY */}
               <div
                 className="
                   absolute
                   inset-0
                   bg-gradient-to-br
-                  from-[#C9A227]/5
+                  from-[#8B5CF6]/10
                   via-transparent
-                  to-[#C9A227]/10
+                  to-[#7C3AED]/20
                   opacity-0
                   group-hover:opacity-100
                   transition-opacity
                   duration-500
+                  pointer-events-none
                 "
               />
             </motion.div>
@@ -400,23 +346,14 @@ const ProjectDetails = () => {
           md:mb-32
         "
       >
-
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }}
-          viewport={{
-            once: true
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="
             relative
             overflow-hidden
-            bg-[#1A1A1A]
+            bg-white
             rounded-[2.5rem]
             p-8
             md:p-12
@@ -426,13 +363,12 @@ const ProjectDetails = () => {
             items-center
             justify-between
             gap-8
-            shadow-[0_30px_90px_rgba(0,0,0,0.5)]
+            shadow-[0_25px_60px_rgba(139,92,246,0.12)]
             border
-            border-[#2A2A2A]
+            border-[#E5E7EB]
           "
         >
-
-          {/* GOLD LINE */}
+          {/* PURPLE ACCENT LINE */}
           <div
             className="
               absolute
@@ -440,28 +376,30 @@ const ProjectDetails = () => {
               left-0
               w-2
               h-full
-              bg-[#C9A227]
+              bg-gradient-to-b
+              from-[#C4B5FD]
+              to-[#8B5CF6]
             "
           />
 
-          {/* GLOW */}
+          {/* INNER GLOW */}
           <div
             className="
               absolute
               inset-0
               bg-gradient-to-br
-              from-[#C9A227]/5
+              from-[#8B5CF6]/5
               via-transparent
-              to-[#C9A227]/10
+              to-[#7C3AED]/10
+              pointer-events-none
             "
           />
 
-          {/* LEFT */}
-          <div className="relative z-10 text-center md:text-left">
-
+          {/* LEFT CONTENT */}
+          <div className="relative z-10 text-center md:text-left pl-2">
             <span
               className="
-                text-[#E5C76B]
+                text-[#8B5CF6]
                 text-[10px]
                 font-black
                 uppercase
@@ -472,21 +410,19 @@ const ProjectDetails = () => {
             >
               Inspired by this space?
             </span>
-
             <h2
               className="
                 text-3xl
                 md:text-4xl
-                font-milchella
+                font-serif
                 font-semibold
                 tracking-wide
-                text-white
+                text-[#1F2937]
                 leading-tight
               "
             >
               Let's design your{" "}
-
-              <span className="italic text-[#C9A227]">
+              <span className="italic text-[#8B5CF6]">
                 sanctuary.
               </span>
             </h2>
@@ -507,7 +443,6 @@ const ProjectDetails = () => {
               shrink-0
             "
           >
-
             {/* PRIMARY */}
             <Link
               to="/contact"
@@ -516,19 +451,19 @@ const ProjectDetails = () => {
                 sm:w-auto
                 px-8
                 py-4
-                bg-[#C9A227]
-                text-black
+                bg-[#8B5CF6]
+                text-white
                 font-black
                 uppercase
                 tracking-[0.2em]
                 text-[10px]
                 md:text-xs
                 rounded-2xl
-                hover:bg-[#E5C76B]
+                hover:bg-[#7C3AED]
                 transition-all
                 duration-300
                 text-center
-                shadow-[0_15px_40px_rgba(201,162,39,0.3)]
+                shadow-[0_12px_35px_rgba(139,92,246,0.35)]
               "
             >
               Book Consult
@@ -542,22 +477,22 @@ const ProjectDetails = () => {
                 sm:w-auto
                 px-8
                 py-4
-                bg-black/20
-                backdrop-blur-xl
+                bg-[#F8FAFC]
                 border
-                border-[#C9A227]/10
-                text-white
+                border-[#E5E7EB]
+                text-[#6B7280]
                 font-black
                 uppercase
                 tracking-[0.2em]
                 text-[10px]
                 md:text-xs
                 rounded-2xl
-                hover:border-[#C9A227]/40
-                hover:text-[#E5C76B]
+                hover:border-[#8B5CF6]/40
+                hover:text-[#8B5CF6]
                 transition-all
                 duration-300
                 text-center
+                shadow-sm
               "
             >
               Next Project →

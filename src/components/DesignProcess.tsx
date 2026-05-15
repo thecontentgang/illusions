@@ -35,13 +35,13 @@ const steps = [
 
 const DesignProcess = () => {
   return (
-    <section className="relative py-28 overflow-hidden bg-[#111111]">
+    <section className="relative py-28 overflow-hidden bg-white">
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-      {/* GOLD GLOW */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
+      {/* PURPLE GLOW */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/20 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
@@ -53,7 +53,7 @@ const DesignProcess = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto"
         >
-          <span className="text-[#E5C76B] font-semibold uppercase tracking-[0.25em] text-sm">
+          <span className="text-[#8B5CF6] font-semibold uppercase tracking-[0.25em] text-sm">
             Design Process
           </span>
 
@@ -63,21 +63,21 @@ const DesignProcess = () => {
               text-4xl
               sm:text-5xl
               md:text-6xl
-              font-milchella
+              font-abhre
               font-semibold
-              text-[#F5F5F5]
-              tracking-wide
+              text-[#1F2937]
+              
               leading-[1.1]
             "
           >
             A Seamless Journey <br />
 
-            <span className="italic text-[#C9A227]">
+            <span className="italic text-[#8B5CF6]">
               From Vision To Reality
             </span>
           </h2>
 
-          <p className="mt-6 text-[#A1A1AA] text-base md:text-lg leading-relaxed">
+          <p className="mt-6 text-[#6B7280] text-base md:text-lg leading-relaxed">
             Our process blends creativity, planning, and craftsmanship
             to deliver extraordinary interior experiences.
           </p>
@@ -104,9 +104,9 @@ const DesignProcess = () => {
               lg:block
               w-[3px]
               bg-gradient-to-b
-              from-[#C9A227]/30
-              via-[#C9A227]
-              to-[#C9A227]/30
+              from-[#8B5CF6]/30
+              via-[#8B5CF6]
+              to-[#8B5CF6]/30
               rounded-full
             "
           />
@@ -156,16 +156,16 @@ const DesignProcess = () => {
                       w-16
                       h-16
                       rounded-full
-                      bg-[#1A1A1A]
+                      bg-white
                       border-4
-                      border-[#C9A227]
+                      border-[#8B5CF6]
                       items-center
                       justify-center
-                      shadow-[0_10px_40px_rgba(201,162,39,0.25)]
+                      shadow-[0_10px_40px_rgba(139,92,246,0.25)]
                       z-20
                     "
                   >
-                    <span className="text-[#C9A227] font-bold text-lg">
+                    <span className="text-[#8B5CF6] font-bold text-lg">
                       0{index + 1}
                     </span>
                   </div>
@@ -184,29 +184,35 @@ const DesignProcess = () => {
                         relative
                         overflow-hidden
                         rounded-[2.5rem]
-                        bg-[#1A1A1A]/90
+
+                        bg-white/80
                         backdrop-blur-xl
+
                         border
-                        border-[#2A2A2A]
+                        border-white/50
+
                         p-8
                         md:p-10
-                        shadow-[0_20px_60px_rgba(0,0,0,0.4)]
-                        hover:shadow-[0_25px_80px_rgba(201,162,39,0.15)]
+
+                        shadow-[0_20px_60px_rgba(139,92,246,0.12)]
+
+                        hover:shadow-[0_25px_80px_rgba(139,92,246,0.18)]
                         hover:-translate-y-2
+
                         transition-all
                         duration-500
                       "
                     >
 
-                      {/* HOVER GLOW */}
+                      {/* CARD GLOW */}
                       <div
                         className="
                           absolute
                           inset-0
                           bg-gradient-to-br
-                          from-[#C9A227]/5
+                          from-[#8B5CF6]/5
                           via-transparent
-                          to-[#C9A227]/10
+                          to-[#7C3AED]/10
                           opacity-0
                           group-hover:opacity-100
                           transition-opacity
@@ -221,13 +227,14 @@ const DesignProcess = () => {
                           w-14
                           h-14
                           rounded-2xl
-                          bg-[#C9A227]
-                          text-black
+                          bg-[#8B5CF6]
+                          text-white
                           flex
                           items-center
                           justify-center
                           text-lg
                           font-bold
+                          shadow-[0_10px_30px_rgba(139,92,246,0.3)]
                         "
                       >
                         0{index + 1}
@@ -242,7 +249,7 @@ const DesignProcess = () => {
                             text-2xl
                             md:text-3xl
                             font-semibold
-                            text-[#F5F5F5]
+                            text-[#1F2937]
                           "
                         >
                           {step.title}
@@ -251,7 +258,7 @@ const DesignProcess = () => {
                         <p
                           className="
                             mt-5
-                            text-[#A1A1AA]
+                            text-[#6B7280]
                             leading-relaxed
                             text-base
                             md:text-lg
@@ -269,7 +276,7 @@ const DesignProcess = () => {
                           right-6
                           text-7xl
                           font-bold
-                          text-[#C9A227]/5
+                          text-[#8B5CF6]/5
                           select-none
                         "
                       >

@@ -20,8 +20,6 @@ const ImageCard = memo(
     return (
       <div
         className="
-          group
-          relative
           w-[280px]
           sm:w-[340px]
           md:w-[420px]
@@ -30,30 +28,15 @@ const ImageCard = memo(
           sm:h-[260px]
           md:h-[300px]
           lg:h-[340px]
-          rounded-[2.2rem]
+          rounded-[2rem]
           overflow-hidden
-          bg-[#1A1A1A]
+          bg-white
+          shadow-[0_10px_40px_rgba(208,188,200,0.15)]
           border
-          border-[#2F2F2F]
-          shadow-[0_15px_60px_rgba(0,0,0,0.45)]
+          border-white/50
           flex-shrink-0
         "
       >
-
-        {/* GOLD BORDER GLOW */}
-        <div
-          className="
-            absolute inset-0
-            rounded-[2.2rem]
-            border border-[#C9A227]/10
-            group-hover:border-[#C9A227]/30
-            transition-all duration-500
-            z-20
-            pointer-events-none
-          "
-        />
-
-        {/* IMAGE */}
         <img
           src={img}
           alt={`Interior ${index + 1}`}
@@ -63,41 +46,9 @@ const ImageCard = memo(
             w-full
             h-full
             object-cover
-            group-hover:scale-105
+            hover:scale-105
             transition-transform
-            duration-[1600ms]
-            ease-out
-          "
-        />
-
-        {/* DARK OVERLAY */}
-        <div
-          className="
-            absolute inset-0
-            bg-gradient-to-t
-            from-black/70
-            via-black/10
-            to-transparent
-          "
-        />
-
-        {/* GOLD SHINE EFFECT */}
-        <div
-          className="
-            absolute
-            top-0
-            left-[-120%]
-            w-[60%]
-            h-full
-            bg-gradient-to-r
-            from-transparent
-            via-white/10
-            to-transparent
-            rotate-12
-            group-hover:left-[140%]
-            transition-all
-            duration-[1800ms]
-            ease-out
+            duration-700
           "
         />
       </div>
@@ -115,82 +66,48 @@ const ShowcaseCarousel = () => {
   );
 
   return (
-    <section className="relative w-full overflow-hidden py-24 bg-[#111111]">
+    <section className="relative w-full overflow-hidden py-20 bg-transparent">
 
-      {/* MAIN BACKGROUND */}
-      <div
-        className="
-          absolute inset-0
-          bg-gradient-to-br
-          from-[#111111]
-          via-[#181818]
-          to-[#222222]
-        "
-      />
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-      {/* TOP GOLD GLOW */}
-      <div
-        className="
-          absolute
-          top-[-250px]
-          left-1/2
-          -translate-x-1/2
-          w-[800px]
-          h-[800px]
-          rounded-full
-          bg-[#C9A227]/10
-          blur-3xl
-        "
-      />
+      {/* BLUSH GLOW */}
+      <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#d0bcc8]/20 blur-3xl rounded-full" />
 
-      {/* BOTTOM SOFT DARK GLOW */}
-      <div
-        className="
-          absolute
-          bottom-0
-          left-0
-          w-full
-          h-[40%]
-          bg-gradient-to-t
-          from-black
-          via-[#111111]/70
-          to-transparent
-        "
-      />
+      {/* BOTTOM SOFT GLOW */}
+      <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#F5F1F3] via-white/60 to-transparent" />
 
-      {/* SIDE FADE LEFT */}
+      {/* LEFT FADE */}
       <div
         className="
           absolute
           left-0
           top-0
-          w-32
+          w-24
           h-full
           z-20
           bg-gradient-to-r
-          from-[#111111]
+          from-[#FAF8F9]
           to-transparent
           pointer-events-none
         "
       />
 
-      {/* SIDE FADE RIGHT */}
+      {/* RIGHT FADE */}
       <div
         className="
           absolute
           right-0
           top-0
-          w-32
+          w-24
           h-full
           z-20
           bg-gradient-to-l
-          from-[#111111]
+          from-[#FAF8F9]
           to-transparent
           pointer-events-none
         "
       />
-
-      
 
       {/* CAROUSEL */}
       <motion.div
@@ -202,7 +119,7 @@ const ShowcaseCarousel = () => {
         }}
         className="relative z-10"
       >
-        <div className="flex w-max gap-7 px-6 animate-marquee">
+        <div className="flex w-max gap-6 px-6 animate-marquee">
 
           {duplicatedImages.map((img, index) => (
             <ImageCard

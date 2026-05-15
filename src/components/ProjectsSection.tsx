@@ -6,13 +6,13 @@ const ProjectsSection = () => {
   const featuredProjects = portfolioData.slice(0, 4);
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#111111] px-5 md:px-10 lg:px-20 overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-white px-5 md:px-10 lg:px-20 overflow-hidden">
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-      {/* GOLD GLOW */}
-      <div className="absolute top-[-220px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
+      {/* PURPLE GLOW */}
+      <div className="absolute top-[-220px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/20 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
@@ -23,7 +23,7 @@ const ProjectsSection = () => {
 
             <span
               className="
-                text-[#E5C76B]
+                text-[#8B5CF6]
                 text-[10px]
                 font-black
                 uppercase
@@ -39,16 +39,16 @@ const ProjectsSection = () => {
               className="
                 text-4xl
                 md:text-6xl
-                font-milchella
+                font-abhre
                 font-semibold
-                tracking-wider
-                text-[#F5F5F5]
+             
+                text-[#1F2937]
                 leading-tight
               "
             >
               Creating spaces that <br />
 
-              <span className="italic text-[#C9A227]">
+              <span className="italic text-[#8B5CF6]">
                 inspire
               </span>{" "}
 
@@ -66,18 +66,18 @@ const ProjectsSection = () => {
               justify-center
               px-7
               py-4
-              bg-[#C9A227]
+              bg-[#8B5CF6]
               border
-              border-[#C9A227]
+              border-[#8B5CF6]
               rounded-2xl
               text-xs
               font-black
               uppercase
               tracking-[0.25em]
-              text-black
-              hover:bg-[#E5C76B]
-              hover:border-[#E5C76B]
-              hover:shadow-[0_12px_35px_rgba(201,162,39,0.35)]
+              text-white
+              hover:bg-[#7C3AED]
+              hover:border-[#7C3AED]
+              hover:shadow-[0_12px_35px_rgba(139,92,246,0.35)]
               transition-all
               duration-300
             "
@@ -117,12 +117,34 @@ const ProjectsSection = () => {
                 h-[280px]
                 md:h-[340px]
                 lg:h-[380px]
-                bg-[#1A1A1A]
+
+                bg-white/80
+                backdrop-blur-xl
+
                 border
-                border-[#2A2A2A]
-                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                border-white/50
+
+                shadow-[0_20px_60px_rgba(139,92,246,0.12)]
+
+                hover:shadow-[0_20px_60px_rgba(139,92,246,0.22)]
+
+                transition-all
+                duration-500
               "
             >
+
+              {/* CARD GLOW */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-br
+                  from-[#8B5CF6]/5
+                  via-transparent
+                  to-[#7C3AED]/5
+                  pointer-events-none
+                "
+              />
 
               <Link
                 to={`/projects/${project.id}`}
@@ -159,15 +181,15 @@ const ProjectsSection = () => {
                   "
                 />
 
-                {/* GOLD HOVER GLOW */}
+                {/* PURPLE HOVER GLOW */}
                 <div
                   className="
                     absolute
                     inset-0
                     bg-gradient-to-br
-                    from-[#C9A227]/5
+                    from-[#8B5CF6]/5
                     via-transparent
-                    to-[#C9A227]/10
+                    to-[#7C3AED]/10
                     opacity-0
                     group-hover:opacity-100
                     transition-opacity
@@ -191,10 +213,10 @@ const ProjectsSection = () => {
                   <div
                     className="
                       rounded-[1.5rem]
-                      bg-black/20
+                      bg-white/10
                       backdrop-blur-xl
                       border
-                      border-[#C9A227]/10
+                      border-white/20
                       px-3
                       py-2
                     "
@@ -208,7 +230,7 @@ const ProjectsSection = () => {
                         uppercase
                         text-center
                         tracking-[0.25em]
-                        text-[#E5C76B]
+                        text-[#8B5CF6]
                         mb-2
                       "
                     >
@@ -247,14 +269,18 @@ const ProjectsSection = () => {
             mt-10
             px-8
             py-4
-            bg-[#C9A227]
+            bg-[#8B5CF6]
             rounded-2xl
             text-xs
             font-black
             uppercase
             tracking-[0.25em]
-            text-black
-            shadow-[0_12px_35px_rgba(201,162,39,0.35)]
+            text-white
+            shadow-[0_12px_35px_rgba(139,92,246,0.35)]
+
+            hover:bg-[#7C3AED]
+            transition-all
+            duration-300
           "
         >
           Explore Portfolio

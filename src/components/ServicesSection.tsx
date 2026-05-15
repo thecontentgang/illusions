@@ -52,20 +52,20 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-[#111111]">
+    <section className="relative py-24 overflow-hidden bg-white">
 
       {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFC] to-[#EEF2FF]" />
 
-      {/* GOLD GLOW */}
-      <div className="absolute top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full" />
+      {/* PURPLE GLOW */}
+      <div className="absolute top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/20 blur-3xl rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* HEADING */}
         <div className="text-center max-w-3xl mx-auto">
 
-          <span className="text-[#E5C76B] font-semibold uppercase tracking-[0.2em] text-sm">
+          <span className="text-[#8B5CF6] font-semibold uppercase tracking-[0.2em] text-sm">
             Our Services
           </span>
 
@@ -75,20 +75,20 @@ const ServicesSection = () => {
               text-4xl
               sm:text-5xl
               md:text-6xl
-              font-milchella
+              font-abhre
               font-semibold
-              tracking-wider
-              text-[#F5F5F5]
+              tracking-tight
+              text-[#1F2937]
             "
           >
             Designing Spaces <br />
 
-            <span className="text-[#C9A227] italic">
+            <span className="text-[#8B5CF6] italic">
               Beyond Expectations
             </span>
           </h2>
 
-          <p className="mt-6 text-[#A1A1AA] text-base md:text-lg leading-relaxed">
+          <p className="mt-6 text-[#6B7280] text-base md:text-lg leading-relaxed">
             We craft sophisticated interiors and architectural experiences
             blending luxury, functionality, and timeless aesthetics.
           </p>
@@ -121,12 +121,29 @@ const ServicesSection = () => {
                 relative
                 overflow-hidden
                 rounded-[2rem]
-                bg-[#1A1A1A]
+                bg-white/80
+                backdrop-blur-xl
                 border
-                border-[#2A2A2A]
-                shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                border-white/50
+                shadow-[0_20px_60px_rgba(139,92,246,0.12)]
+                hover:shadow-[0_20px_60px_rgba(139,92,246,0.22)]
+                transition-all
+                duration-500
               "
             >
+
+              {/* CARD GLOW */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-br
+                  from-[#8B5CF6]/5
+                  via-transparent
+                  to-[#7C3AED]/5
+                  pointer-events-none
+                "
+              />
 
               {/* IMAGE */}
               <div
@@ -173,10 +190,10 @@ const ServicesSection = () => {
                   <div
                     className="
                       rounded-[1.5rem]
-                      bg-black/20
+                      bg-white/10
                       backdrop-blur-xl
                       border
-                      border-[#C9A227]/10
+                      border-white/20
                       px-5
                       py-2
                     "
@@ -202,7 +219,7 @@ const ServicesSection = () => {
 
                 <p
                   className="
-                    text-[#A1A1AA]
+                    text-[#6B7280]
                     leading-relaxed
                     text-base
                     md:text-lg

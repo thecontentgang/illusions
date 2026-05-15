@@ -31,8 +31,8 @@ const Pill = ({
     onClick={onClick}
     className={`px-3 py-1.5 rounded-xl text-xs font-semibold tracking-wide border transition-all duration-200 whitespace-nowrap ${
       active
-        ? 'bg-[#C9A227] border-[#C9A227] text-black shadow-[0_6px_20px_rgba(201,162,39,0.35)]'
-        : 'bg-[#111111] border-[#2A2A2A] text-[#A1A1AA] hover:border-[#C9A227]/30 hover:text-[#E5C76B]'
+        ? 'bg-[#8B5CF6] border-[#8B5CF6] text-white shadow-[0_6px_20px_rgba(139,92,246,0.25)]'
+        : 'bg-[#F8FAFC] border-[#E5E7EB] text-[#6B7280] hover:border-[#8B5CF6]/40 hover:text-[#8B5CF6]'
     }`}
   >
     {label}
@@ -41,13 +41,13 @@ const Pill = ({
 
 /* ─── Label ─── */
 const FieldLabel = ({ children }: { children: React.ReactNode }) => (
-  <p className="text-[11px] font-semibold tracking-widest text-[#666666] uppercase mb-1.5">
+  <p className="text-[11px] font-bold tracking-widest text-[#8B5CF6] uppercase mb-1.5">
     {children}
   </p>
 );
 
 /* ══════════════════════════════
-     LEAD CAPTURE MODAL
+    LEAD CAPTURE MODAL
 ══════════════════════════════ */
 interface LeadModalProps {
   isOpen: boolean;
@@ -110,7 +110,7 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[998] bg-black/70 backdrop-blur-md"
+            className="fixed inset-0 z-[998] bg-black/40 backdrop-blur-md"
           />
 
           {/* MODAL WRAPPER */}
@@ -123,48 +123,44 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
               duration: 0.35,
               ease: [0.22, 1, 0.36, 1],
             }}
-            onClick={handleClose} // Let clicks on the wrapper close the modal
+            onClick={handleClose}
             className="
               fixed inset-0 z-[999]
               flex items-center justify-center
               px-4
             "
           >
-            {/* ACTUAL MODAL CARD */}
+            {/* ACTUAL MODAL CARD (Glass / Light Premium) */}
             <div
-              onClick={(e) => e.stopPropagation()} // Prevent wrapper click from firing when clicking inside the form
+              onClick={(e) => e.stopPropagation()}
               className="
                 relative w-full max-w-md
-                bg-[#1A1A1A]
+                bg-white/90 backdrop-blur-xl
                 rounded-[2rem]
-                shadow-[0_30px_90px_rgba(0,0,0,0.6)]
-                border border-[#2A2A2A]
+                shadow-[0_30px_90px_rgba(139,92,246,0.15)]
+                border border-[#E5E7EB]
                 overflow-hidden
               "
             >
+              {/* PURPLE GRADIENT TOP BAR */}
+              <div className="pointer-events-none absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#C4B5FD] via-[#8B5CF6] to-[#6D28D9]" />
 
-              {/* GOLD BAR */}
-              <div className="pointer-events-none absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#E5C76B] via-[#C9A227] to-[#8A6A16]" />
-
-              {/* GOLD GLOW */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#C9A227]/5 via-transparent to-[#C9A227]/10" />
-
-              {/* CLOSE BUTTON - Bumped to z-50 */}
+              {/* CLOSE BUTTON */}
               <button
                 onClick={handleClose}
                 className="
                   absolute top-4 right-4 z-50
                   w-9 h-9 rounded-xl
                   flex items-center justify-center
-                  bg-[#111111]
-                  border border-[#2A2A2A]
-                  text-[#666666]
-                  hover:text-[#F5F5F5]
-                  hover:border-[#C9A227]/20
+                  bg-[#F8FAFC]
+                  border border-[#E5E7EB]
+                  text-[#6B7280]
+                  hover:text-[#8B5CF6]
+                  hover:border-[#8B5CF6]/30
                   transition-all duration-200
                 "
               >
-                <X size={14} strokeWidth={2} />
+                <X size={14} strokeWidth={2.5} />
               </button>
 
               <AnimatePresence mode="wait">
@@ -177,10 +173,9 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                     transition={{ duration: 0.4 }}
                     className="relative z-10 flex flex-col items-center justify-center text-center px-8 py-14 gap-4"
                   >
-
-                    <div className="w-16 h-16 rounded-2xl bg-[#C9A227]/10 border border-[#C9A227]/20 flex items-center justify-center mb-1">
+                    <div className="w-16 h-16 rounded-2xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/25 flex items-center justify-center mb-1">
                       <svg
-                        className="w-7 h-7 text-[#C9A227]"
+                        className="w-7 h-7 text-[#8B5CF6]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -188,19 +183,19 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth="2"
+                          strokeWidth="2.5"
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
                     </div>
 
-                    <h3 className="text-2xl font-semibold text-[#F5F5F5] tracking-tight">
+                    <h3 className="text-2xl font-bold text-[#1F2937] tracking-tight">
                       We'll be in touch soon!
                     </h3>
 
-                    <p className="text-sm text-[#A1A1AA] leading-relaxed max-w-[260px]">
+                    <p className="text-sm text-[#6B7280] leading-relaxed max-w-[260px]">
                       Thank you,{' '}
-                      <span className="text-[#E5C76B] font-medium">
+                      <span className="text-[#8B5CF6] font-bold">
                         {form.name.split(' ')[0]}
                       </span>
                       . Our design team will reach out within 24 hours.
@@ -210,11 +205,11 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                       onClick={handleClose}
                       className="
                         mt-2 px-8 py-3 rounded-2xl
-                        bg-[#C9A227]
-                        text-black
+                        bg-[#8B5CF6]
+                        text-white
                         text-sm font-semibold tracking-wide
-                        shadow-[0_10px_30px_rgba(201,162,39,0.35)]
-                        hover:bg-[#E5C76B]
+                        shadow-[0_12px_35px_rgba(139,92,246,0.35)]
+                        hover:bg-[#7C3AED]
                         transition-all duration-200
                       "
                     >
@@ -222,7 +217,6 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                     </button>
                   </motion.div>
                 ) : (
-
                   <motion.div
                     key="form"
                     initial={{ opacity: 0 }}
@@ -230,27 +224,24 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                     exit={{ opacity: 0 }}
                     className="relative z-10 px-6 pt-6 pb-5"
                   >
-
                     {/* HEADER */}
                     <div className="mb-5 pr-6">
-                      <span className="text-[10px] font-bold tracking-[0.2em] text-[#E5C76B] uppercase">
+                      <span className="text-[11px] font-extrabold tracking-[0.2em] text-[#8B5CF6] uppercase">
                         Free Consultation
                       </span>
 
-                      <h2 className="mt-0.5 text-2xl font-semibold text-[#F5F5F5] tracking-tight leading-snug">
+                      <h2 className="mt-0.5 text-2xl font-bold text-[#1F2937] tracking-tight leading-snug">
                         Transform Your Space
                       </h2>
 
-                      <p className="mt-1 text-xs text-[#666666]">
+                      <p className="mt-1 text-xs text-[#6B7280]">
                         Fill in the details — we'll respond within 24 hrs.
                       </p>
                     </div>
 
                     <div className="flex flex-col gap-4">
-
                       {/* NAME + PHONE */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-
                         {/* NAME */}
                         <div>
                           <FieldLabel>Name</FieldLabel>
@@ -268,12 +259,13 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                             required
                             className="
                               w-full px-3 py-3 rounded-xl
-                              text-sm text-[#F5F5F5]
-                              placeholder-[#666666]
-                              bg-[#111111]
-                              border border-[#2A2A2A]
+                              text-sm text-[#1F2937] font-medium
+                              placeholder-[#9CA3AF]
+                              bg-[#F8FAFC]
+                              border border-[#E5E7EB]
                               focus:outline-none
-                              focus:border-[#C9A227]
+                              focus:border-[#8B5CF6]
+                              focus:bg-white
                               transition-all
                             "
                           />
@@ -283,9 +275,8 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                         <div>
                           <FieldLabel>Phone</FieldLabel>
 
-                          <div className="flex items-center overflow-hidden rounded-xl border border-[#2A2A2A] bg-[#111111] focus-within:border-[#C9A227] transition-all">
-
-                            <div className="px-3 py-3 text-sm font-semibold text-[#F5F5F5] border-r border-[#2A2A2A] bg-[#1A1A1A]">
+                          <div className="flex items-center overflow-hidden rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] focus-within:border-[#8B5CF6] focus-within:bg-white transition-all">
+                            <div className="px-3 py-3 text-sm font-bold text-[#8B5CF6] border-r border-[#E5E7EB] bg-[#EEF2FF]">
                               +91
                             </div>
 
@@ -304,9 +295,9 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                                 setField('phone', value);
                               }}
                               className="
-                                w-full px-3 py-3 text-sm
-                                text-[#F5F5F5]
-                                placeholder-[#666666]
+                                w-full px-3 py-3 text-sm font-medium
+                                text-[#1F2937]
+                                placeholder-[#9CA3AF]
                                 bg-transparent
                                 focus:outline-none
                               "
@@ -315,7 +306,7 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
 
                           {form.phone.length > 0 &&
                             form.phone.length < 10 && (
-                              <p className="text-[11px] text-red-400 mt-1 pl-1">
+                              <p className="text-[11px] text-red-500 mt-1 pl-1 font-medium">
                                 Enter a valid 10-digit phone number
                               </p>
                             )}
@@ -333,7 +324,10 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                               label={t!}
                               active={form.projectType === t}
                               onClick={() => {
-                                setField('projectType', toggle(form.projectType, t));
+                                setField(
+                                  'projectType',
+                                  toggle(form.projectType, t)
+                                );
                                 setField('bhk', null);
                               }}
                             />
@@ -354,7 +348,6 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                             }}
                             className="overflow-hidden"
                           >
-
                             <FieldLabel>Configuration</FieldLabel>
 
                             <div className="flex flex-wrap gap-2">
@@ -377,7 +370,7 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                       <div>
                         <FieldLabel>
                           Space Size{' '}
-                          <span className="normal-case font-normal text-[#E5C76B]">
+                          <span className="normal-case font-normal text-[#6D28D9]">
                             (optional)
                           </span>
                         </FieldLabel>
@@ -405,7 +398,7 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                       <div>
                         <FieldLabel>
                           Your Vision{' '}
-                          <span className="normal-case font-normal text-[#E5C76B]">
+                          <span className="normal-case font-normal text-[#6D28D9]">
                             (optional)
                           </span>
                         </FieldLabel>
@@ -417,34 +410,35 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                           onChange={(e) => setField('message', e.target.value)}
                           className="
                             w-full px-3 py-3 rounded-xl resize-none
-                            text-sm text-[#F5F5F5]
-                            placeholder-[#666666]
-                            bg-[#111111]
-                            border border-[#2A2A2A]
+                            text-sm text-[#1F2937] font-medium
+                            placeholder-[#9CA3AF]
+                            bg-[#F8FAFC]
+                            border border-[#E5E7EB]
                             focus:outline-none
-                            focus:border-[#C9A227]
+                            focus:border-[#8B5CF6]
+                            focus:bg-white
                             transition-all
                           "
                         />
                       </div>
 
                       {/* TERMS */}
-                      <label className="flex items-start gap-3 text-[11px] text-[#A1A1AA] leading-relaxed cursor-pointer select-none">
+                      <label className="flex items-start gap-3 text-[11px] text-[#6B7280] leading-relaxed cursor-pointer select-none">
                         <input
                           type="checkbox"
                           required
                           className="
                             mt-0.5 w-4 h-4 rounded
-                            border-[#2A2A2A]
-                            text-[#C9A227]
-                            focus:ring-[#C9A227]
-                            bg-[#111111]
+                            border-[#E5E7EB]
+                            text-[#8B5CF6]
+                            focus:ring-[#8B5CF6]
+                            bg-[#F8FAFC]
                           "
                         />
 
                         <span>
                           I agree to the{' '}
-                          <span className="text-[#E5C76B] font-medium">
+                          <span className="text-[#8B5CF6] font-bold">
                             Terms & Conditions
                           </span>{' '}
                           and consent to being contacted regarding my inquiry.
@@ -463,10 +457,10 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                         className="
                           w-full py-4 rounded-2xl
                           text-sm font-semibold tracking-wide
-                          text-black
-                          bg-[#C9A227]
-                          shadow-[0_12px_30px_rgba(201,162,39,0.35)]
-                          hover:bg-[#E5C76B]
+                          text-white
+                          bg-[#8B5CF6]
+                          shadow-[0_12px_35px_rgba(139,92,246,0.3)]
+                          hover:bg-[#7C3AED]
                           disabled:opacity-40
                           disabled:cursor-not-allowed
                           active:scale-[0.98]
@@ -487,28 +481,27 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
   );
 };
 
-/* DEMO */
+/* DEMO App Container */
 export default function App() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#111111]">
+    <div className="min-h-screen flex items-center justify-center bg-white text-[#1F2937]">
+      {/* BACKGROUND GRADIENT GRID */}
+      <div className="fixed inset-0 bg-gradient-to-tr from-[#F8FAFC] via-white to-[#EEF2FF] -z-10" />
 
-      {/* BACKGROUND */}
-      <div className="fixed inset-0 bg-gradient-to-b from-[#111111] via-[#1A1A1A] to-[#222222] -z-10" />
-
-      {/* GOLD GLOW */}
-      <div className="fixed top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C9A227]/10 blur-3xl rounded-full -z-10" />
+      {/* SOFT PURPLE GLOW ACCENT */}
+      <div className="fixed bottom-[-150px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#C4B5FD]/15 blur-3xl rounded-full -z-10" />
 
       <button
         onClick={() => setOpen(true)}
         className="
           px-8 py-4 rounded-2xl
-          text-sm font-semibold tracking-wide
-          text-black
-          bg-[#C9A227]
-          shadow-[0_12px_30px_rgba(201,162,39,0.35)]
-          hover:bg-[#E5C76B]
+          text-sm font-bold tracking-wide
+          text-white
+          bg-[#8B5CF6]
+          shadow-[0_12px_35px_rgba(139,92,246,0.3)]
+          hover:bg-[#7C3AED]
           transition-all duration-300
         "
       >

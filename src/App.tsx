@@ -6,6 +6,9 @@ import ContactPage from './pages/ContactPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetails from './pages/ProjectDetails';
 import Footer from './components/Footer';
+import TermsConditionsPage from './pages/TermsConditions';
+import PrivacyPolicyPage from './pages/PrivacyPOlicyPage';
+import NotFoundPage from './pages/404Page';
 import ScrollToTop from './components/ScrollToTop';
 import SocialMediaBar from './components/SocialMediaBar';
 
@@ -27,8 +30,10 @@ const App = () => {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/terms-conditions" element={<TermsConditionsPage/>}/>
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage/>}/>
           {/* Catch-all for 404s - Optional */}
-          <Route path="*" element={<div className="pt-32 px-12">404 Not Found</div>} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />
