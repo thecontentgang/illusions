@@ -228,7 +228,7 @@ const AboutPage = () => {
             <m.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-5 relative">
               <div className="aspect-[4/5] bg-gray-200 rounded-[3rem] overflow-hidden relative z-10">
                 <img 
-                  src="/founder.jpeg" 
+                  src="/founder.avif" 
                   alt="Nikhil - Founder of Interior Illusion Studio" 
                   loading="lazy"
                   decoding="async"

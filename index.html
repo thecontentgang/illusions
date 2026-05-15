@@ -1,78 +1,27 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- BASIC -->
+    <!-- BASIC METADATA -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
 
-    <!-- TITLE -->
-    <title>
-      Illusion Interiors | Luxury Interior Design & Modular Home Solutions
-    </title>
-
-    <!-- SEO -->
-    <meta
-      name="description"
-      content="Illusion Interiors creates luxury interior designs, modular kitchens, elegant living spaces, and premium home transformations with modern craftsmanship and timeless aesthetics."
+    <!-- FALLBACK SEO (React Helmet will override these on specific pages) -->
+    <title>Illusion Interiors | Luxury Interior Design</title>
+    <meta 
+      name="description" 
+      content="Luxury interior design studio crafting elegant and timeless living spaces." 
     />
-
-    <meta
-      name="keywords"
-      content="Interior Design, Luxury Interiors, Modular Kitchen, Home Interiors, Modern Interior Design, Living Room Design, Bedroom Interiors, Architecture, Premium Interiors, Illusion Interiors"
-    />
-
-    <meta name="author" content="Illusion Interiors" />
     <meta name="robots" content="index, follow" />
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/illusion-white.png" />
 
-    <!-- CANONICAL -->
-    <link rel="canonical" href="https://yourdomain.com/" />
-
-    <!-- OPEN GRAPH -->
-    <meta
-      property="og:title"
-      content="Illusion Interiors | Luxury Interior Design"
-    />
-
-    <meta
-      property="og:description"
-      content="Transform your home with luxury interiors, modular kitchens, premium craftsmanship, and modern architectural elegance."
-    />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com/" />
-
-    <meta
-      property="og:image"
-      content="https://yourdomain.com/og-image.jpg"
-    />
-
-    <!-- TWITTER -->
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <meta
-      name="twitter:title"
-      content="Illusion Interiors | Luxury Interior Design"
-    />
-
-    <meta
-      name="twitter:description"
-      content="Luxury interior design studio crafting elegant and timeless living spaces."
-    />
-
-    <meta
-      name="twitter:image"
-      content="https://yourdomain.com/og-image.jpg"
-    />
-
-    <!-- PERFORMANCE -->
+    <!-- PERFORMANCE (Keep these, they are great for loading speed!) -->
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
 
-    <!-- FONT SMOOTH -->
+    <!-- FONT SMOOTHING & BASE STYLES -->
     <style>
       html {
         scroll-behavior: smooth;
@@ -90,6 +39,7 @@
   </head>
 
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
     <script type="module" src="/src/main.tsx"></script>
