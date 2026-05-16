@@ -70,8 +70,8 @@ const Footer = () => {
             <p className="text-sm md:text-base font-bold text-[#C4B5FD] leading-relaxed">
               Suncity, Hyderabad
             </p>
-            <a href="mailto:hello@illusioninteriors.com" className="mt-3 block text-sm md:text-base font-semibold text-[#F3F4F6] hover:text-[#C4B5FD] transition-colors break-all">
-              hello@illusioninteriors.com
+            <a href="mailto:Interiorillusions1@outlook.com" className="mt-3 block text-sm md:text-base font-semibold text-[#F3F4F6] hover:text-[#C4B5FD] transition-colors break-all">
+              Interiorillusions1@outlook.com
             </a>
             <a href="tel:+918317503596" className="mt-3 block text-sm md:text-base font-semibold text-[#F3F4F6] hover:text-[#C4B5FD] transition-colors">
               +91 83175 03596

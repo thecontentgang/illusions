@@ -4,13 +4,13 @@ import { X } from "lucide-react";
 
 import videoimg1 from "../assets/video-1.png";
 import videoimg2 from "../assets/video-2.png";
-import videoimg3 from "../assets/video-3.png";
+import videoimg3 from "/testimonial-3.png";
 
 const testimonials = [
   {
     id: 1,
-    client: "Ananya Sharma",
-    project: "Apartment",
+    client: "Anju & Rejul",
+    project: "Apt team 4 nyla",
     thumbnail: videoimg1,
     duration: "0:44",
     videoUrl: "https://www.youtube.com/embed/bH1YmrjnvIc",
@@ -18,8 +18,8 @@ const testimonials = [
 
   {
     id: 2,
-    client: "Vikram Reddy",
-    project: "Heritage Villa",
+    client: "Shristi & rahul",
+    project: "Aparna Cyberlife",
     thumbnail: videoimg2,
     duration: "1:05",
     videoUrl: "https://www.youtube.com/embed/NCr72bMZv8I",
@@ -27,11 +27,11 @@ const testimonials = [
 
   {
     id: 3,
-    client: "The Mehtas",
-    project: "Studio Apartment",
+    client: "Padmaja & Venu Gopal",
+    project: "CyberWoods Apartment",
     thumbnail: videoimg3,
     duration: "2:10",
-    videoUrl: "https://www.youtube.com/embed/HFIEhvxB90Y",
+    videoUrl: "https://www.youtube.com/embed/0YRpyMOeLEM",
   },
 ];
 

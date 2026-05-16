@@ -201,7 +201,7 @@ const HeroSection = memo(() => {
                 <div className="flex -space-x-4">
 
                   <img
-                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    src="/gr-3.webp"
                     alt=""
                     className="
                       w-12
@@ -214,7 +214,7 @@ const HeroSection = memo(() => {
                   />
 
                   <img
-                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    src="/gr-2.webp"
                     alt=""
                     className="
                       w-12
@@ -227,7 +227,7 @@ const HeroSection = memo(() => {
                   />
 
                   <img
-                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    src="/gr-1.webp"
                     alt=""
                     className="
                       w-12

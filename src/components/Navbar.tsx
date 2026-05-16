@@ -14,19 +14,6 @@ const navLinks = [
   { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
-// const socialLinks = [
-//   {
-//     id: 'instagram',
-//     href: '#',
-//     icon: <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
-//   },
-//   {
-//     id: 'pinterest',
-//     href: '#',
-//     icon: <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439z" />
-//   },
-// ];
-
 const Navbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,20 +24,19 @@ const Navbar = () => {
 
   const path = location.pathname;
 
+  // 1. FIXED PATH MATCHING
   const activeLink =
-    path.startsWith('/projects')
+    path === '/projects' || path.startsWith('/projects/')
       ? 'projects'
-      : path.startsWith('/contact')
+      : path === '/contact'
       ? 'contact'
-      : path.startsWith('/about')
+      : path === '/about'
       ? 'about'
       : 'home';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -90,7 +76,7 @@ const Navbar = () => {
           fixed top-0 left-0 w-full
           flex items-center justify-between
           px-6 md:px-12 py-4
-          z-50
+          z-[100]
           transition-all duration-500 ease-in-out
           ${
             isScrolled || menuOpen
@@ -99,14 +85,12 @@ const Navbar = () => {
           }
         `}
       >
-
         {/* LOGO */}
         <MotionLink
           to="/"
           className="nav-logo z-50 flex items-center group relative cursor-pointer"
         >
           <div className="relative w-[180px] md:w-[220px] lg:w-[240px] aspect-[4/1] overflow-hidden">
-
             <img
               src={Logo}
               alt="Luxury Interior Studio"
@@ -123,7 +107,6 @@ const Navbar = () => {
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center space-x-1">
-
           {navLinks.map((link) => (
             <MotionLink
               key={link.id}
@@ -136,7 +119,6 @@ const Navbar = () => {
                 transition-colors duration-300
               "
             >
-
               <span
                 className={`
                   relative z-10
@@ -176,8 +158,9 @@ const Navbar = () => {
                     absolute inset-0
                     opacity-0
                     group-hover:opacity-100
-                    bg-[#8B5CF6]
+                    bg-[#8B5CF6]/5
                     rounded-xl
+                    pointer-events-none /* 2. FIXED HOVER INTERCEPTION */
                     transition-opacity duration-300
                   "
                 />
@@ -188,7 +171,6 @@ const Navbar = () => {
 
         {/* DESKTOP BUTTON */}
         <div className="hidden md:block nav-cta">
-
           <motion.button
             onClick={openModal}
             whileHover={{
@@ -217,9 +199,7 @@ const Navbar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle Menu"
         >
-
           <div className="flex flex-col justify-center items-end gap-[5px] w-6">
-
             <motion.span
               animate={
                 menuOpen
@@ -269,9 +249,8 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className="fixed inset-0 w-full h-[100dvh] md:hidden"
+              className="fixed inset-0 w-full h-[100dvh] md:hidden z-40" // 3. FIXED Z-INDEX
             >
-
               {/* BACKGROUND */}
               <div className="absolute inset-0 bg-white" />
 
@@ -293,8 +272,7 @@ const Navbar = () => {
                 "
               />
 
-              <div className="relative z-10 flex flex-col h-full pt-20 pb-10 px-8">
-
+              <div className="relative z-50 flex flex-col h-full pt-20 pb-10 px-8">
                 {/* MENU LABEL */}
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -305,9 +283,7 @@ const Navbar = () => {
                   }}
                   className="flex items-center gap-3 mb-auto"
                 >
-
                   <div className="h-px flex-1 bg-gradient-to-r from-[#8B5CF6]/50 to-transparent" />
-
                   <span
                     className="
                       text-[10px]
@@ -323,9 +299,7 @@ const Navbar = () => {
 
                 {/* MOBILE LINKS */}
                 <div className="flex-1 flex flex-col items-center justify-center -mt-10">
-
-                  <div className="flex flex-col items-center w-full">
-
+                  <div className="flex flex-col items-center w-full relative z-50">
                     {navLinks.map((link, i) => (
                       <motion.div
                         key={link.id}
@@ -337,19 +311,18 @@ const Navbar = () => {
                           duration: 0.5,
                           ease: [0.22, 1, 0.36, 1],
                         }}
-                        className="w-full flex flex-col items-center"
+                        className="w-full flex flex-col items-center relative z-50"
                       >
-
+                        {/* 4. FIXED HITBOX AND ROUTING */}
                         <Link
                           to={link.href}
                           onClick={() => setMenuOpen(false)}
                           className="
                             group relative
                             flex items-center justify-center
-                            py-4 w-full
+                            py-5 w-full z-50 cursor-pointer
                           "
                         >
-
                           <span
                             className="
                               absolute left-0
@@ -357,6 +330,7 @@ const Navbar = () => {
                               font-mono
                               text-[#9CA3AF]
                               select-none
+                              pointer-events-none
                             "
                           >
                             0{i + 1}
@@ -372,7 +346,7 @@ const Navbar = () => {
                               ${
                                 activeLink === link.id
                                   ? 'text-[#8B5CF6]'
-                                  : 'text-[#1F2937] group-hover:text-[#8B5CF6]/60 group-hover:translate-x-1'
+                                  : 'text-[#1F2937] group-active:text-[#8B5CF6]/60'
                               }
                             `}
                           >
@@ -387,6 +361,7 @@ const Navbar = () => {
                                 w-2 h-2
                                 rounded-full
                                 bg-[#8B5CF6]
+                                pointer-events-none
                               "
                               transition={{
                                 type: 'spring',
@@ -409,6 +384,7 @@ const Navbar = () => {
                               w-full h-px
                               bg-[#E5E7EB]
                               origin-left
+                              pointer-events-none
                             "
                           />
                         )}
@@ -437,9 +413,9 @@ const Navbar = () => {
                       bg-[#8B5CF6]
                       shadow-[0_12px_32px_-6px_rgba(139,92,246,0.4)]
                       hover:bg-[#7C3AED]
-                      hover:shadow-[0_16px_36px_-6px_rgba(139,92,246,0.5)]
                       active:scale-[0.97]
                       transition-all duration-300
+                      relative z-50
                     "
                   >
                     Start a Project

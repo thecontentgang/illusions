@@ -1,191 +1,597 @@
-import { useEffect } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async'; // Added for SEO
-import { portfolioData } from '../data/data';
 
-const ProjectDetails = () => {
-  const { id } = useParams();
-  const project = portfolioData.find((p) => p.id === id);
+const ContactPage = () => {
+  const [activeService, setActiveService] = useState('Residential');
 
-  useEffect(() => {
-    // Scroll to top smoothly
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [id]);
-
-  if (!project) {
-    return <Navigate to="/projects" replace />;
-  }
+  const services = ['Residential', 'Commercial', 'Consultation'];
 
   return (
-    <main className="bg-white min-h-screen overflow-hidden relative z-0">
-      {/* --- DYNAMIC SEO META TAGS --- */}
-      <Helmet>
-        <title>{project.title} | Your Portfolio Name</title>
-        <meta name="description" content={`Explore ${project.title}, a ${project.category} project located in ${project.community}.`} />
-        <meta property="og:title" content={project.title} />
-        <meta property="og:image" content={project.heroImage} />
-        <meta property="og:type" content="article" />
-        {/* Preload the LCP (Largest Contentful Paint) image */}
-        <link rel="preload" as="image" href={project.heroImage} />
-      </Helmet>
+    <div className="bg-[#F9FAFB] pt-32 pb-20 min-h-screen overflow-hidden">
 
-      {/* BACKGROUND DECORATIONS (Hidden from screen readers) */}
-      <div aria-hidden="true" className="fixed inset-0 bg-gradient-to-tr from-[#F8FAFC] via-white to-[#EEF2FF] -z-10" />
-      <div aria-hidden="true" className="fixed top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#C4B5FD]/15 blur-3xl rounded-full -z-10" />
+      {/* BACKGROUND */}
+      <div className="fixed inset-0 bg-gradient-to-b from-[#F9FAFB] via-[#FFFFFF] to-[#F3F4F6] -z-10" />
 
-      {/* HERO SECTION */}
-      <section className="relative h-[70vh] md:h-[85vh] w-full bg-[#F3F4F6]">
-        {/* BACK BUTTON */}
-        <div className="absolute top-32 left-6 md:left-12 lg:left-24 z-20">
-          <Link
-            to="/projects"
-            aria-label="Go back to portfolio projects"
+      {/* PURPLE GLOW */}
+      <div className="fixed top-[-250px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#8B5CF6]/10 blur-3xl rounded-full -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+
+        {/* PAGE HEADER */}
+        <div className="mb-16 md:mb-24 text-center lg:text-left">
+
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             className="
-              group flex items-center gap-3 text-[#1F2937] text-[10px] font-black uppercase tracking-[0.3em]
-              hover:text-[#8B5CF6] transition-colors bg-white/80 backdrop-blur-xl px-6 py-3 rounded-full 
-              border border-[#E5E7EB] shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-[#8B5CF6] focus-visible:ring-offset-2
+              text-[#8B5CF6]
+              text-[10px]
+              md:text-xs
+              font-black
+              uppercase
+              tracking-[0.4em]
+              mb-4
+              block
             "
           >
-            <span aria-hidden="true" className="group-hover:-translate-x-1 transition-transform">
-              ←
+            Start the Dialogue
+          </motion.span>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.1,
+              duration: 0.6
+            }}
+            className="
+              text-4xl
+              md:text-6xl
+              lg:text-7xl
+              font-milchella
+              font-semibold
+              tracking-wider
+              text-[#1F2937]
+              leading-[1.1]
+            "
+          >
+            Let's discuss your <br className="hidden md:block" />
+
+            <span className="text-[#8B5CF6] italic">
+              future space.
             </span>
-            Back to Portfolio
-          </Link>
+          </motion.h1>
         </div>
 
-        {/* HERO IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute inset-0 w-full h-full"
+        {/* MAIN SPLIT LAYOUT */}
+        <div
+          className="
+            grid
+            grid-cols-1
+            lg:grid-cols-12
+            gap-16
+            lg:gap-12
+            items-start
+          "
         >
-          <img
-            src={project.heroImage}
-            alt={`Hero view of ${project.title}`}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            // ADD RESPONSIVE SIZES/SRCSET IF AVAILABLE IN YOUR DATA:
-            // srcSet={`${project.heroImageSm} 640w, ${project.heroImageMd} 1024w, ${project.heroImage} 1920w`}
-            // sizes="100vw"
-            className="w-full h-full object-cover will-change-transform transform-gpu backface-hidden"
-            onError={(e) => { e.currentTarget.style.display = 'none'; }}
-          />
-          {/* OVERLAYS */}
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-white" />
-          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.15),transparent_40%)] pointer-events-none" />
-        </motion.div>
-      </section>
 
-      {/* TITLE BLOCK */}
-      <section className="relative z-10 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto -mt-32 md:-mt-48 mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="relative overflow-hidden bg-white/85 backdrop-blur-2xl p-10 md:p-16 lg:p-20 rounded-[3rem] shadow-[0_30px_90px_rgba(139,92,246,0.1)] border border-white/60"
-        >
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#8B5CF6]/5 via-transparent to-[#7C3AED]/10 pointer-events-none" />
-          <div className="relative z-10">
-            <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
-              {project.category} • {project.community}
-            </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-semibold tracking-wider text-[#1F2937] leading-[1.1] mb-12">
-              {project.title}
-            </h1>
+          {/* LEFT COLUMN */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.2,
+              duration: 0.6
+            }}
+            className="
+              lg:col-span-5
+              space-y-12
+              pr-0
+              lg:pr-8
+            "
+          >
 
-            {/* PROJECT MATRIX */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-[#E5E7EB]">
-              {[
-                { label: 'Client', value: project.client },
-                { label: 'Location', value: project.community },
-                { label: 'Area', value: project.area },
-                { label: 'Year', value: project.year },
-              ].map((stat, i) => (
-                <div key={i} className="space-y-1">
-                  <h2 className="text-[10px] font-bold uppercase tracking-widest text-[#6B7280]">
-                    {stat.label}
-                  </h2>
-                  <p className="text-sm md:text-base font-bold text-[#1F2937]">
-                    {stat.value}
-                  </p>
-                </div>
-              ))}
+            {/* STUDIO */}
+            <div className="space-y-4">
+
+              <h3
+                className="
+                  text-2xl
+                  font-semibold
+                  text-[#1F2937]
+                "
+              >
+                Interior Illustrations
+              </h3>
+
+              <p
+                className="
+                  text-[#6B7280]
+                  font-medium
+                  leading-relaxed
+                  max-w-sm
+                "
+              >
+                H.no 7-31/16, <br />
+                Laxmi Narsimha colony, <br />
+                Suncity Hyderabad
+              </p>
             </div>
-          </div>
-        </motion.div>
-      </section>
 
-      {/* GALLERY */}
-      <section className="px-6 md:px-12 lg:px-24 max-w-[90rem] mx-auto mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 auto-rows-[400px] md:auto-rows-[600px] grid-flow-dense">
-          {project.gallery.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: i * 0.1 }}
-              className={`${img.layout || ''} rounded-[2.5rem] overflow-hidden bg-[#E5E7EB] group relative border border-[#E5E7EB] shadow-[0_15px_40px_rgba(139,92,246,0.06)]`}
+            {/* CONTACT */}
+            <div className="space-y-4">
+
+              <h3
+                className="
+                  text-2xl
+                  font-semibold
+                  text-[#1F2937]
+                "
+              >
+                Direct Contact
+              </h3>
+
+              <div className="flex flex-col gap-3">
+
+                <a
+                  href="mailto:Interiorillusions1@outlook.com"
+                  className="
+                    text-[#6B7280]
+                    font-medium
+                    hover:text-[#8B5CF6]
+                    transition-colors
+                    w-fit
+                  "
+                >
+                  Interiorillusions1@outlook.com
+                </a>
+
+                <a
+                  href="tel:+918317503596"
+                  className="
+                    text-[#6B7280]
+                    font-medium
+                    hover:text-[#8B5CF6]
+                    transition-colors
+                    w-fit
+                  "
+                >
+                  +91 83175 03596
+                </a>
+              </div>
+            </div>
+
+            {/* MAP CARD */}
+            <div
+              className="
+                relative
+                overflow-hidden
+                rounded-[2rem]
+                h-[320px]
+                shadow-[0_20px_40px_rgba(0,0,0,0.08)]
+                mt-8
+                group
+                border
+                border-[#E5E7EB]
+              "
             >
-              <img
-                src={img.src}
-                alt={`${project.title} architectural detail ${i + 1}`}
+
+              {/* MAP */}
+              <iframe
+                title="Office Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243710.23946883448!2d78.0901336669922!3d17.365056641899134!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97e032e71c0b%3A0x347126a37060cd26!2sInterior%20Illusions!5e0!3m2!1sen!2sin!4v1778670596783!5m2!1sen!2sin"
+                className="
+                  absolute
+                  inset-0
+                  w-full
+                  h-full
+                  border-0
+                "
                 loading="lazy"
-                decoding="async"
-                width="800" 
-                height="600" 
-                className="w-full h-full object-cover will-change-transform transform-gpu backface-hidden transition-transform duration-[1.2s] ease-out group-hover:scale-105"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                referrerPolicy="no-referrer-when-downgrade"
               />
-              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#8B5CF6]/10 via-transparent to-[#7C3AED]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </motion.div>
-          ))}
+
+              {/* OVERLAY */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-black/80
+                  via-black/20
+                  to-transparent
+                "
+              />
+
+              {/* CONTENT */}
+              <div
+                className="
+                  absolute
+                  bottom-0
+                  left-0
+                  w-full
+                  p-5
+                "
+              >
+
+                <div
+                  className="
+                    rounded-[1.5rem]
+                    bg-white/10
+                    backdrop-blur-xl
+                    border
+                    border-white/20
+                    px-5
+                    py-4
+                  "
+                >
+
+                  <p
+                    className="
+                      text-[10px]
+                      font-black
+                      uppercase
+                      tracking-[0.3em]
+                      text-[#C4B5FD]
+                      mb-2
+                    "
+                  >
+                    Visit Our Studio
+                  </p>
+
+                  <h3
+                    className="
+                      text-xl
+                      text-white
+                      leading-tight
+                    "
+                  >
+                    Interior Illustrations <br />
+
+                    <span className="text-gray-300 text-base">
+                      Suncity, Hyderabad
+                    </span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT COLUMN */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.6
+            }}
+            className="lg:col-span-7"
+          >
+
+            <div
+              className="
+                bg-white
+                p-8
+                md:p-12
+                rounded-[2.5rem]
+                md:rounded-[3rem]
+                shadow-[0_20px_50px_rgba(0,0,0,0.05)]
+                border
+                border-[#E5E7EB]
+                relative
+                overflow-hidden
+              "
+            >
+
+              {/* PURPLE GLOW IN CARD */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-br
+                  from-[#8B5CF6]/5
+                  via-transparent
+                  to-[#8B5CF6]/10
+                "
+              />
+
+              {/* TOP ACCENT */}
+              <div
+                className="
+                  absolute
+                  top-0
+                  right-12
+                  w-24
+                  h-2
+                  bg-[#8B5CF6]
+                  rounded-b-lg
+                "
+              />
+
+              <form
+                className="relative z-10 space-y-8"
+                onSubmit={(e) => e.preventDefault()}
+              >
+
+                {/* NAME & PHONE */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                  {/* NAME */}
+                  <div className="space-y-2">
+
+                    <label
+                      className="
+                        text-[10px]
+                        font-black
+                        uppercase
+                        tracking-[0.2em]
+                        text-[#9CA3AF]
+                        pl-2
+                      "
+                    >
+                      Full Name
+                    </label>
+
+                    <input
+                      type="text"
+                      placeholder="Enter your full name"
+                      required
+                      pattern="^[A-Za-z\s]+$"
+                      title="Only letters are allowed"
+                      className="
+                        w-full
+                        bg-transparent
+                        border-2
+                        border-[#E5E7EB]
+                        rounded-2xl
+                        px-5
+                        py-4
+                        text-sm
+                        font-medium
+                        text-[#1F2937]
+                        focus:outline-none
+                        focus:border-[#8B5CF6]
+                        transition-all
+                        placeholder:text-[#9CA3AF]
+                      "
+                    />
+                  </div>
+
+                  {/* PHONE */}
+                  <div className="space-y-2">
+
+                    <label
+                      className="
+                        text-[10px]
+                        font-black
+                        uppercase
+                        tracking-[0.2em]
+                        text-[#9CA3AF]
+                        pl-2
+                      "
+                    >
+                      Phone Number
+                    </label>
+
+                    <div
+                      className="
+                        flex
+                        items-center
+                        overflow-hidden
+                        rounded-2xl
+                        border-2
+                        border-[#E5E7EB]
+                        bg-transparent
+                        focus-within:border-[#8B5CF6]
+                        transition-all
+                      "
+                    >
+
+                      {/* COUNTRY CODE */}
+                      <div
+                        className="
+                          px-4
+                          py-4
+                          text-sm
+                          font-semibold
+                          text-[#1F2937]
+                          border-r
+                          border-[#E5E7EB]
+                          bg-[#F3F4F6]
+                        "
+                      >
+                        +91
+                      </div>
+
+                      {/* INPUT */}
+                      <input
+                        type="tel"
+                        placeholder="9876543210"
+                        required
+                        maxLength={10}
+                        pattern="[0-9]{10}"
+                        inputMode="numeric"
+                        title="Please enter a valid 10-digit number"
+                        onInput={(e) => {
+                          e.currentTarget.value = e.currentTarget.value
+                            .replace(/[^0-9]/g, "")
+                            .slice(0, 10);
+                        }}
+                        className="
+                          w-full
+                          px-5
+                          py-4
+                          bg-transparent
+                          text-sm
+                          font-medium
+                          text-[#1F2937]
+                          focus:outline-none
+                          placeholder:text-[#9CA3AF]
+                        "
+                      />
+                    </div>
+
+                    <p className="text-xs text-[#9CA3AF] pl-2">
+                      Enter a valid 10-digit mobile number
+                    </p>
+                  </div>
+                </div>
+
+                {/* EMAIL */}
+                <div className="space-y-2">
+
+                  <label
+                    className="
+                      text-[10px]
+                      font-black
+                      uppercase
+                      tracking-[0.2em]
+                      text-[#9CA3AF]
+                      pl-2
+                    "
+                  >
+                    Email Address
+                  </label>
+
+                  <input
+                    type="email"
+                    placeholder="hello@example.com"
+                    className="
+                      w-full
+                      bg-transparent
+                      border-2
+                      border-[#E5E7EB]
+                      rounded-2xl
+                      px-5
+                      py-4
+                      text-sm
+                      font-medium
+                      text-[#1F2937]
+                      focus:outline-none
+                      focus:border-[#8B5CF6]
+                      transition-all
+                      placeholder:text-[#9CA3AF]
+                    "
+                  />
+                </div>
+
+                {/* SERVICES */}
+                <div className="space-y-3">
+
+                  <label
+                    className="
+                      text-[10px]
+                      font-black
+                      uppercase
+                      tracking-[0.2em]
+                      text-[#9CA3AF]
+                      pl-2
+                    "
+                  >
+                    I am interested in
+                  </label>
+
+                  <div className="flex flex-wrap gap-3">
+
+                    {services.map((service) => (
+                      <button
+                        key={service}
+                        type="button"
+                        onClick={() => setActiveService(service)}
+                        className={`
+                          px-6
+                          py-3
+                          rounded-xl
+                          text-xs
+                          font-bold
+                          tracking-widest
+                          uppercase
+                          transition-all
+                          duration-300
+                          border
+
+                          ${activeService === service
+                            ? 'bg-[#8B5CF6] border-[#8B5CF6] text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)]'
+                            : 'bg-[#F9FAFB] border-[#E5E7EB] text-[#6B7280] hover:border-[#8B5CF6]/40 hover:text-[#8B5CF6]'
+                          }
+                        `}
+                      >
+                        {service}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* TEXTAREA */}
+                <div className="space-y-2">
+
+                  <label
+                    className="
+                      text-[10px]
+                      font-black
+                      uppercase
+                      tracking-[0.2em]
+                      text-[#9CA3AF]
+                      pl-2
+                    "
+                  >
+                    Project Details
+                  </label>
+
+                  <textarea
+                    rows={4}
+                    placeholder="Tell us about your space, location (e.g., Aparna Zicon), and timeline..."
+                    className="
+                      w-full
+                      bg-transparent
+                      border-2
+                      border-[#E5E7EB]
+                      rounded-2xl
+                      px-5
+                      py-4
+                      text-sm
+                      font-medium
+                      text-[#1F2937]
+                      focus:outline-none
+                      focus:border-[#8B5CF6]
+                      transition-all
+                      placeholder:text-[#9CA3AF]
+                      resize-none
+                    "
+                  ></textarea>
+                </div>
+
+                {/* SUBMIT BUTTON */}
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="
+                    w-full
+                    bg-[#8B5CF6]
+                    text-white
+                    rounded-2xl
+                    py-5
+                    text-xs
+                    font-black
+                    uppercase
+                    tracking-[0.2em]
+                    shadow-[0_15px_40px_rgba(139,92,246,0.3)]
+                    hover:bg-[#7C3AED]
+                    transition-all
+                    duration-300
+                  "
+                >
+                  Submit Inquiry
+                </motion.button>
+
+              </form>
+            </div>
+          </motion.div>
         </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto mb-20 md:mb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative overflow-hidden bg-white rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_25px_60px_rgba(139,92,246,0.12)] border border-[#E5E7EB]"
-        >
-          <div aria-hidden="true" className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#C4B5FD] to-[#8B5CF6]" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-[#8B5CF6]/5 via-transparent to-[#7C3AED]/10 pointer-events-none" />
-
-          <div className="relative z-10 text-center md:text-left pl-2">
-            <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.4em] mb-2 block">
-              Inspired by this space?
-            </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold tracking-wide text-[#1F2937] leading-tight">
-              Let's design your <span className="italic text-[#8B5CF6]">sanctuary.</span>
-            </h2>
-          </div>
-
-          <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto shrink-0">
-            <Link
-              to="/contact"
-              aria-label="Book a consultation"
-              className="w-full sm:w-auto px-8 py-4 bg-[#8B5CF6] text-white font-black uppercase tracking-[0.2em] text-[10px] md:text-xs rounded-2xl hover:bg-[#7C3AED] transition-all duration-300 text-center shadow-[0_12px_35px_rgba(139,92,246,0.35)] outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8B5CF6]"
-            >
-              Book Consult
-            </Link>
-            <Link
-              to="/projects"
-              aria-label="View the next project"
-              className="w-full sm:w-auto px-8 py-4 bg-[#F8FAFC] border border-[#E5E7EB] text-[#6B7280] font-black uppercase tracking-[0.2em] text-[10px] md:text-xs rounded-2xl hover:border-[#8B5CF6]/40 hover:text-[#8B5CF6] transition-all duration-300 text-center shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8B5CF6]"
-            >
-              Next Project →
-            </Link>
-          </div>
-        </motion.div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 };
 
-export default ProjectDetails;
+export default ContactPage;

@@ -1,3 +1,58 @@
+import zenonHero from "../assets/zenon/living-12.webp";
+import living1 from "../assets/zenon/living-1.webp";
+import living2 from "../assets/zenon/living-2.webp";
+import living3 from "../assets/zenon/living-3.webp";
+import living4 from "../assets/zenon/living-4.webp";
+import living5 from "../assets/zenon/living-5.webp";
+import living6 from "../assets/zenon/living-6.webp";
+import living7 from "../assets/zenon/living-7.webp";
+import living8 from "../assets/zenon/living-8.webp";
+import living9 from "../assets/zenon/living-9.webp";
+import living10 from "../assets/zenon/living-10.webp";
+import living11 from "../assets/zenon/living-11.webp";
+import living13 from "../assets/zenon/living-13.webp";
+import living15 from "../assets/zenon/living-15.webp";
+
+import hall1 from "../assets/zenon/hall-1.webp";
+import hall2 from "../assets/zenon/hall-2.webp";
+import hall3 from "../assets/zenon/hall-3.webp";
+
+import kitchen1 from "../assets/zenon/kitchen-1.webp";
+import kitchen2 from "../assets/zenon/kitchen-2.webp";
+import kitchen3 from "../assets/zenon/kitchen-3.webp";
+import kitchen4 from "../assets/zenon/kitchen-4.webp";
+
+import bed1 from "../assets/zenon/bed-1.webp";
+import bed2 from "../assets/zenon/bed-2.webp";
+import bed3 from "../assets/zenon/bed-3.webp";
+import bed4 from "../assets/zenon/bed-4.webp";
+import bed5 from "../assets/zenon/bed-5.webp";
+import bed7 from "../assets/zenon/bed-7.webp";
+import bed8 from "../assets/zenon/bed-8.webp";
+
+
+//cyberwoods
+import cyberHero from "../assets/cyberwoods/IMG_3740.webp";
+import cyber3682 from "../assets/cyberwoods/IMG_3682.webp";
+import cyber3683 from "../assets/cyberwoods/IMG_3683.webp";
+import cyber3684 from "../assets/cyberwoods/IMG_3684.webp";
+import cyber3685 from "../assets/cyberwoods/IMG_3685.webp";
+import cyber3687 from "../assets/cyberwoods/IMG_3687.webp";
+import cyber3688 from "../assets/cyberwoods/IMG_3688.webp";
+import cyber3689 from "../assets/cyberwoods/IMG_3689.webp";
+import cyber3693 from "../assets/cyberwoods/IMG_3693.webp";
+import cyber3694 from "../assets/cyberwoods/IMG_3694.webp";
+import cyber3702 from "../assets/cyberwoods/IMG_3702.webp";
+import cyber3704 from "../assets/cyberwoods/IMG_3704.webp";
+import cyber3708 from "../assets/cyberwoods/IMG_3708.webp";
+import cyber3709 from "../assets/cyberwoods/IMG_3709.webp";
+import cyber3712 from "../assets/cyberwoods/IMG_3712.webp";
+import cyber3721 from "../assets/cyberwoods/IMG_3721.webp";
+import cyber3727 from "../assets/cyberwoods/IMG_3727.webp";
+import cyber3742 from "../assets/cyberwoods/IMG_3742.webp";
+import cyber3750 from "../assets/cyberwoods/IMG_3750.webp";
+
+
 export interface Material {
   name: string;
   hex: string;
@@ -21,122 +76,104 @@ export interface Project {
   heroImage: string;
   story: string;
   quote: string;
-  materials: Material[];
+
   gallery: GalleryImage[];
 }
 
 export const portfolioData: Project[] = [
-  {
-    id: "aparna-zicon",
-    title: "Zicon Apartment",
+ {
+    id: "aparna-zenon",
+    title: "Aparna Zenon",
     community: "Aparna Zicon",
     category: "Luxury Apartment",
-    // 1. MASSIVE HERO CARD: Takes up 2 columns and 2 rows
     layout: "col-span-1 md:col-span-2 row-span-2",
     client: "Confidential",
     area: "4,500 sq.ft",
     year: "2026",
-    duration: "8 Months",
-    heroImage:
-      "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778133973/IMG_8641_oryy1n.heic",
+    duration: "5 Months",
+    heroImage: zenonHero,
     story:
       "Perched high above the Hyderabad skyline in Aparna Zicon, this penthouse was designed to be a sanctuary of light and texture. The client requested a space that felt incredibly expansive yet intimate—a home where contemporary minimalism could coexist with the warmth of traditional Indian artistry.",
     quote:
       "A masterclass in restraint, using light and shadow as the primary materials of construction.",
-    materials: [
-      { name: "Italian Marble", hex: "#EAE6DF" },
-      { name: "Walnut Wood", hex: "#4A3728" },
-      { name: "Brushed Brass", hex: "#CBA135" },
-      { name: "Lilac Accents", hex: "#C4B5FD" },
-    ],
+    
     gallery: [
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778133984/IMG_8635_ejqaag.heic",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778133981/IMG_8637_ayjad7.heic",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778133972/Flow_IMG_20260425_172836_01_590_id2szc.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778133965/Flow_IMG_20260419_214104_01_466_x1gftl.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778133965/Flow_IMG_20260419_214916_01_496_bzpyya.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778133981/IMG_8637_ayjad7.heic",
-        layout: "col-span-1 aspect-square",
-      },
+      // Living Room Spaces
+      { src: living1, layout: "col-span-1 aspect-square" },
+      { src: living2, layout: "col-span-1 aspect-square" },
+      { src: living3, layout: "col-span-1 aspect-square" },
+      { src: living4, layout: "col-span-1 aspect-square" },
+      { src: living5, layout: "col-span-1 aspect-square" },
+      { src: living6, layout: "col-span-1 aspect-square" },
+      { src: living7, layout: "col-span-1 aspect-square" },
+      { src: living8, layout: "col-span-1 aspect-square" },
+      { src: living9, layout: "col-span-1 aspect-square" },
+      { src: living10, layout: "col-span-1 aspect-square" },
+      { src: living11, layout: "col-span-1 aspect-square" },
+      { src: living13, layout: "col-span-1 aspect-square" },
+      { src: living15, layout: "col-span-1 aspect-square" },
+
+      // Hall / Common Areas
+      { src: hall1, layout: "col-span-1 aspect-square" },
+      { src: hall2, layout: "col-span-1 aspect-square" },
+      { src: hall3, layout: "col-span-1 aspect-square" },
+
+      // Kitchen / Dining Spaces
+      { src: kitchen1, layout: "col-span-1 aspect-square" },
+      { src: kitchen2, layout: "col-span-1 aspect-square" },
+      { src: kitchen3, layout: "col-span-1 aspect-square" },
+      { src: kitchen4, layout: "col-span-1 aspect-square" },
+
+      // Bedroom Spaces
+      { src: bed1, layout: "col-span-1 aspect-square" },
+      { src: bed2, layout: "col-span-1 aspect-square" },
+      { src: bed3, layout: "col-span-1 aspect-square" },
+      { src: bed4, layout: "col-span-1 aspect-square" },
+      { src: bed5, layout: "col-span-1 aspect-square" },
+      { src: bed7, layout: "col-span-1 aspect-square" },
+      { src: bed8, layout: "col-span-1 aspect-square" },
     ],
   },
   {
-    id: "cyber-wood-haven",
-    title: "Cyber Wood Flat",
+    id: "bricks-infra-cyberwoods",
+    title: "Brick infra Cyberwoods",
     community: "Cyber Wood",
     category: "Villa",
-    // 2. STANDARD SQUARE: Tucks neatly next to the massive hero card
     layout: "col-span-1 row-span-1",
     client: "The Reddy Family",
     area: "6,200 sq.ft",
     year: "2025",
-    duration: "12 Months",
-    heroImage:
-      "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134821/IMG_3740_dtkjqs.jpg",
+    duration: "4 Months",
+    heroImage: cyberHero,
     story:
       "Nestled in the lush environs of Cyber Wood, this villa is an exercise in grounding architecture. We utilized massive raw stone slabs and sweeping teak wood ceilings to create a home that feels inherently connected to the earth, while providing ultra-modern, seamless smart-home integration.",
     quote:
       "True luxury is the absence of visual noise. This villa breathes with its inhabitants.",
-    materials: [
-      { name: "Kota Stone", hex: "#8B8C88" },
-      { name: "Raw Teak", hex: "#8A5A44" },
-      { name: "Matte Charcoal", hex: "#1F2937" },
-      { name: "Linen White", hex: "#FDFDFF" },
-    ],
+    
     gallery: [
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134821/IMG_3734_klqxzl.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134820/IMG_3693_zhxvxm.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134815/IMG_3715_wpqvwm.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134814/IMG_3689_safuac.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134811/IMG_3682_wky5hc.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134810/IMG_3679_kqdfhm.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134813/IMG_3685_cm7nlw.jpg",
-        layout: "col-span-1 aspect-square",
-      },
-      {
-        src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778134817/IMG_3727_xmezqg.jpg",
-        layout: "col-span-1 aspect-square",
-      },
+      { src: cyber3682, layout: "col-span-1 aspect-square" },
+      { src: cyber3683, layout: "col-span-1 aspect-square" },
+      { src: cyber3684, layout: "col-span-1 aspect-square" },
+      { src: cyber3685, layout: "col-span-1 aspect-square" },
+      { src: cyber3687, layout: "col-span-1 aspect-square" },
+      { src: cyber3688, layout: "col-span-1 aspect-square" },
+      { src: cyber3689, layout: "col-span-1 aspect-square" },
+      { src: cyber3693, layout: "col-span-1 aspect-square" },
+      { src: cyber3694, layout: "col-span-1 aspect-square" },
+      { src: cyber3702, layout: "col-span-1 aspect-square" },
+      { src: cyber3704, layout: "col-span-1 aspect-square" },
+      { src: cyber3708, layout: "col-span-1 aspect-square" },
+      { src: cyber3709, layout: "col-span-1 aspect-square" },
+      { src: cyber3712, layout: "col-span-1 aspect-square" },
+      { src: cyber3721, layout: "col-span-1 aspect-square" },
+      { src: cyber3727, layout: "col-span-1 aspect-square" },
+      { src: cyber3742, layout: "col-span-1 aspect-square" },
+      { src: cyber3750, layout: "col-span-1 aspect-square" },
     ],
   },
   {
-    id: "asbl-spire-sanctuary",
-    title: "Urban Sanctuary",
+    id: "asbl-spire",
+    title: "Asbl Spire",
     community: "ASBL Spire",
     category: "Apartment",
     // 3. TALL PORTRAIT: Takes up 1 column but stretches down 2 rows
@@ -151,12 +188,7 @@ export const portfolioData: Project[] = [
       "Designed for a fast-paced tech executive, this ASBL Spire apartment acts as a decompression zone. We employed a monochromatic palette, deep textures, and acoustic treatments to create a completely silent, serene escape right in the heart of Hyderabad's IT corridor.",
     quote:
       "We didn't just design rooms; we engineered a daily retreat from the urban rush.",
-    materials: [
-      { name: "Concrete Finish", hex: "#A3A3A3" },
-      { name: "Smoked Oak", hex: "#3E362E" },
-      { name: "Gunmetal", hex: "#2C3539" },
-      { name: "Soft Greige", hex: "#D5D0C8" },
-    ],
+   
     gallery: [
       {
         src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778136580/IMG_8736_ylflkz.jpg",
@@ -193,8 +225,8 @@ export const portfolioData: Project[] = [
     ],
   },
   {
-    id: "eipl-heritage",
-    title: "EIPL Apartment",
+    id: "eipl-cornerstone",
+    title: "Eipl cornerstone",
     community: "EIPL Cornerstone",
     category: "Apartment",
 
@@ -214,13 +246,6 @@ export const portfolioData: Project[] = [
 
     quote:
       "A dialogue between the past and the future, held together by impeccable design logic.",
-
-    materials: [
-      { name: "Rosewood", hex: "#5E2C24" },
-      { name: "Travertine", hex: "#E4D5C7" },
-      { name: "Aged Copper", hex: "#B87333" },
-      { name: "Terracotta", hex: "#E2725B" },
-    ],
 
     gallery: [
       {
@@ -253,12 +278,7 @@ export const portfolioData: Project[] = [
       "A commercial workspace designed to foster creativity. By knocking down restrictive walls, we transformed this ASBL Spectra unit into an open-plan powerhouse. We utilized fluted glass partitions to maintain privacy while allowing natural light to penetrate deep into the floor plate.",
     quote:
       "Productivity is directly correlated to the quality of light and space.",
-    materials: [
-      { name: "Fluted Glass", hex: "#E8F1F2" },
-      { name: "Exposed Steel", hex: "#4B5563" },
-      { name: "Birch Plywood", hex: "#DBC3A3" },
-      { name: "Brand Lilac", hex: "#C4B5FD" },
-    ],
+  
     gallery: [
       {
         src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778138070/IMG_4456_g4w1fv.jpg",
@@ -304,12 +324,7 @@ export const portfolioData: Project[] = [
       "High in the towers of My Home Bhooja, this apartment commands sweeping views of the city. We designed the interior to defer to the view, utilizing highly reflective surfaces, low-profile Italian furniture, and seamless stretch ceilings to make the space feel boundless.",
     quote:
       "An interior that doesn't compete with the skyline, but rather invites it inside.",
-    materials: [
-      { name: "Calacatta Quartz", hex: "#F4F4F4" },
-      { name: "Black Bronze", hex: "#2A2925" },
-      { name: "Velvet Navy", hex: "#1D2A3B" },
-      { name: "Warm LED Gold", hex: "#FFDFA6" },
-    ],
+  
     gallery: [
   {
     src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778138971/Flow_IMG_20260314_200100_01_573_a62ycu.jpg",
@@ -381,13 +396,7 @@ export const portfolioData: Project[] = [
   quote:
     "Luxury lies not in excess, but in the harmony of thoughtful details.",
 
-  materials: [
-    { name: "Ash Wood", hex: "#B08968" },
-    { name: "Soft Concrete", hex: "#C9C5C1" },
-    { name: "Champagne Gold", hex: "#D6B98C" },
-    { name: "Muted Lilac", hex: "#C4B5FD" },
-  ],
-
+ 
   gallery: [
     {
       src: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778139712/IMG_0766_qocegu.jpg",
