@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 /* ─── Types ─── */
 type ProjectType = 'Residential' | 'Commercial' | null;
@@ -65,6 +66,7 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const setField = <K extends keyof LeadForm>(
     key: K,
@@ -77,9 +79,37 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
     value: T
   ): T | null => (current === value ? null : value);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name.trim() || !form.phone.trim() || !form.projectType) return;
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+
+    try {
+      // Map your form state to the variables used in your EmailJS template
+      const templateParams = {
+        name: form.name,
+        phone: form.phone,
+        project_type: form.projectType,
+        bhk: form.bhk || 'N/A',
+        size: form.size || 'N/A',
+        message: form.message || 'No message provided.',
+      };
+
+      // Replace these strings with your actual EmailJS IDs
+      await emailjs.send(
+        'service_z0y2r5y',
+        'template_22pw2rd',
+        templateParams,
+        'Tj8nbGAIkEWCBcGkm'
+      );
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Failed to send email via EmailJS:', error);
+      alert('Something went wrong. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
@@ -87,6 +117,7 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
 
     setTimeout(() => {
       setSubmitted(false);
+      setIsSubmitting(false);
 
       setForm({
         name: '',
@@ -452,7 +483,8 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                         disabled={
                           !form.name.trim() ||
                           !form.phone.trim() ||
-                          !form.projectType
+                          !form.projectType ||
+                          isSubmitting
                         }
                         className="
                           w-full py-4 rounded-2xl
@@ -465,9 +497,10 @@ const LeadModal = ({ isOpen, onClose }: LeadModalProps) => {
                           disabled:cursor-not-allowed
                           active:scale-[0.98]
                           transition-all duration-250
+                          flex items-center justify-center gap-2
                         "
                       >
-                        Request a Free Consultation
+                        {isSubmitting ? 'Sending Request...' : 'Request a Free Consultation'}
                       </button>
                     </div>
                   </motion.div>
