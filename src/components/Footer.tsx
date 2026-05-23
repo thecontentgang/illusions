@@ -15,7 +15,6 @@ const Footer = () => {
         md:px-12
         lg:px-20
         z-0
-        mt-10
       "
     >
       {/* SHADER EFFECT GLOW 1 */}
@@ -70,8 +69,8 @@ const Footer = () => {
             <p className="text-sm md:text-base font-bold text-[#C4B5FD] leading-relaxed">
               Suncity, Hyderabad
             </p>
-            <a href="mailto:Interiorillusions1@outlook.com" className="mt-3 block text-sm md:text-base font-semibold text-[#F3F4F6] hover:text-[#C4B5FD] transition-colors break-all">
-              Interiorillusions1@outlook.com
+            <a href="mailto:nikhil@interiorillusions.co.in" className="mt-3 block text-sm md:text-base font-semibold text-[#F3F4F6] hover:text-[#C4B5FD] transition-colors break-all">
+              nikhil@interiorillusions.co.in 
             </a>
             <a href="tel:+918317503596" className="mt-3 block text-sm md:text-base font-semibold text-[#F3F4F6] hover:text-[#C4B5FD] transition-colors">
               +91 83175 03596

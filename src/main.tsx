@@ -7,7 +7,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* Wrap App in BrowserRouter to fix the useLocation error */}
+    
     <BrowserRouter>
       <HelmetProvider>
         <App />

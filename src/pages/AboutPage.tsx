@@ -136,67 +136,123 @@ const AboutPage = () => {
 
         {/* 3. CORE PRINCIPLES */}
         <section className="py-16 md:py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16 border-b border-gray-200 pb-8">
-            <div>
-              <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.4em] mb-3 block">
-                Core Principles
-              </span>
-              <h2 className="text-3xl md:text-5xl font-abhre text-[#111827] leading-tight">
-                The architecture of <span className="italic text-[#8B5CF6]">experience.</span>
-              </h2>
+  
+  {/* Heading */}
+  <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16 border-b border-gray-200 pb-8">
+    
+    <div>
+      <span className="text-[#8B5CF6] text-[10px] font-black uppercase tracking-[0.4em] mb-3 block">
+        Core Principles
+      </span>
+
+      <h2 className="text-3xl md:text-5xl font-abhre text-[#111827] leading-tight">
+        The architecture of{" "}
+        <span className="italic text-[#8B5CF6]">
+          experience.
+        </span>
+      </h2>
+    </div>
+
+    <p className="text-gray-500 text-sm md:text-base font-medium max-w-sm">
+      We believe design should be invisible, yet deeply felt. Here is how we engineer your sanctuary.
+    </p>
+  </div>
+
+  {/* Cards */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+
+    {[
+      {
+        id: "01",
+        title: "Honest Materials",
+        desc: "We favor raw stone, natural wood, and breathable textiles that age gracefully over time, bringing tactile richness to daily life."
+      },
+      {
+        id: "02",
+        title: "Intentional Lines",
+        desc: "Every curve, arch, and corner is designed with absolute purpose, balancing minimal aesthetics with natural light."
+      },
+      {
+        id: "03",
+        title: "Cultural Depth",
+        desc: "We seamlessly integrate traditional Indian warmth and spatial principles with striking, contemporary global aesthetics."
+      }
+    ].map((item, i) => (
+
+      <m.div
+        key={i}
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.1, duration: 0.5 }}
+        whileHover={{ y: -5 }}
+        className="
+          bg-gradient-to-br
+          from-[#faf7ff]
+          via-[#f5f0ff]
+          to-[#efe7ff]
+
+          p-6 md:p-8
+          rounded-2xl
+
+          border border-[#e9dcff]
+
+          shadow-[0_4px_20px_rgba(139,92,246,0.06)]
+
+          hover:shadow-[0_12px_40px_rgba(139,92,246,0.12)]
+          hover:border-[#d8c4ff]
+
+          transition-all duration-500
+
+          flex flex-col justify-between
+          group
+        "
+      >
+
+        <div>
+
+          {/* Top */}
+          <div className="flex justify-between items-start mb-8">
+
+            {/* Circle */}
+            <div
+              aria-hidden="true"
+              className="
+                w-8 h-8
+                rounded-full
+                border border-[#d8c4ff]
+                bg-white/70
+                flex items-center justify-center
+                backdrop-blur-sm
+              "
+            >
+              <div className="w-1.5 h-1.5 bg-[#8B5CF6] rounded-full group-hover:scale-150 transition-transform duration-300" />
             </div>
-            <p className="text-gray-500 text-sm md:text-base font-medium max-w-sm">
-              We believe design should be invisible, yet deeply felt. Here is how we engineer your sanctuary.
-            </p>
+
+            {/* Number */}
+            <span className="text-sm font-bold text-[#8B5CF6]/50 font-mono tracking-widest">
+              {item.id}
+            </span>
+
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-            {[
-              {
-                id: "01",
-                title: "Honest Materials",
-                desc: "We favor raw stone, natural wood, and breathable textiles that age gracefully over time, bringing tactile richness to daily life."
-              },
-              {
-                id: "02",
-                title: "Intentional Lines",
-                desc: "Every curve, arch, and corner is designed with absolute purpose, balancing minimal aesthetics with natural light."
-              },
-              {
-                id: "03",
-                title: "Cultural Depth",
-                desc: "We seamlessly integrate traditional Indian warmth and spatial principles with striking, contemporary global aesthetics."
-              }
-            ].map((item, i) => (
-              <m.div
-                key={i}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                whileHover={{ y: -5 }}
-                className="bg-[#8B5CF6] p-6 md:p-8 rounded-2xl border border-[#A78BFA]/30 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex justify-between items-start mb-8">
-                    <div aria-hidden="true" className="w-8 h-8 rounded-full border border-[#1F2937]/10 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 bg-[#1F2937] rounded-full group-hover:scale-150 transition-transform" />
-                    </div>
-                    <span className="text-sm font-bold text-[#1F2937]/40 font-mono tracking-widest">
-                      {item.id}
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-xl md:text-2xl text-[#1F2937] mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-[#1F2937]/70 text-sm leading-relaxed font-medium">
-                    {item.desc}
-                  </p>
-                </div>
-              </m.div>
-            ))}
-          </div>
-        </section>
+          {/* Title */}
+          <h3 className="font-serif text-xl md:text-2xl text-[#1f1b2d] mb-3">
+            {item.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-[#4b445d] text-sm leading-relaxed font-medium">
+            {item.desc}
+          </p>
+
+        </div>
+
+      </m.div>
+    ))}
+
+  </div>
+</section>
 
         {/* 4. PRESTIGE & COMMUNITIES */}
         <section className="py-20 md:py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">

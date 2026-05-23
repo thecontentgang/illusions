@@ -67,7 +67,7 @@ export interface Project {
   id: string;
   title: string;
   community: string;
-  category: "Villa" | "Apartment" | "Commercial" | "Luxury Apartment";
+  category:  "Apartment" | "Commercial" | "Luxury Apartment";
   layout: string;
   client: string;
   area: string;
@@ -138,7 +138,7 @@ export const portfolioData: Project[] = [
     id: "bricks-infra-cyberwoods",
     title: "Brick infra Cyberwoods",
     community: "Cyber Wood",
-    category: "Villa",
+    category: "Apartment",
     layout: "col-span-1 row-span-1",
     client: "The Reddy Family",
     area: "6,200 sq.ft",
@@ -146,9 +146,9 @@ export const portfolioData: Project[] = [
     duration: "4 Months",
     heroImage: cyberHero,
     story:
-      "Nestled in the lush environs of Cyber Wood, this villa is an exercise in grounding architecture. We utilized massive raw stone slabs and sweeping teak wood ceilings to create a home that feels inherently connected to the earth, while providing ultra-modern, seamless smart-home integration.",
+      "Nestled in the lush environs of Cyber Wood, this Apartment is an exercise in grounding architecture. We utilized massive raw stone slabs and sweeping teak wood ceilings to create a home that feels inherently connected to the earth, while providing ultra-modern, seamless smart-home integration.",
     quote:
-      "True luxury is the absence of visual noise. This villa breathes with its inhabitants.",
+      "True luxury is the absence of visual noise. This Apartment breathes with its inhabitants.",
     
     gallery: [
       { src: cyber3682, layout: "col-span-1 aspect-square" },
@@ -263,11 +263,11 @@ export const portfolioData: Project[] = [
     ],
   },
   {
-    id: "asbl-spectra-light",
-    title: "The Light Studio",
+    id: "asbl-spire",
+    title: "Apartment asbl spire.",
     community: "ASBL Spectra",
-    category: "Commercial",
-    // 5. STANDARD SQUARE: Fits into the remaining gaps
+    category: "Apartment",
+
     layout: "col-span-1 row-span-1",
     client: "Creative Agency",
     area: "3,200 sq.ft",
@@ -275,7 +275,7 @@ export const portfolioData: Project[] = [
     duration: "4 Months",
     heroImage: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778138063/IMG_4444_jpej61.jpg",
     story:
-      "A commercial workspace designed to foster creativity. By knocking down restrictive walls, we transformed this ASBL Spectra unit into an open-plan powerhouse. We utilized fluted glass partitions to maintain privacy while allowing natural light to penetrate deep into the floor plate.",
+      "A Apartment workspace designed to foster creativity. By knocking down restrictive walls, we transformed this ASBL Spectra unit into an open-plan powerhouse. We utilized fluted glass partitions to maintain privacy while allowing natural light to penetrate deep into the floor plate.",
     quote:
       "Productivity is directly correlated to the quality of light and space.",
   
@@ -309,9 +309,9 @@ export const portfolioData: Project[] = [
     ],
   },
   {
-    id: "my-home-bhooja-glass",
-    title: "The Glass Residence",
-    community: "My Home Bhooja",
+    id: "team-4-nyla",
+    title: "Apartment - team 4 nyla",
+    community: "team 4 nyla",
     category: "Luxury Apartment",
     // 6. TALL PORTRAIT: Drops down elegantly to finish the grid
     layout: "col-span-1 row-span-2",
@@ -321,7 +321,7 @@ export const portfolioData: Project[] = [
     duration: "7 Months",
     heroImage: "https://res.cloudinary.com/dmabn7bjw/image/upload/q_auto/f_auto/v1778138961/Flow_IMG_20260314_192424_01_465_tgfy8o.jpg",
     story:
-      "High in the towers of My Home Bhooja, this apartment commands sweeping views of the city. We designed the interior to defer to the view, utilizing highly reflective surfaces, low-profile Italian furniture, and seamless stretch ceilings to make the space feel boundless.",
+      "High in the towers of team 4 nyla, this apartment commands sweeping views of the city. We designed the interior to defer to the view, utilizing highly reflective surfaces, low-profile Italian furniture, and seamless stretch ceilings to make the space feel boundless.",
     quote:
       "An interior that doesn't compete with the skyline, but rather invites it inside.",
   

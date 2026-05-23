@@ -268,7 +268,7 @@ const HeroSection = memo(() => {
                     </span>
 
                     <span className="text-gray-500 text-sm">
-                      (250+ Reviews)
+                      (100+ Reviews)
                     </span>
                   </div>
                 </div>

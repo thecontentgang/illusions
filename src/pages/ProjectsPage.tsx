@@ -161,7 +161,7 @@ const ProjectsPage = () => {
                         aria-hidden="true"
                         className="
                           absolute inset-0 
-                          bg-gradient-to-t from-black/40 via-black/5 to-transparent
+                          bg-gradient-to-t from-black/40 via-black/20 to-transparent
                         "
                       />
 
@@ -174,41 +174,16 @@ const ProjectsPage = () => {
                         "
                       />
 
-                      {/* CONTENT (White Glassmorphism) */}
-                      <div className="absolute bottom-0 left-0 w-full p-5 md:p-6">
-                        <div
-                          className="
-                            rounded-[1.5rem]
-                            bg-white/35 backdrop-blur-xl
-                            border border-white/50
-                            shadow-[0_8px_30px_rgba(0,0,0,0.08)]
-                            px-6 py-5
-                            transform transition-transform duration-500
-                            group-hover:-translate-y-1
-                          "
-                        >
-                          {/* CATEGORY & COMMUNITY */}
-                          <p
-                            className="
-                              text-[10px] md:text-xs font-black uppercase tracking-[0.25em]
-                              text-[#8B5CF6] mb-2
-                            "
-                          >
-                            {project.category} • {project.community}
-                          </p>
-
-                          {/* TITLE: Upgraded to h2 for proper Document Hierarchy */}
-                          <h2
-                            className="
-                              text-xl md:text-2xl lg:text-3xl
-                              font-abhre text-[#1F2937]
-                              leading-tight m-0
-                            "
-                          >
-                            {project.title}
-                          </h2>
-                        </div>
-                      </div>
+                     <div className="absolute bottom-0 left-0 w-full p-2 md:p-3 z-20">
+                  <div className="rounded-[1.5rem] bg-white/10 backdrop-blur-xl border border-white/20 px-3 py-2">
+                    <h3 className="text-[10px] md:text-xs font-black uppercase text-center tracking-[0.25em] text-[#8B5CF6] mb-2">
+                      {project.category} . {project.community}
+                    </h3>
+                    <p className="text-xl md:text-2xl text-center font-semibold text-white leading-tight">
+                      {project.title}
+                    </p>
+                  </div>
+                </div>
                     </Link>
                   </m.div>
                 ))}

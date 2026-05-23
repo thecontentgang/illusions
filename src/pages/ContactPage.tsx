@@ -134,7 +134,7 @@ const ContactPage = () => {
               <div className="flex flex-col gap-3">
 
                 <a
-                  href="mailto:Interiorillusions1@outlook.com"
+                  href="mailto:nikhil@interiorillusions.co.in"
                   className="
                     text-[#6B7280]
                     font-medium
@@ -143,7 +143,7 @@ const ContactPage = () => {
                     w-fit
                   "
                 >
-                  Interiorillusions1@outlook.com
+                  nikhil@interiorillusions.co.in
                 </a>
 
                 <a
@@ -179,7 +179,7 @@ const ContactPage = () => {
               {/* MAP */}
               <iframe
                 title="Office Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243710.23946883448!2d78.0901336669922!3d17.365056641899134!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97e032e71c0b%3A0x347126a37060cd26!2sInterior%20Illusions!5e0!3m2!1sen!2sin!4v1778670596783!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1601.0544951499069!2d78.39305714357164!3d17.365138314044113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97e032e71c0b%3A0x347126a37060cd26!2sInterior%20Illusions!5e0!3m2!1sen!2sin!4v1779530217275!5m2!1sen!2sin"
                 className="
                   absolute
                   inset-0
@@ -204,7 +204,7 @@ const ContactPage = () => {
               />
 
               {/* CONTENT */}
-              <div
+              {/* <div
                 className="
                   absolute
                   bottom-0
@@ -249,11 +249,12 @@ const ContactPage = () => {
                     Interior Illustrations <br />
 
                     <span className="text-gray-300 text-base">
+                      Laxmi Narsimha colony,
                       Suncity, Hyderabad
                     </span>
                   </h3>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
 
@@ -406,7 +407,7 @@ const ContactPage = () => {
                       {/* INPUT */}
                       <input
                         type="tel"
-                        placeholder="9876543210"
+                        placeholder="8317503596"
                         required
                         maxLength={10}
                         pattern="[0-9]{10}"
