@@ -88,7 +88,7 @@ export const portfolioData: Project[] = [
     category: "Luxury Apartment",
     layout: "col-span-1 md:col-span-2 row-span-2",
     client: "Confidential",
-    area: "4,500 sq.ft",
+    area: "2,400 sq.ft",
     year: "2026",
     duration: "5 Months",
     heroImage: zenonHero,
@@ -141,7 +141,7 @@ export const portfolioData: Project[] = [
     category: "Apartment",
     layout: "col-span-1 row-span-1",
     client: "The Reddy Family",
-    area: "6,200 sq.ft",
+    area: "2,100 sq.ft",
     year: "2025",
     duration: "4 Months",
     heroImage: cyberHero,
@@ -179,7 +179,7 @@ export const portfolioData: Project[] = [
     // 3. TALL PORTRAIT: Takes up 1 column but stretches down 2 rows
     layout: "col-span-1 row-span-2",
     client: "Private Tech Executive",
-    area: "2,800 sq.ft",
+    area: "2,255 sq.ft",
     year: "2025",
     duration: "5 Months",
     heroImage:
