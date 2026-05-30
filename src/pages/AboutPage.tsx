@@ -14,13 +14,13 @@ const AboutPage = () => {
           content="Based in Hyderabad, Interior Illusion is an architectural practice dedicated to the art of meaningful, high-end living. Founded by Nikhil, we engineer luxury lifestyles." 
         />
         <meta name="keywords" content="Interior Illusion Studio, Nikhil interior designer, luxury interiors Hyderabad, best interior design studio, bespoke design" />
-        <link rel="canonical" href="https://www.illusioninteriors.com/about" />
+        <link rel="canonical" href="https://www.illusioninteriors.co.in/about" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="About | Illusion Interior Studio" />
+        <meta property="og:title" content="About | Interior Illusions" />
         <meta property="og:description" content="We don't just decorate spaces; we engineer lifestyles. Discover the vision behind Hyderabad's premier interior studio." />
-        <meta property="og:image" content="https://www.illusioninteriors.com/founder.jpeg" />
-        <meta property="og:url" content="https://www.illusioninteriors.com/about" />
+        <meta property="og:image" content="https://www.illusioninteriors.co.in/founder.jpeg" />
+        <meta property="og:url" content="https://www.illusioninteriors.co.in/about" />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -28,9 +28,9 @@ const AboutPage = () => {
             "@graph": [
               {
                 "@type": "InteriorDesignBusiness",
-                "name": "Illusion Interior Studio",
-                "image": "https://www.illusioninteriors.com/illusion-dark.png",
-                "url": "https://www.illusioninteriors.com",
+                "name": "Interior Illusions",
+                "image": "https://www.illusioninteriors.co.in/illusion-dark.png",
+                "url": "https://www.illusioninteriors.co.in",
                 "telephone": "+918317503596",
                 "address": {
                   "@type": "PostalAddress",
@@ -45,7 +45,7 @@ const AboutPage = () => {
                 "jobTitle": "Founder & Principal Designer",
                 "worksFor": {
                   "@type": "InteriorDesignBusiness",
-                  "name": "Illusion Interior Studio"
+                  "name": "Interior Illusions"
                 }
               }
             ]

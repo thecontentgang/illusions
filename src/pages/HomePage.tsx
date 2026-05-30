@@ -31,14 +31,14 @@ const HomePage = () => {
         {/* Open Graph / Facebook (How it looks when shared on WhatsApp/FB) */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.illusioninteriors.com/" />
-        <meta property="og:title" content="Illusion Interior Studio | Luxury Interior Designers" />
+        <meta property="og:title" content="Interior Illusions | Luxury Interior Designers" />
         <meta property="og:description" content="Transform your space with Illusion Interior Studio, Hyderabad's premier luxury interior designers." />
         <meta property="og:image" content="https://www.illusioninteriors.com/og-image.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.illusioninteriors.com/" />
-        <meta property="twitter:title" content="Illusion Interior Studio | Luxury Interior Designers" />
+        <meta property="twitter:title" content="Interior Illusions | Luxury Interior Designers" />
         <meta property="twitter:description" content="Transform your space with Illusion Interior Studio, Hyderabad's premier luxury interior designers." />
         <meta property="twitter:image" content="https://www.illusioninteriors.com/og-image.jpg" />
 
@@ -47,7 +47,7 @@ const HomePage = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "InteriorDesignBusiness",
-            "name": "Illusion Interior Studio",
+            "name": "Interior Illusions",
             "image": "https://www.illusioninteriors.com/illusion-dark.png",
             "description": "Luxury interior design studio based in Hyderabad, specializing in bespoke residential and commercial spaces.",
             "url": "https://www.illusioninteriors.com",

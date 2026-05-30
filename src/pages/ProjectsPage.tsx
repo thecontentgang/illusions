@@ -8,30 +8,32 @@ const ProjectsPage = () => {
     <LazyMotion features={domAnimation} strict>
       {/* 1. ON-PAGE SEO & JSON-LD SCHEMA */}
       <Helmet>
-        <title>Our Portfolio | Illusion Interior Studio Hyderabad</title>
+        <title>Our Portfolio |Interior  Illusions Studio Hyderabad</title>
         <meta 
           name="description" 
           content="Explore our curated collection of luxury interior design projects across Hyderabad's most prestigious addresses. Spaces designed to inspire life." 
         />
         <meta name="keywords" content="interior design portfolio, luxury interiors Hyderabad, apartment interior designs, modern villa interiors, Illusion Interior Studio projects" />
-        <link rel="canonical" href="https://www.illusioninteriors.com/projects" />
+        <link rel="canonical" href="https://www.illusioninteriors.co.in/projects" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Our Portfolio | Illusion Interior Studio" />
+        <meta property="og:title" content="Our Portfolio | Interior Illusions" />
         <meta property="og:description" content="Explore our curated collection of luxury interior design projects across Hyderabad's most prestigious addresses." />
-        <meta property="og:url" content="https://www.illusioninteriors.com/projects" />
+        <meta property="og:url" content="https://www.illusioninteriors.co.in/projects" />
 
         {/* JSON-LD Schema for Portfolio / ImageGallery */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Illusion Interior Studio Portfolio",
+            "name": "Interior Illusions Portfolio",
             "description": "A curated collection of luxury interior design projects.",
-            "url": "https://www.illusioninteriors.com/projects",
+            "url": "https://www.illusioninteriors.co.in/projects",
             "publisher": {
               "@type": "InteriorDesignBusiness",
-              "name": "Illusion Interior Studio"
+              "name": "Interior Illusions",
+              "image": "https://www.illusioninteriors.co.in/illusion-dark.png",
+              "telephone": "+918317503596",
             }
           })}
         </script>
