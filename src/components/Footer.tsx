@@ -90,9 +90,9 @@ const Footer = () => {
             <Link to="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
           </div>
           <span className="hidden sm:inline text-white/20">|</span>
-          <a href="https://eshadigital.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
+          <a href="https://thecontentgang.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
             <span>Built by</span>
-            <span className="text-white font-black tracking-[0.2em]">EshaDigital</span>
+            <span className="text-white font-black tracking-[0.2em]">TheContentGang</span>
           </a>
         </div>
 
